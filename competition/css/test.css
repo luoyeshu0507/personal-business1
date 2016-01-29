@@ -1,0 +1,21 @@
+.h {
+  height: 1000px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.test {
+  background-color: #f0f;
+  color: #ddd;
+  display: block;
+  line-height: 20px;
+  width: 120px;
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  right: -30px;
+  font-size: 12px; }
