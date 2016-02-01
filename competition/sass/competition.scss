@@ -1,0 +1,246 @@
+@mixin cliptext{
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+.c-list-selector{
+	margin-bottom: 54px;
+	background-color: #ebeae8;
+	height:400px;
+}
+
+.c-container{
+	border-left: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+	padding-bottom: 34px;
+	.c-list-wrap{
+		margin-left: 37px;
+		.c-list-shownpart{
+			overflow:hidden;
+			background-color: #fafaf9;
+			padding-left:34px;
+			margin-bottom: 64px;
+			.c-list-img{
+				display: block;
+				float:left;
+				margin:18px 54px 0 0;
+				position:relative;
+				img{
+					width:206px;
+					height:290px;
+				}
+				&.c-list-closed:after{
+					position:absolute;
+					top:10px;
+					right:-12px;
+					content:'';
+					display:block;
+					width:63px;
+					height:20px;
+					background: url("../../libs/images/icons.png") no-repeat 0 -100px;
+				}
+			}
+			.c-list-middle{
+				float:left;
+				width:260px;
+				color:#221f1f;
+				margin-right: 54px;
+				h3{
+					font-size: 22px;
+					font-weight: 300;
+					line-height: 46px;
+					width:690px;
+					@include cliptext;		
+				}
+				.c-list-tip{
+
+				}
+
+				.c-list-detail{
+					max-height: 180px;
+					overflow: hidden;
+					font-size: 14px;
+					line-height: 18px;
+					font-weight: 300;	
+				}
+				.c-list-openbtn{
+					float:right;
+				}
+				.c-list-likes{
+					clear:both;
+					overflow:hidden;
+					line-height: 26px;
+					font-size:12px;
+					font-weight: 300;
+					li{
+						float:left;
+						width:86px;
+						.g-icon{
+							float:left;
+						}
+						i{
+							float:left;
+							width:60px;
+							@include cliptext;
+						}
+					}
+				}
+			}
+			.c-list-right{
+				margin-top:64px;
+				float:left;
+				width:400px;
+				overflow:hidden;
+				li{
+					line-height: 18px;
+					color:#838386;
+					font-size:14px;
+					margin-bottom: 16px;
+					font-weight: 300;
+					i{
+						float:left;
+					}
+					em{
+						overflow:hidden;
+						display:block;
+						b{
+							font-weight: 700;
+						}
+					}
+					&:last-child{
+						font-weight: 700;
+					}
+				}
+			}
+		}
+		.c-list-hiddenpart{
+			border-radius: 10px;
+			padding-left: 54px;
+			margin-top:-24px;
+			background-color: #e5e3e0;
+			position:relative;
+			.c-list-arrow{
+				display:block;
+				height:0;
+				width:0;
+				overflow:hidden;
+				border:24px solid transparent;
+				border-bottom-color: #e5e3e0;
+				top:-48px;
+				left:100px;
+				position:absolute;
+			}
+			.c-list-subbtn{
+				display:block;
+				margin:20px auto;
+				width:180px;
+				line-height: 34px;
+				text-align: center;
+				color:#fff;
+				background-color: #e85c5f;
+				font-weight: 300;
+				border:2px solid #f9f9f9;
+				cursor: pointer;
+			}
+			.c-list-imgswrap{
+				float:left;
+				width:144px;
+				margin-right: 53px;
+				margin-bottom: 20px;
+				span{
+					display:block;
+					position:relative;
+					height:202px;
+					overflow:hidden;
+					img{
+						width:144px;
+						height:202px;
+					}
+				}
+				&:nth-of-type(1) span,&:nth-of-type(2) span,&:nth-of-type(3) span{
+					&:after,&:before{
+						position:absolute;
+						content:'';
+						display:block;
+					}
+					&:before{
+						background-color: #e7564d;
+						border:1px solid #fff;
+						width:50px;
+						height:50px;
+						top:-27px;
+						right:-27px;
+						transform:rotate(45deg);
+					}
+					&:after{
+						line-height: 20px;
+						color:#fff;
+						text-align: center;
+						content:"1";
+						top:0;
+						right:0;
+						width:18px;
+						font-size:14px;
+					}
+				}
+				&:nth-of-type(2) span:after{
+					content:"2";
+				}
+				&:nth-of-type(3) span:after{
+					content:"3";
+				}
+				i{
+					text-align: center;
+					display:block;
+					font-size: 14px;
+					line-height: 28px;
+					font-weight: 300;
+					color:#808083;
+				}
+			}
+		}
+	}
+}
+
+
+.c-scores{
+	width: 1000px;
+	margin: 40px auto;
+	overflow:hidden;
+	li{
+		width:248px;
+		border-right: 2px solid #fafafa;
+		float:left;
+		height:70px;
+		&:last-child{
+			border-right: none;
+		}
+		em,i{
+			float:right;
+			width:160px;
+			line-height: 320px;
+			margin-right: 10px;
+			@include cliptext;
+			text-overflow:clip;
+		}
+		em{
+			color: #EA2127;
+			font-size: 36px;
+			line-height: 44px;
+			font-weight: 100;
+			text-align: center;
+
+		}
+		i{
+			font-size: 18px;
+			text-align: center;
+			line-height: 24px;
+			color: #ABAAAB;
+			font-weight: 300;
+		}
+		.g-icon{
+			margin:22px 0 0 48px;
+			float:left;
+		}
+	}
+}

@@ -1,43 +1,51 @@
-@import 'reset';
-@import 'header';
-@import 'footer';
+@import '../_part/reset';
+@import '../_part/header';
+@import '../_part/footer';
 
 /* include font */
 @font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Oswald Light'), local('Oswald-Light'), url(https://fonts.gstatic.com/s/oswald/v10/HqHm7BVC_nzzTui2lzQTDZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Oswald Light'), local('Oswald-Light'), url(https://fonts.gstatic.com/s/oswald/v10/HqHm7BVC_nzzTui2lzQTDZBw1xU1rKptJj_0jans920.woff2) format('woff2');
 }
 @font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v10/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v10/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
 }
 @font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Oswald Bold'), local('Oswald-Bold'), url(https://fonts.gstatic.com/s/oswald/v10/bH7276GfdCjMjApa_dkG6ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Oswald Bold'), local('Oswald-Bold'), url(https://fonts.gstatic.com/s/oswald/v10/bH7276GfdCjMjApa_dkG6ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
 }
 
 /* common css */
 .g-container{
 	width: 1080px;
 	margin:0 auto;
-	padding:0 25px;
+	box-sizing:border-box;
 	font-family:Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 .g-pt65{
 	padding-top:65px;
+}
+.clearfix:before,.clearfix:after{ 
+    content:""; 
+    display:table; 
+} 
+.clearfix:after{clear:both;} 
+.clearfix{ 
+    *zoom:1;
 }
 a{
 	outline: none;
 	text-decoration: none;
 }
 body{
-	background-color: #ebeae8;
+	background-color: #efeeec;
 	font-size:16px;
 }
 .g-wline{
@@ -51,6 +59,33 @@ body{
 }
 .g-fright{
 	float:right;
+}
+.g-icon{
+	display: inline-block;
+	width:26px;
+	height:26px;
+	background: url("../images/icons.png") no-repeat;
+}
+.g-icon-fav{
+	background-position: 2px 0;
+}
+.g-icon-comments{
+	background-position: -31px 0;
+}
+.g-icon-likes{
+	background-position: -67px -1px;
+}
+.g-icon-uploads{
+	background-position: -103px -1px;
+}
+.g-icon-heart{
+	background-position: 6px -74px;
+}
+.g-icon-see{
+	background-position: -37px -74px;
+}
+.g-icon-share{
+	background-position: -81px -74px;
 }
 
 
