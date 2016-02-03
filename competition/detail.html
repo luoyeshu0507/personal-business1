@@ -78,7 +78,7 @@
 	    </div>
 	    <div class="d-mark-score">
 	    	<div class="d-mark-itemname">
-	    		COMMIT<br/>
+	    		CONTENT<br/>
 	    		FORM<br/>
 	    		TECHNIQUE
 	    	</div>
@@ -89,11 +89,12 @@
 	    		<span>0.0</span>
 	    		<i></i>
 	    	</div>
-			<div class="d-circle d-mark-circle1"><span>0.0</span></div>
-			<div class="d-circle d-mark-circle2"><span>0.0</span></div>
-			<div class="d-circle d-mark-circle3"><span>0.0</span></div>
-			<div class="d-circle d-mark-circle4"><span>0.0</span></div>
-			<div class="d-circle d-mark-circle5"><span>Rated</span></div>
+			<div class="d-circle d-mark-circle1" data-circle='.75'><span>0.0</span></div>
+			<div class="d-circle d-mark-circle2" data-circle='.75'><span>0.0</span></div>
+			<div class="d-circle d-mark-circle3" data-circle='.75'><span>0.0</span></div>
+			<div class="d-circle d-mark-circle4" data-circle='.75'><span>0.0</span></div>
+			<div class="d-circle d-mark-circle5"><span>7,520</span></div>
+			<div class="d-mark-subbtn">SUBMIT</div>
 	    </div>
 	</div>
 	<!-- images switcher end -->
@@ -183,11 +184,11 @@
     			circlecolor:"87d5b1"
     		}
     	];
-	    $(".d-circle:not(:last)").each(function(index){
+	    $("[data-circle]").each(function(index){
 	    	var width=$(this).width();
 	    	var $span=$(this).find('span');
 	    	$(this).circleProgress({
-		        value: .75,
+		        value: $(this).data('circle'),
 		        size: width-10,
 		        thickness:width/11,
 		        startAngle:-Math.PI/2,
@@ -198,7 +199,36 @@
 		    }).on('circle-animation-progress',function(event, animationProgress, stepValue){
 		    	$span.html((stepValue*10).toFixed(1));
 		    });
-	    })
+	    });
+
+	    $('.d-mark-scoretips span').on("mousedown",function(event){
+			var $that=$(this);
+	    	var left=$(this).css("left");
+	    	var pagex=event.pageX;
+	    	var newleft=0;
+	    	$(document).on('mousemove.myevent',function(event) {
+	    		event.preventDefault();
+    			newleft=event.pageX-pagex+parseInt(left);
+    			newleft=newleft>-10 ? newleft : -10; 
+    			newleft=newleft<263 ? newleft : 263; 
+	    		$that.css('left',newleft+"px");
+	    		$that.html((10*(newleft+10)/273).toFixed(1));
+	    	}).on('mouseup.myevent',function(event) {
+	    		$(this).unbind('.myevent');
+	    	});
+	    });
+
+	    $('.d-mark-subbtn').click(function(){
+	    	if($(this).hasClass("d-disabled")) return;
+	    	var sum=0,item=0;
+	    	$('.d-mark-scoretips span').each(function(i){
+	    		item=$(this).html()/10;
+	    		sum+=item;
+	    		$(".d-circle").eq(i).circleProgress({ value: item });
+	    	});
+	    	$(".d-circle").eq(3).circleProgress({ value: sum/3 });
+	    	$(this).addClass("d-disabled");
+	    });
 	</script>
 </body>
 </html>
