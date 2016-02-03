@@ -24,7 +24,7 @@ gulp.task('sass', function() {
             cascade: false,
             remove:true
 		}))
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(rename(function(path){
         	path.dirname=path.dirname.replace(/sass$/,'css');
     	}))

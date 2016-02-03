@@ -4,7 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Competition List</title>
 	<link rel="stylesheet" type="text/css" href="../libs/css/g-global.css">
+	<link rel="stylesheet" type="text/css" href="../libs/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/competition.css">
+	<script type="text/javascript" src="../libs/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../libs/js/swiper.min.js"></script>
+	<script type="text/javascript" src="../libs/js/circle-progress.js"></script>
+	<script type="text/javascript" src="/js/"></script>
 </head>
 <body>
 	<!-- header-start -->
@@ -33,6 +38,24 @@
 				<div class="c-list-middle">
 					<h3>一笔勾勒 极简主义作画竞赛 一笔勾勒 极简主义作画竞赛 一笔勾勒 极简主义作画竞赛</h3>
 					<div class="c-list-tip">Fine Art</div>
+					<div class="swiper-container">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				            <div class="swiper-slide"><img src="images/badge1.png"></div>
+				        </div>
+				        <div class="swiper-button-next"></div>
+				        <div class="swiper-button-prev"></div>
+				    </div>
 					<div class="c-list-badgelist"></div>
 					<p class="c-list-detail">Influenced by the Siberian cold air, is located in the border of Mongolia and Xinjiang Xinjiang production and Construction Corps, the 10th division 183 regiment recently temperature sharp decline of 8 to 10 degrees, the ion and Construction Corps, the 10th division 183 regiment recently temperature sharp decline of 8 to 10 degrees, the </p>
 					<a href="javascript:void(0);" class="c-list-openbtn">展开作品</a>
@@ -86,32 +109,37 @@
 				<i class="c-list-arrow"></i>
 				<button class="c-list-subbtn">SUBMIT</button>
 				<a href="#" class="c-list-imgswrap">
-					<span>
+					<span data-score='2.45343' data-vote='12'>
 						<img src="images/list-img1.png" alt="">
+						<em><b title="score:2.45"></b><strong title="vote:12"></strong></em>
 					</span>
 					<i>Name</i>
 				</a>
 				<a href="#" class="c-list-imgswrap">
-					<span>
+					<span data-score='2.45343' data-vote='12'>
 						<img src="images/list-img1.png" alt="">
+						<em><b title="score:2.45"></b><strong title="vote:12"></strong></em>
 					</span>
 					<i>Name</i>
 				</a>
 				<a href="#" class="c-list-imgswrap">
-					<span>
+					<span data-score='2.45343' data-vote='12'>
 						<img src="images/list-img1.png" alt="">
+						<em><b title="score:2.45"></b><strong title="vote:12"></strong></em>
 					</span>
 					<i>Name</i>
 				</a>
 				<a href="#" class="c-list-imgswrap">
-					<span>
+					<span data-score='2.45343' data-vote='12'>
 						<img src="images/list-img1.png" alt="">
+						<em><b title="score:2.45"></b><strong title="vote:12"></strong></em>
 					</span>
 					<i>Name</i>
 				</a>
 				<a href="#" class="c-list-imgswrap">
-					<span>
+					<span data-score='2.45343' data-vote='12'>
 						<img src="images/list-img1.png" alt="">
+						<em><b title="score:2.45"></b><strong title="vote:12"></strong></em>
 					</span>
 					<i>Name</i>
 				</a>
@@ -184,7 +212,7 @@
 	                </li>
 	                <li>
 	                	<h3>Wechat</h3>
-	                	<img src="../libs/images/wechat_ewm.png" height="144" width="145">
+	                	<img src="../libs/images/wechat_ewm.png">
 	                </li>
 	        	</ul>
 	        </div>
@@ -197,5 +225,37 @@
 		</div>
 	</div>
 	<!-- footer-end -->
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        paginationClickable: true,
+	        slidesPerView: 5,
+	        slidesPerGroup : 5,
+	        freeMode: true
+	    });
+	    $('.c-list-wrap').on('mouseenter','.c-list-imgswrap span',function(){
+	    	if($(this).find('canvas').length) return;
+    		var score=$(this).data('score');
+    		var vote=$(this).data('vote');
+    		var $em=$(this).find('em');
+    		var $b=$em.find("b");
+    		var $strong=$em.find("strong");
+    		// $(this).find('em').on('mouseover mouseout',function(){return false;})
+    		$em.circleProgress({
+		        value: score/10,
+		        size: 72,
+		        thickness:9,
+		        fill: {
+		            gradient: ["#4dbf84"]
+		        },
+		        emptyFill:'#cceddc'
+		    }).on('circle-animation-progress',function(event, animationProgress, stepValue){
+		    	$b.html((animationProgress*score).toFixed(1));
+		    	$strong.html((animationProgress*vote).toFixed(0));
+		    });
+	    });
+	</script>
 </body>
 </html>
