@@ -89,15 +89,109 @@
 	    		<span>0.0</span>
 	    		<i></i>
 	    	</div>
-			<div class="d-circle d-mark-circle1" data-circle='.75'><span>0.0</span></div>
-			<div class="d-circle d-mark-circle2" data-circle='.75'><span>0.0</span></div>
-			<div class="d-circle d-mark-circle3" data-circle='.75'><span>0.0</span></div>
-			<div class="d-circle d-mark-circle4" data-circle='.75'><span>0.0</span></div>
+			<div class="d-circle d-mark-circle1" data-circle='7.5'><span>0.0</span></div>
+			<div class="d-circle d-mark-circle2" data-circle='7.5'><span>0.0</span></div>
+			<div class="d-circle d-mark-circle3" data-circle='7.5'><span>0.0</span></div>
+			<div class="d-circle d-mark-circle4" data-circle='7.5'><span>0.0</span></div>
 			<div class="d-circle d-mark-circle5"><span>7,520</span></div>
 			<div class="d-mark-subbtn">SUBMIT</div>
 	    </div>
 	</div>
 	<!-- images switcher end -->
+
+	<!-- other artists start -->
+	<div class="g-container d-container d-otherartists">
+		<ul>
+			<li>
+				<a href="">
+					<img src="https://placem.at/people?w=64&h=64&random=1">
+					<i>Tom Daley</i>
+				</a>
+				<em data-circle="7.5"><span></span></em>
+				<em data-circle="7.5"><span></span></em>
+				<em data-circle="7.5"><span></span></em>
+			</li>
+			<li>
+				<a href="">
+					<img src="https://placem.at/people?w=64&h=64&random=2">
+					<i>Tom Daley</i>
+				</a>
+				<em data-circle="7.5"><span></span></em>
+				<em data-circle="7.5"><span></span></em>
+				<em data-circle="7.5"><span></span></em>
+			</li>
+			<li>
+				<a href="">
+					<img src="https://placem.at/people?w=64&h=64&random=3">
+					<i>Tom Daley</i>
+				</a>
+				<em data-circle="7.5"><span></span></em>
+				<em data-circle="7.5"><span></span></em>
+				<em data-circle="7.5"><span></span></em>
+			</li>
+		</ul>
+	</div>
+	<!-- other artists end -->
+
+	<!-- about artist start -->
+	<div class="g-container d-container d-about-artist">
+		<ul>
+			<li>
+				<img src="https://placem.at/people?w=64&h=64&random=4">
+				<button>FOLLOW</button>
+			</li>
+			<li>
+				<div class="g-about-artist-title">
+					<span>Starry Night</span>
+					<em> / Nov.15.2016</em>
+					<i>LIKE</i>
+				</div>
+				<div class="g-about-artist-name">by Fan Gogo</div>
+			</li>
+			<li>
+				<div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			            <div class="swiper-slide"><img src="images/badge1.png"></div>
+			        </div>
+			        <div class="swiper-button-next"></div>
+			        <div class="swiper-button-prev"></div>
+			    </div>
+			</li>
+		</ul>
+	</div>
+	<!-- about artist end -->
+	
+	<!-- comment start -->
+	<div class="g-container d-container d-comment">
+		<dl>
+			<dt>Add a comment</dt>
+			<dd>
+				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=6"></a>
+				<p>
+					<span class="d-comment-name"><a href=""></a></span>
+					<i>
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+					</i>
+				</p>
+			</dd>
+		</dl>
+	</div>
+	<!-- comment end -->
 
 	<!-- footer-start -->
 	<div class="f-footer">
@@ -187,8 +281,12 @@
 	    $("[data-circle]").each(function(index){
 	    	var width=$(this).width();
 	    	var $span=$(this).find('span');
+	    	if(index>3) {
+	    		index=(index-1)%3;
+	    		width+=10;
+	    	}
 	    	$(this).circleProgress({
-		        value: $(this).data('circle'),
+		        value: $(this).data('circle')/10,
 		        size: width-10,
 		        thickness:width/11,
 		        startAngle:-Math.PI/2,
@@ -228,6 +326,16 @@
 	    	});
 	    	$(".d-circle").eq(3).circleProgress({ value: sum/3 });
 	    	$(this).addClass("d-disabled");
+	    });
+
+	    var swiper = new Swiper('.d-about-artist .swiper-container', {
+	        pagination: '.swiper-pagination',
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        paginationClickable: true,
+	        slidesPerView: 5,
+	        slidesPerGroup : 5,
+	        freeMode: true
 	    });
 	</script>
 </body>

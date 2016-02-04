@@ -690,3 +690,215 @@
 .d-switcher .d-mark-score .d-mark-subbtn.d-disabled {
   opacity: .5;
 }
+
+.d-otherartists ul {
+  width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+  padding-left: 34px;
+}
+
+.d-otherartists ul li {
+  float: left;
+  width: 276px;
+  border-right: 2px solid #efeff0;
+  margin-right: 33px;
+  padding-bottom: 20px;
+}
+
+.d-otherartists ul li:last-child {
+  border: none;
+  margin-right: 0;
+}
+
+.d-otherartists ul li a {
+  float: left;
+  margin-right: 22px;
+  position: relative;
+}
+
+.d-otherartists ul li a img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.d-otherartists ul li a i {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #939395;
+  line-height: 1;
+  width: 128px;
+  position: absolute;
+  bottom: -18px;
+  left: -32px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.d-otherartists ul li em {
+  margin-right: 22px;
+  font-size: 12px;
+  line-height: 1;
+  color: #939395;
+  float: left;
+  display: block;
+  margin-top: 20px;
+  width: 38px;
+}
+
+.d-otherartists ul li em span {
+  display: block;
+  text-align: center;
+  margin-top: -25px;
+}
+
+.d-about-artist ul {
+  width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+  padding-left: 34px;
+}
+
+.d-about-artist li {
+  float: left;
+  font-weight: 300;
+}
+
+.d-about-artist li .g-about-artist-title {
+  line-height: 32px;
+}
+
+.d-about-artist li .g-about-artist-title span, .d-about-artist li .g-about-artist-title em, .d-about-artist li .g-about-artist-title i {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.d-about-artist li .g-about-artist-title span {
+  font-size: 24px;
+  color: #221f1f;
+  max-width: 220px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: -8px;
+}
+
+.d-about-artist li .g-about-artist-title em {
+  font-size: 16px;
+  margin-right: 10px;
+  line-height: 24px;
+}
+
+.d-about-artist li .g-about-artist-title i {
+  color: #fff;
+  background-color: #f1f0ee;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  font-size: 10px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.d-about-artist li .g-about-artist-name {
+  color: #807e7e;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.d-about-artist li .swiper-container {
+  padding: 0 30px;
+  margin-top: 30px;
+}
+
+.d-about-artist li .swiper-container .swiper-slide {
+  width: 59px;
+  height: 30px;
+  text-align: center;
+}
+
+.d-about-artist li .swiper-container .swiper-button-next, .d-about-artist li .swiper-container .swiper-button-prev {
+  width: 35px;
+  height: 30px;
+  background-image: url("../../libs/images/icons.png");
+  background-repeat: no-repeat;
+  top: 0;
+  background-size: auto;
+  margin-top: auto;
+  background-color: #fff;
+}
+
+.d-about-artist li .swiper-container .swiper-button-next {
+  background-position: -98px -33px;
+  right: 0;
+}
+
+.d-about-artist li .swiper-container .swiper-button-prev {
+  background-position: -66px -33px;
+  left: 0;
+}
+
+.d-about-artist li:nth-child(1) {
+  text-align: center;
+  width: 70px;
+  margin-right: 20px;
+}
+
+.d-about-artist li:nth-child(1) img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.d-about-artist li:nth-child(1) button {
+  display: block;
+  width: 70px;
+  line-height: 18px;
+  color: #fff;
+  background-color: #e85c5f;
+  font-weight: 300;
+  border: 1px solid #f8b7b9;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 10px;
+  outline: none;
+}
+
+.d-about-artist li:nth-child(1) button.d-disabled {
+  opacity: .5;
+}
+
+.d-about-artist li:nth-child(2) {
+  padding-top: 15px;
+  width: 360px;
+  margin-right: 20px;
+}
+
+.d-about-artist li:nth-child(3) {
+  width: 360px;
+}
+
+.d-comment dl {
+  width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+  padding-left: 34px;
+  font-weight: 300;
+}
+
+.d-comment dd .d-comment-img {
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.d-comment dd .d-comment-img img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
