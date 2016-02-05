@@ -178,14 +178,40 @@
 			<dt>Add a comment</dt>
 			<dd>
 				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=6"></a>
-				<p>
-					<span class="d-comment-name"><a href=""></a></span>
+				<p class="d-comment-text">
+					<span class="d-comment-name"><a href="">Ryan Gosting</a></span>
+					<textarea></textarea>
+					<button>COMMENT</button>
+				</p>
+			</dd>
+			<dd>
+				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=7"></a>
+				<p class="d-comment-text">
+					<span class="d-comment-name"><a href="">Ryan Gosting</a> - 2 days ago</span>
 					<i>
 						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
 						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
 						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
 						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
 						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+					</i>
+				</p>
+			</dd>
+			<dd>
+				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=8"></a>
+				<p class="d-comment-text">
+					<span class="d-comment-name"><a href="">Ryan Gosting</a> - 2 days ago</span>
+					<i>
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+					</i>
+				</p>
+			</dd>
+			<dd>
+				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=9"></a>
+				<p class="d-comment-text">
+					<span class="d-comment-name"><a href="">Ryan Gosting</a> - 2 days ago</span>
+					<i>
+						Ryan GoslingRyan
 					</i>
 				</p>
 			</dd>
@@ -247,8 +273,8 @@
 	<!-- footer-end -->
 	<script type="text/javascript">
 	    var galleryTop = new Swiper('.gallery-top', {
-	        nextButton: '.swiper-button-next',
-	        prevButton: '.swiper-button-prev'
+	        nextButton: '.gallery-top .swiper-button-next',
+	        prevButton: '.gallery-top .swiper-button-prev'
 	    });
 	    var galleryThumbs = new Swiper('.gallery-thumbs', {
 	        spaceBetween: 10,
@@ -329,9 +355,8 @@
 	    });
 
 	    var swiper = new Swiper('.d-about-artist .swiper-container', {
-	        pagination: '.swiper-pagination',
-	        nextButton: '.swiper-button-next',
-	        prevButton: '.swiper-button-prev',
+	        nextButton: '.d-about-artist .swiper-button-next',
+	        prevButton: '.d-about-artist .swiper-button-prev',
 	        paginationClickable: true,
 	        slidesPerView: 5,
 	        slidesPerGroup : 5,
