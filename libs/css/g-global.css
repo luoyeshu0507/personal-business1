@@ -110,10 +110,15 @@ table {
   height: 34px;
   float: left;
   margin: 0 8px 8px 0;
+  transition: transform .5s;
 }
 
 .f-footer .f-third-websites a img {
   border-radius: 50%;
+}
+
+.f-footer .f-third-websites a:hover {
+  transform: rotate(360deg);
 }
 
 .f-footer .f-urlmap {

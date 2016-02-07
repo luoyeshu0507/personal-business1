@@ -28,4 +28,28 @@ $(function(){
 	    	$strong.html((animationProgress*vote).toFixed(0));
 	    });
     });
+
+    //month selector
+    $('.c-list-month li').click(function(){
+    	var $self=$(this);
+    	var $list=$('.c-list-month li');
+    	var $siblings=$self.siblings('.c-bright-point');
+    	var start=-1;
+    	var end=-1;
+    	var index=$list.index($self);
+    	if($siblings.length==0){
+    		$self.toggleClass('c-bright-point');
+    	} else if($siblings.length==1){
+			start=$list.index($siblings);
+			end=index;
+			$list.removeClass("c-bright-point c-bright-line").slice(start,end).addClass("c-bright-point c-bright-line").next().addClass("c-bright-point");
+    	} else{
+    		start=$list.index($siblings.eq(0));
+    		end=$list.index($siblings.last());
+    		if(index<=start) start=index;
+			else if(index>=end) end=index;
+    		else index-start>=end-index ? end=index:start=index;
+    		$list.removeClass("c-bright-point c-bright-line").slice(start,end).addClass("c-bright-point c-bright-line").next().addClass("c-bright-point");
+    	}
+    });
 });
