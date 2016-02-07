@@ -1,8 +1,18 @@
 /* list.html sass start */
 .c-list-selector {
-  margin-bottom: 54px;
   background-color: #ebeae8;
-  height: 400px;
+  margin-bottom: 54px;
+  overflow: hidden;
+}
+
+.c-list-selector .g-container {
+  margin-top: 50px;
+}
+
+.c-list-selector .g-container .c-list-badges {
+  width: 388px;
+  height: 430px;
+  background: url("../images/badges.png") no-repeat;
 }
 
 .c-container {

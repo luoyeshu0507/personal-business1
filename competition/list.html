@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="../libs/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../libs/js/swiper.min.js"></script>
 	<script type="text/javascript" src="../libs/js/circle-progress.js"></script>
-	<script type="text/javascript" src="/js/"></script>
+	<script type="text/javascript" src="js/list.js"></script>
 </head>
 <body>
 	<!-- header-start -->
@@ -24,7 +24,9 @@
 	
 	<!-- selector-start -->
 	<div class="c-list-selector">
-		
+		<div class="g-container">
+			<div class="c-list-badges"></div>
+		</div>
 	</div>
 	<!-- selector-end -->
 
@@ -225,37 +227,5 @@
 		</div>
 	</div>
 	<!-- footer-end -->
-	<script type="text/javascript">
-		var swiper = new Swiper('.swiper-container', {
-	        pagination: '.swiper-pagination',
-	        nextButton: '.swiper-button-next',
-	        prevButton: '.swiper-button-prev',
-	        paginationClickable: true,
-	        slidesPerView: 5,
-	        slidesPerGroup : 5,
-	        freeMode: true
-	    });
-	    $('.c-list-wrap').on('mouseenter','.c-list-imgswrap span',function(){
-	    	if($(this).find('canvas').length) return;
-    		var score=$(this).data('score');
-    		var vote=$(this).data('vote');
-    		var $em=$(this).find('em');
-    		var $b=$em.find("b");
-    		var $strong=$em.find("strong");
-    		// $(this).find('em').on('mouseover mouseout',function(){return false;})
-    		$em.circleProgress({
-		        value: score/10,
-		        size: 72,
-		        thickness:9,
-		        fill: {
-		            gradient: ["#4dbf84"]
-		        },
-		        emptyFill:'#cceddc'
-		    }).on('circle-animation-progress',function(event, animationProgress, stepValue){
-		    	$b.html((animationProgress*score).toFixed(1));
-		    	$strong.html((animationProgress*vote).toFixed(0));
-		    });
-	    });
-	</script>
 </body>
 </html>
