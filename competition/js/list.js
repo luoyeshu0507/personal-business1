@@ -52,4 +52,8 @@ $(function(){
     		$list.removeClass("c-bright-point c-bright-line").slice(start,end).addClass("c-bright-point c-bright-line").next().addClass("c-bright-point");
     	}
     });
+
+    $('.c-container').on("click",".c-list-openbtn",function(){
+    	$(this).parents(".c-list-wrap").find('.c-list-hiddenpart').stop().slideToggle();
+    });
 });
