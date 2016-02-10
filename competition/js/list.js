@@ -41,7 +41,8 @@ $(function(){
     		$self.toggleClass('c-bright-point');
     	} else if($siblings.length==1){
 			start=$list.index($siblings);
-			end=index;
+			end=Math.max(index,start);
+            start=Math.min(index,start);
 			$list.removeClass("c-bright-point c-bright-line").slice(start,end).addClass("c-bright-point c-bright-line").next().addClass("c-bright-point");
     	} else{
     		start=$list.index($siblings.eq(0));
