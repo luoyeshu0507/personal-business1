@@ -7,6 +7,7 @@
 
 .c-list-selector .g-container {
   margin-top: 50px;
+  min-height: 200px;
 }
 
 .c-list-selector .g-container .c-list-badges {
@@ -14,10 +15,10 @@
   height: 430px;
   float: left;
   background: url("../images/badges.png") no-repeat;
+  position: relative;
 }
 
 .c-list-selector .g-container .c-list-badges .c-list-badgewrap {
-  position: relative;
   height: 400px;
 }
 
@@ -51,6 +52,7 @@
   border-radius: 50%;
   width: 18px;
   height: 18px;
+  z-index: 2;
 }
 
 .c-list-selector .g-container .c-list-badges .c-list-badgewrap span.c-badge-active:after {
@@ -63,6 +65,7 @@
   -webkit-transform: rotate(-40deg);
   -ms-transform: rotate(-40deg);
   transform: rotate(-40deg);
+  z-index: 3;
 }
 
 .c-list-selector .g-container .c-list-badges .c-list-badgewrap span:hover {
@@ -70,7 +73,6 @@
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  z-index: 1;
 }
 
 .c-list-selector .g-container .c-list-badges .c-list-badgewrap span img {
@@ -120,6 +122,13 @@
 
 .c-list-selector .g-container .c-list-badges .c-list-badgewrap span:nth-child(n+9) {
   display: none;
+}
+
+.c-list-selector .g-container .c-list-badges .c-list-bigbadge {
+  position: absolute;
+  top: 294px;
+  left: 39px;
+  width: 108px;
 }
 
 .c-list-selector .g-container .c-list-month-selector {
@@ -241,6 +250,19 @@
   border-left: 3px solid #fff;
   border-bottom: 3px solid #fff;
   padding-bottom: 34px;
+  position: relative;
+}
+
+.c-container:after {
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  width: 6px;
+  display: block;
+  height: 200px;
+  right: -50px;
+  top: 50%;
+  margin-top: -100px;
 }
 
 .c-container .c-list-wrap {
@@ -420,6 +442,8 @@
   margin-top: -24px;
   background-color: #e5e3e0;
   position: relative;
+  margin-bottom: 50px;
+  display: none;
 }
 
 .c-container .c-list-wrap .c-list-hiddenpart .c-list-arrow {
@@ -619,6 +643,7 @@
 }
 
 .d-switcher .gallery-top .swiper-slide span {
+  display: none;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -632,6 +657,18 @@
   max-height: 148px;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+.d-switcher .gallery-top .swiper-button-next, .d-switcher .gallery-top .swiper-button-prev {
+  display: none;
+}
+
+.d-switcher .gallery-top:hover .swiper-slide span {
+  display: block;
+}
+
+.d-switcher .gallery-top:hover .swiper-button-next, .d-switcher .gallery-top:hover .swiper-button-prev {
+  display: block;
 }
 
 .d-switcher .gallery-thumbs {
@@ -923,6 +960,16 @@
   opacity: .5;
 }
 
+.d-otherartists .d-otherartists-tip {
+  width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+  padding-left: 34px;
+  font-weight: 300;
+  font-size: 16px;
+  color: #808083;
+}
+
 .d-otherartists ul {
   width: 900px;
   margin: 20px auto;
@@ -932,8 +979,8 @@
 
 .d-otherartists ul li {
   float: left;
-  width: 276px;
-  border-right: 2px solid #efeff0;
+  width: 277px;
+  border-right: 1px solid #efeff0;
   margin-right: 33px;
   padding-bottom: 20px;
 }
