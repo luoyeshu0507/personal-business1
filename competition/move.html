@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>Document</title>
+	<script type="text/javascript" src="http://cdn1.luoyeshu.com/js/zepto.min.js"></script>
+	<style type="text/css">
+		#circle{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border:5px solid red;
+			border-color: #f00 #0f0 #00f #f0f;
+			margin:50px auto;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div id="circle"></div>
+	<script type="text/javascript">
+		var o=$('#circle');
+		var p=o.offset();
+		var centerx=p.left+p.width/2;
+		var centery=p.top+p.height/2;
+		var ex=0,ey=0;
+		console.log(centerx,centery);
+		o.on('touchstart',function(e){
+			var t=e.touches[0];
+			console.log(e.pageX,e.pageY,e.touches[0]);
+			ex=t.pageX-centerx;
+			ey=t.pageY-centery;
+			console.log(ex,ey);
+		})
+	</script>
+</body>
+</html>

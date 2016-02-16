@@ -12,7 +12,7 @@
 
 .c-list-selector .g-container .c-list-badges {
   width: 351px;
-  height: 430px;
+  height: 450px;
   float: left;
   background: url("../images/badges.png") no-repeat;
   position: relative;
@@ -131,6 +131,19 @@
   width: 108px;
 }
 
+.c-list-selector .g-container .c-list-badges .c-list-badgetext {
+  position: absolute;
+  width: 170px;
+  height: 48px;
+  line-height: 16px;
+  font-size: 12px;
+  top: 316px;
+  left: 164px;
+  font-weight: 300;
+  overflow: hidden;
+  color: #3d3a32;
+}
+
 .c-list-selector .g-container .c-list-month-selector {
   float: left;
   width: 729px;
@@ -244,6 +257,27 @@
 
 .c-list-selector .g-container .c-list-month-selector .c-list-month li.c-bright-point i:before {
   border-color: #a6d6dc;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-listimgs {
+  width: 690px;
+  margin-left: 39px;
+  margin-top: 100px;
+  height: 180px;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-listimgs .swiper-slide {
+  width: 95px;
+  margin-right: 23px;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-listimgs .swiper-slide a img {
+  width: 95px;
+  height: 133px;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-listimgs .swiper-pagination-bullet-active {
+  background-color: #fff;
 }
 
 .c-container {

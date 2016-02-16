@@ -97,4 +97,13 @@ var cLsit={
 
 $(function(){
     cLsit.init(); //start js
+    $('.c-list-listimgs').swiper({
+        pagination: '.swiper-pagination',
+        slidesPerView: 6,
+        slidesPerGroup : 6,
+        centeredSlides: false,
+        paginationClickable: true,
+        spaceBetween: 28
+    });
+
 });
