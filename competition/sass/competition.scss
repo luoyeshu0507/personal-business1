@@ -103,8 +103,8 @@ $bannercolor:#a6d6dc;
 			}
 			.c-list-bigbadge{
 				position: absolute;
-				top: 294px;
-				left: 39px;
+				top: 293px;
+				left: 38px;
 				width: 108px;
 			}
 			.c-list-badgetext{
@@ -214,6 +214,13 @@ $bannercolor:#a6d6dc;
 								border-color: $bannercolor;
 							}
 						}
+					}
+				}
+			}
+			.c-list-years{
+				.swiper-wrapper{
+					.swiper-slider{
+
 					}
 				}
 			}
@@ -527,6 +534,7 @@ $bannercolor:#a6d6dc;
 	width: 1000px;
 	margin: 40px auto;
 	overflow:hidden;
+	font-family:Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 	li{
 		width:248px;
 		border-right: 2px solid #fafafa;
