@@ -115,9 +115,27 @@ var cLsit={
             cLsit.swipBadges($(this).data('direction'));
         });
     },
-    swipBadges:function(n){
+    swipBadges:function(direction){
         var $badges=$('.c-list-badgewrap span');
-        var $nextall=$('.c-list-badgewrap span:not(:hidden)');
+        var $shownBadges=$badges.not(":hidden");
+        var $nextall=$shownBadges.last().nextAll();
+        var $prevall=$shownBadges.first().prevAll();
+        var len=8;
+        $badges.stop(true,true).fadeOut(200);
+        if(direction=='prev'){
+            if($prevall.length>0){
+                $prevall.slice(-len).stop(true,true).fadeIn(200);
+            } else {
+                var last=$badges.length%len||len;
+                $badges.slice(-last).stop(true,true).fadeIn(200);
+            }
+        } else if(direction=='next'){
+            if($nextall.length>0){
+                $nextall.slice(0,len).stop(true,true).fadeIn(200);
+            } else {
+                $badges.slice(0,len).stop(true,true).fadeIn(200);
+            }
+        }
     }
 };
 
