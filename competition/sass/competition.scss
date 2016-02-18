@@ -15,7 +15,7 @@ $bannercolor:#a6d6dc;
 		min-height: 200px;
 		.c-list-badges{
 			width:351px;
-			height:450px;
+			height:466px;
 			float:left;
 			background:url("../images/badges.png") no-repeat;
 			position:relative;
@@ -119,6 +119,24 @@ $bannercolor:#a6d6dc;
 				overflow:hidden;
 				color:#3d3a32;
 			}
+			.c-list-badges-swiper{
+				position:absolute;
+				top:168px;
+				left:250px;
+				i,span{
+					display:inline-block;
+					background:url("../../libs/images/icons.png") no-repeat;
+					width:18px;
+					height:22px;
+					cursor:pointer;
+				}
+				span{
+					background-position: -26px -37px;
+				}
+				i{
+					background-position: 3px -37px;
+				}
+			}
 		}
 		.c-list-month-selector{
 			float:left;
@@ -218,16 +236,53 @@ $bannercolor:#a6d6dc;
 				}
 			}
 			.c-list-years{
+				width:198px;
+				padding: 0 20px;
+				margin:50px auto;
 				.swiper-wrapper{
-					.swiper-slider{
-
+					.swiper-slide{
+						cursor:pointer;
+						width:66px;
+						height:22px;
+						text-align: center;
+						line-height: 18px;
+						font-size: 12px;
+						&.c-year-active span{
+							background-color: #fff;
+						}
+						span{
+							border: 2px solid #fff;
+							border-right: none;
+							display:block;
+							font-weight: 300;
+							color:#a3a3a6;
+						}
+						&:last-child span{
+							border-right: 2px solid #fff;
+						}
 					}
+				}
+				.swiper-next,.swiper-prev{
+					position:absolute;
+					top:0;
+					background: #EBEAE8 url("../../libs/images/icons.png") no-repeat;
+					width:20px;
+					height:22px;
+					cursor:pointer;
+					z-index: 2;
+				}
+				.swiper-next{
+					right:-2px;
+					background-position: -26px -37px;
+				}
+				.swiper-prev{
+					left:0;
+					background-position: 0 -37px;
 				}
 			}
 			.c-list-listimgs{
 				width:690px;
 				margin-left: 39px;
-				margin-top:100px;
 				height:180px;
 				.swiper-slide{
 					width:95px;

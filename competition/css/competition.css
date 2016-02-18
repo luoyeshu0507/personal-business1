@@ -12,7 +12,7 @@
 
 .c-list-selector .g-container .c-list-badges {
   width: 351px;
-  height: 450px;
+  height: 466px;
   float: left;
   background: url("../images/badges.png") no-repeat;
   position: relative;
@@ -144,6 +144,28 @@
   color: #3d3a32;
 }
 
+.c-list-selector .g-container .c-list-badges .c-list-badges-swiper {
+  position: absolute;
+  top: 168px;
+  left: 250px;
+}
+
+.c-list-selector .g-container .c-list-badges .c-list-badges-swiper i, .c-list-selector .g-container .c-list-badges .c-list-badges-swiper span {
+  display: inline-block;
+  background: url("../../libs/images/icons.png") no-repeat;
+  width: 18px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.c-list-selector .g-container .c-list-badges .c-list-badges-swiper span {
+  background-position: -26px -37px;
+}
+
+.c-list-selector .g-container .c-list-badges .c-list-badges-swiper i {
+  background-position: 3px -37px;
+}
+
 .c-list-selector .g-container .c-list-month-selector {
   float: left;
   width: 729px;
@@ -259,10 +281,60 @@
   border-color: #a6d6dc;
 }
 
+.c-list-selector .g-container .c-list-month-selector .c-list-years {
+  width: 198px;
+  padding: 0 20px;
+  margin: 50px auto;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-years .swiper-wrapper .swiper-slide {
+  cursor: pointer;
+  width: 66px;
+  height: 22px;
+  text-align: center;
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-years .swiper-wrapper .swiper-slide.c-year-active span {
+  background-color: #fff;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-years .swiper-wrapper .swiper-slide span {
+  border: 2px solid #fff;
+  border-right: none;
+  display: block;
+  font-weight: 300;
+  color: #a3a3a6;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-years .swiper-wrapper .swiper-slide:last-child span {
+  border-right: 2px solid #fff;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-years .swiper-next, .c-list-selector .g-container .c-list-month-selector .c-list-years .swiper-prev {
+  position: absolute;
+  top: 0;
+  background: #EBEAE8 url("../../libs/images/icons.png") no-repeat;
+  width: 20px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-years .swiper-next {
+  right: -2px;
+  background-position: -26px -37px;
+}
+
+.c-list-selector .g-container .c-list-month-selector .c-list-years .swiper-prev {
+  left: 0;
+  background-position: 0 -37px;
+}
+
 .c-list-selector .g-container .c-list-month-selector .c-list-listimgs {
   width: 690px;
   margin-left: 39px;
-  margin-top: 100px;
   height: 180px;
 }
 

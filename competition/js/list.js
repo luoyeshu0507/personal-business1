@@ -5,6 +5,7 @@ var cLsit={
         this.badgesSwipe(); //competition list badges swiper
         this.listCircleProcesser(); //list's circle processer
         this.listDetailShow(); //list's detail click to show or hide
+        this.someVisionEvent(); //some event which will ont be changed by ajax
     },
     badgesSwipe:function(){
         $('.c-list-middle .swiper-container').each(function(){
@@ -72,11 +73,14 @@ var cLsit={
     listDetailShow:function(){
         $('.c-container').on("click",".c-list-openbtn",function(){
             var $self=$(this);
-            $self.parents(".c-list-wrap").find('.c-list-hiddenpart').stop().slideToggle();
+            var $parent=$self.parents(".c-list-wrap");
+            $parent.find('.c-list-hiddenpart').stop().slideToggle();
             if($self.html()=="展开作品") {
                 $self.html('收起作品');
+                $parent.find('.c-list-detail').animate({'max-height':'300px'},300);
             } else {
                 $self.html('展开作品');
+                $parent.find('.c-list-detail').animate({'max-height':'140px'},300);
             }
         });
     },
@@ -91,6 +95,29 @@ var cLsit={
         }).click(function(){
             $(this).toggleClass('c-badge-active');
         });
+    },
+    someVisionEvent:function(){
+        //years swiper
+        $('.c-list-years').swiper({
+            slidesPerView: 3,
+            slidesPerGroup : 3,
+            centeredSlides: false,
+            spaceBetween: 0,
+            nextButton: $('.c-list-years').find('.swiper-next'),
+            prevButton: $('.c-list-years').find('.swiper-prev')
+        }).slideTo(100,0);
+        $('.c-list-years').find('.swiper-slide').click(function(){
+            $(this).addClass("c-year-active").siblings().removeClass('c-year-active');
+        }).last().addClass("c-year-active");
+
+        //badges swiper
+        $('.c-list-badges-swiper span,.c-list-badges-swiper i').click(function(){
+            cLsit.swipBadges($(this).data('direction'));
+        });
+    },
+    swipBadges:function(n){
+        var $badges=$('.c-list-badgewrap span');
+        var $nextall=$('.c-list-badgewrap span:not(:hidden)');
     }
 };
 
@@ -105,16 +132,6 @@ $(function(){
         paginationClickable: true,
         spaceBetween: 28
     });
-    $('.c-list-years').swiper({
-        slidesPerView: 3,
-        slidesPerGroup : 3,
-        centeredSlides: false,
-        paginationClickable: true,
-        spaceBetween: 0,
-        nextButton: $('.c-list-years').find('.swiper-button-next'),
-        prevButton: $('.c-list-years').find('.swiper-button-prev')
-    });
-
 
     var o={
         "content_score": 3.37273, 
@@ -128,13 +145,13 @@ $(function(){
         url: "http://139.196.195.4/competition/vote",
         type:'POST',
         dataType:"JSONP",
-        jsonp:"callback",
+        jsonp:"callbackparam",
         data: o,
         success: function(data){
             console.log(data)
         },
         error:function(e){
-            console.log(e);
+            console.log('vote error');
         }
     });
 });

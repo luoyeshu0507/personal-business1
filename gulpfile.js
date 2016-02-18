@@ -12,9 +12,9 @@ gulp.task('serve', ['sass'], function() {
 		},
 		port:3012
     });
-    gulp.watch("*/**/*.scss", ['sass']);
-    gulp.watch(['*.html','*/*.html']).on('change', reload);
-    gulp.watch("*/**/*.js").on('change', reload);
+    gulp.watch(["*/**/*.scss","!node_modules/**"], ['sass']);
+    gulp.watch(['*.html','*/*.html',"!node_modules/**"]).on('change', reload);
+    gulp.watch(["*/**/*.js","!node_modules/**"]).on('change', reload);
 });
 
 gulp.task('sass', function() {
