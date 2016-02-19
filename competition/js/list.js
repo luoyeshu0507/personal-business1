@@ -1,4 +1,4 @@
-var cLsit={
+var cList={
     init:function(){
         this.badgesEvent(); //badges's hover and click events
         this.monthSelector(); //month selector event
@@ -6,8 +6,9 @@ var cLsit={
         this.listCircleProcesser(); //list's circle processer
         this.listDetailShow(); //list's detail click to show or hide
         this.someVisionEvent(); //some event which will ont be changed by ajax
+        this.swipListImgs(); //swipe list images
     },
-    badgesSwipe:function(){
+    badgesSwipe:function(){ //competition list badges swiper
         $('.c-list-middle .swiper-container').each(function(){
             $(this).swiper({
                 nextButton: $(this).find('.swiper-button-next'),
@@ -18,7 +19,7 @@ var cLsit={
             });
         });
     },
-    listCircleProcesser:function(){
+    listCircleProcesser:function(){ //list's circle processer
         $('.c-container').on('mouseenter','.c-list-imgswrap span',function(){
             if($(this).find('canvas').length) return;
             var score=$(this).data('score');
@@ -40,7 +41,7 @@ var cLsit={
             });
         });
     },
-    monthSelector:function(){
+    monthSelector:function(){ //month selector event
         $('.c-list-month li').click(function(){
             var $self=$(this);
             var $list=$('.c-list-month li');
@@ -70,7 +71,7 @@ var cLsit={
             }
         }); 
     },
-    listDetailShow:function(){
+    listDetailShow:function(){ //list's detail click to show or hide
         $('.c-container').on("click",".c-list-openbtn",function(){
             var $self=$(this);
             var $parent=$self.parents(".c-list-wrap");
@@ -84,7 +85,7 @@ var cLsit={
             }
         });
     },
-    badgesEvent:function(){
+    badgesEvent:function(){ //badges's hover and click events
         var $bigbadge=$('.c-list-bigbadge');
         var $badgeText=$('.c-list-badgetext');
         $('.c-list-badgewrap span').mouseover(function() {
@@ -96,7 +97,7 @@ var cLsit={
             $(this).toggleClass('c-badge-active');
         });
     },
-    someVisionEvent:function(){
+    someVisionEvent:function(){ //some event which will ont be changed by ajax
         //years swiper
         $('.c-list-years').swiper({
             slidesPerView: 3,
@@ -114,8 +115,12 @@ var cLsit={
         $('.c-list-badges-swiper span,.c-list-badges-swiper i').click(function(){
             cLsit.swipBadges($(this).data('direction'));
         });
+
+        //selector
+        $('.c-list-badgewrap span,.c-list-month li,.c-list-years .swiper-slide').click(this.selector);
+        this.selector();
     },
-    swipBadges:function(direction){
+    swipBadges:function(direction){ //swip Badges
         var $badges=$('.c-list-badgewrap span');
         var $shownBadges=$badges.not(":hidden");
         var $nextall=$shownBadges.last().nextAll();
@@ -136,20 +141,145 @@ var cLsit={
                 $badges.slice(0,len).stop(true,true).fadeIn(200);
             }
         }
+    },
+    swipListImgs:function(){ // swip ListImgs
+        $('.c-list-listimgs').swiper({
+            pagination: '.swiper-pagination',
+            slidesPerView: 6,
+            slidesPerGroup : 6,
+            centeredSlides: false,
+            paginationClickable: true,
+            spaceBetween: 28
+        });
+    },
+    selector:function(){ // the selector event on the top of the page
+        var postdata={
+            badge:[],
+            start_month:1,
+            end_month:12,
+            page_size:100,
+            page_num:1,
+            year:2016
+        };
+        var i=0,len=0;
+        var $activeBadges=$(".c-list-badgewrap .c-badge-active");
+        var $month=$('.c-list-month li.c-bright-point');
+        for(i=0,len=$activeBadges.length;i<len;i++){
+            postdata.badge.push($activeBadges.eq(i).data('name'));
+        }
+        if($month.length>0){
+            postdata.start_month=$month.eq(0).index()+1;
+            postdata.end_month=$month.last().index()+1;
+        }
+        postdata.year=parseInt($(".c-year-active").text());
+        cList.ajaxCompeitionList(postdata);
+    },
+    ajaxCompeitionList:function(o){ // ajax for the competition's list after selector
+        $.ajax({
+            url: "http://139.196.195.4/competition/homepage/list",
+            type:'POST',
+            dataType:"JSONP",
+            jsonp:"callbackparam",
+            data: o,
+            success: function(data){
+                if(data.result=="success"){
+                    cList.renderCompetitionList(data);
+                } else{
+                    console.log('get competition list error');
+                }
+            },
+            error:function(e){
+                console.log('get competition list error');
+            }
+        });
+    },
+    renderCompetitionList:function(data){ //render the competition list data got by ajax
+        var list=data.competition;
+        var listhtml='';
+        var imgshtml='';
+        for(var i=0;i<list.length;i++){
+            listhtml+='<li class="c-list-wrap">'+
+                    '<div class="c-list-shownpart">'+
+                        '<a href="#" target="_blank" class="c-list-img c-list-closed">'+
+                            '<img src="'+list[i].img+'" alt="">'+
+                        '</a>'+
+                        '<div class="c-list-middle">'+
+                            '<h3>'+list[i].title+'</h3>'+
+                            '<div class="c-list-tip">'+list[i].type+'</div>'+
+                            '<div class="swiper-container">'+
+                                '<div class="swiper-wrapper">'+
+                                    (function(badges){
+                                        var html='';
+                                        for(var j=0;j<badges.length;j++){
+                                            html+='<div class="swiper-slide"><img src="'+badges[i]+'"></div>';
+                                        }
+                                        return html;
+                                    })(list[i].badge)+
+                                '</div>'+
+                                '<div class="swiper-button-next"></div>'+
+                                '<div class="swiper-button-prev"></div>'+
+                            '</div>'+
+                            '<p class="c-list-detail">'+list[i].content+'</p>'+
+                            '<a href="javascript:void(0);" class="c-list-openbtn">展开作品</a>'+
+                            '<ul class="c-list-likes">'+
+                                '<li>'+
+                                    '<a href="javascript:void(0);" class="g-icon g-icon-heart"></a>'+
+                                    '<i>'+list[i].like_num+'</i>'+
+                                '</li>'+
+                                '<li>'+
+                                    '<a href="javascript:void(0);" class="g-icon g-icon-see"></a>'+
+                                    '<i>'+list[i].fee+'</i>'+
+                                '</li>'+
+                                '<li>'+
+                                    '<a href="javascript:void(0);" class="g-icon g-icon-share"></a>'+
+                                    '<i>'+list[i].share_num+'</i>'+
+                                '</li>'+
+                            '</ul>'+
+                        '</div>'+
+                        '<ul class="c-list-right">'+
+                            '<li>'+
+                                '<i>主办者：</i>'+
+                                '<em>'+list[i].organizer.join(" ")+'</em>'+
+                            '</li>'+
+                            '<li>'+
+                                '<i>赞助方/ainmal：</i>'+
+                                '<em>'+list[i].sponsor+'</em>'+
+                            '</li>'+
+                            '<li>'+
+                                '<i>参赛费用：</i>'+
+                                '<em>'+list[i].fee+'</em>'+
+                            '</li>'+
+                            '<li>'+
+                                '<i>评判标准：</i>'+
+                                '<em>'+list[i].rule+'</em>'+
+                            '</li>'+
+                            '<li>'+
+                                '<i>颁发奖项：</i>'+
+                                '<em>希特勒艺术基金 + Pigment</em>'+
+                            '</li>'+
+                            '<li>'+
+                                '<i>联络方式：</i>'+
+                                '<em>希特勒艺术基金 + Pigment</em>'+
+                            '</li>'+
+                            '<li>'+
+                                '<i>收件期限：</i>'+
+                                '<em>截止到2016年5月7日（上传皆可评选）</em>'+
+                            '</li>'+
+                        '</ul>'+
+                    '</div>'+
+                    '<div class="c-list-hiddenpart clearfix">'+
+                        '<i class="c-list-arrow"></i>'+
+                        '<button class="c-list-subbtn">SUBMIT</button>'+
+                    '</div>'+
+                '</li>';
+        }
+        $('#c-competition-list').html(listhtml);
     }
 };
 
 
 $(function(){
-    cLsit.init(); //start js
-    $('.c-list-listimgs').swiper({
-        pagination: '.swiper-pagination',
-        slidesPerView: 6,
-        slidesPerGroup : 6,
-        centeredSlides: false,
-        paginationClickable: true,
-        spaceBetween: 28
-    });
+    cList.init(); //start js
 
     var o={
         "content_score": 3.37273, 
@@ -166,7 +296,7 @@ $(function(){
         jsonp:"callbackparam",
         data: o,
         success: function(data){
-            console.log(data)
+            // console.log(data)
         },
         error:function(e){
             console.log('vote error');
