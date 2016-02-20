@@ -2,11 +2,10 @@ var cList={
     init:function(){
         this.badgesEvent(); //badges's hover and click events
         this.monthSelector(); //month selector event
-        this.badgesSwipe(); //competition list badges swiper
         this.listCircleProcesser(); //list's circle processer
         this.listDetailShow(); //list's detail click to show or hide
         this.someVisionEvent(); //some event which will ont be changed by ajax
-        this.swipListImgs(); //swipe list images
+        this.displayImage(); //display one image when clicked on fullscreen
     },
     badgesSwipe:function(){ //competition list badges swiper
         $('.c-list-middle .swiper-container').each(function(){
@@ -77,6 +76,7 @@ var cList={
             var $parent=$self.parents(".c-list-wrap");
             $parent.find('.c-list-hiddenpart').stop().slideToggle();
             if($self.html()=="展开作品") {
+                cList.ajaxCompeitionWorks($parent);
                 $self.html('收起作品');
                 $parent.find('.c-list-detail').animate({'max-height':'300px'},300);
             } else {
@@ -116,6 +116,12 @@ var cList={
             cLsit.swipBadges($(this).data('direction'));
         });
 
+        $(".c-container").on("mouseover",'.c-list-right li',function(){
+            $(this).css('max-height','none');
+        }).end().on("mouseout",'.c-list-right li',function(){
+            $(this).css('max-height','36px');
+        })
+
         //selector
         $('.c-list-badgewrap span,.c-list-month li,.c-list-years .swiper-slide').click(this.selector);
         this.selector();
@@ -150,6 +156,19 @@ var cList={
             centeredSlides: false,
             paginationClickable: true,
             spaceBetween: 28
+        });
+    },
+    displayImage:function(){
+        $('body').on('click','.c-list-listimgs .swiper-slide img,.c-list-img img',function(){
+            $body=$('body').append($('<div id="c-display-imgbg"></div>'))
+            .append($('<div class="c-display-imgwrap"></div>').append($('<img>').attr('src',$(this).attr('src'))));
+            $('#c-display-imgbg,.c-display-imgwrap').click(function(){
+                $('#c-display-imgbg,.c-display-imgwrap').remove();
+            });
+            $('.c-display-imgwrap img').click(function(){
+                return false;
+            });
+            return false;
         });
     },
     selector:function(){ // the selector event on the top of the page
@@ -198,9 +217,9 @@ var cList={
         var listhtml='';
         var imgshtml='';
         for(var i=0;i<list.length;i++){
-            listhtml+='<li class="c-list-wrap">'+
+            listhtml+='<li class="c-list-wrap" data-id="'+list[i].id+'">'+
                     '<div class="c-list-shownpart">'+
-                        '<a href="#" target="_blank" class="c-list-img c-list-closed">'+
+                        '<a href="#" target="_blank" class="c-list-img '+(list[i].open_status ? 'c-list-closed':'')+'">'+
                             '<img src="'+list[i].img+'" alt="">'+
                         '</a>'+
                         '<div class="c-list-middle">'+
@@ -228,7 +247,7 @@ var cList={
                                 '</li>'+
                                 '<li>'+
                                     '<a href="javascript:void(0);" class="g-icon g-icon-see"></a>'+
-                                    '<i>'+list[i].fee+'</i>'+
+                                    '<i>'+list[i].collect_num+'</i>'+
                                 '</li>'+
                                 '<li>'+
                                     '<a href="javascript:void(0);" class="g-icon g-icon-share"></a>'+
@@ -259,7 +278,7 @@ var cList={
                             '</li>'+
                             '<li>'+
                                 '<i>联络方式：</i>'+
-                                '<em>希特勒艺术基金 + Pigment</em>'+
+                                '<em>'+list[i].contact+'</em>'+
                             '</li>'+
                             '<li>'+
                                 '<i>收件期限：</i>'+
@@ -272,8 +291,55 @@ var cList={
                         '<button class="c-list-subbtn">SUBMIT</button>'+
                     '</div>'+
                 '</li>';
+            imgshtml+='<div class="swiper-slide">'+
+                            '<a href="javascript:void(0);">'+
+                                '<img src="'+list[i].img+'" alt="">'+
+                            '</a>'+
+                        '</div>';
         }
         $('#c-competition-list').html(listhtml);
+        $('.c-list-listimgs .swiper-wrapper').html(imgshtml);
+        cList.badgesSwipe(); //competition list badges swiper
+        cList.swipListImgs(); //swipe list images
+    },
+    ajaxCompeitionWorks:function($obj){ //after click '展开作品', get the works with ajax
+        var cid=$obj.data('id');
+        var o={
+            competition_id:cid,
+            page_size:100,
+            page_num:1
+        }
+        if($obj.find('.c-list-imgswrap').length>0) return;
+        if(cid) {
+            $.ajax({
+                url: "http://139.196.195.4/competition/homepage/artwork",
+                type:'POST',
+                dataType:"JSONP",
+                jsonp:"callbackparam",
+                data: o,
+                success: function(data){
+                    if(data.result=='success'){
+                        var list=data.artworks;
+                        var html='';
+                        for(var i=0;i<list.length;i++){
+                            html+='<a data-id="'+list[i].id+'" href="#" class="c-list-imgswrap">'+
+                                        '<span data-score="'+list[i].total_score+'" data-vote="'+list[i].total_vote+'">'+
+                                            '<img src="'+list[i].img+'">'+
+                                            '<em><b title="score:'+list[i].total_score+'">2.5</b><strong title="vote:'+list[i].total_vote+'"></strong></em>'+
+                                        '</span>'+
+                                        '<i>'+list[i].title+'</i>'+
+                                    '</a>';
+                        }
+                        $obj.find('.c-list-hiddenpart').append(html);
+                    } else{
+                        console.log('get works error');
+                    }
+                },
+                error:function(e){
+                    console.log('get works error');
+                }
+            });
+        }
     }
 };
 

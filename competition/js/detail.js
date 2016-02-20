@@ -2,7 +2,8 @@ $(function(){
 	//banner swiper
     var galleryTop = new Swiper('.gallery-top', {
         nextButton: '.gallery-top .swiper-button-next',
-        prevButton: '.gallery-top .swiper-button-prev'
+        prevButton: '.gallery-top .swiper-button-prev',
+        autoHeight: true
     });
     var galleryThumbs = new Swiper('.gallery-thumbs', {
         spaceBetween: 10,

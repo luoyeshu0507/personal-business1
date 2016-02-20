@@ -375,6 +375,9 @@ $bannercolor:#a6d6dc;
 						width:45px;
 						height:30px;
 						text-align: center;
+						img{
+							width:34px;
+						}
 					}
 					.swiper-button-next,.swiper-button-prev{
 						width:15px;
@@ -440,10 +443,12 @@ $bannercolor:#a6d6dc;
 				overflow:hidden;
 				li{
 					line-height: 18px;
+					min-height: 18px;
 					color:#838386;
 					font-size:14px;
 					margin-bottom: 16px;
 					font-weight: 300;
+					overflow:hidden;
 					i{
 						float:left;
 					}
@@ -456,6 +461,9 @@ $bannercolor:#a6d6dc;
 					}
 					&:last-child{
 						font-weight: 700;
+					}
+					&:nth-child(4){
+						max-height: 36px;
 					}
 				}
 			}
@@ -627,6 +635,33 @@ $bannercolor:#a6d6dc;
 		}
 	}
 }
+#c-display-imgbg{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,.5);
+	z-index:888;
+}
+.c-display-imgwrap{
+	width:70%;
+	height:70%;
+	position:fixed;
+	top:15%;
+	left:15%;
+	z-index:889;
+	text-align: center;
+	img{
+		max-height: 100%;
+		max-width: 100%;
+		position:relative;
+		transform: translate(0,-50%);
+		top:50%;
+		box-shadow: 5px 5px 10px rgb(68, 68, 68);
+	}
+}
+
 
 
 /* detail.html sass start */
@@ -648,6 +683,9 @@ $circlemargin:100px;
 		margin:40px;
 		margin-bottom: 0;
 		.swiper-slide{
+			img{
+				width:100%;
+			}
 			span{
 				display:none;
 				position:absolute;
@@ -682,12 +720,12 @@ $circlemargin:100px;
 		background-color: #f4f4f2;
 		.swiper-slide {
 	        width: 100px;
-	        height: 75px;
 	        opacity: 0.4;
 	        margin:10px 0;
+	        max-height: 200px;
+	        overflow:hidden;
 	        img{
-				width:100px;
-				height:75px;
+				width:100%;
 				cursor:pointer;
 			}
 	    }

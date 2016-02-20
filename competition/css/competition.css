@@ -443,6 +443,10 @@
   text-align: center;
 }
 
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-slide img {
+  width: 34px;
+}
+
 .c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-button-next, .c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-button-prev {
   width: 15px;
   height: 30px;
@@ -519,10 +523,12 @@
 
 .c-container .c-list-wrap .c-list-shownpart .c-list-right li {
   line-height: 18px;
+  min-height: 18px;
   color: #838386;
   font-size: 14px;
   margin-bottom: 16px;
   font-weight: 300;
+  overflow: hidden;
 }
 
 .c-container .c-list-wrap .c-list-shownpart .c-list-right li i {
@@ -540,6 +546,10 @@
 
 .c-container .c-list-wrap .c-list-shownpart .c-list-right li:last-child {
   font-weight: 700;
+}
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-right li:nth-child(4) {
+  max-height: 36px;
 }
 
 .c-container .c-list-wrap .c-list-hiddenpart {
@@ -732,6 +742,37 @@
   float: left;
 }
 
+#c-display-imgbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 888;
+}
+
+.c-display-imgwrap {
+  width: 70%;
+  height: 70%;
+  position: fixed;
+  top: 15%;
+  left: 15%;
+  z-index: 889;
+  text-align: center;
+}
+
+.c-display-imgwrap img {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  box-shadow: 5px 5px 10px #444444;
+}
+
 /* detail.html sass start */
 .d-container {
   background-color: #fff;
@@ -747,6 +788,10 @@
 .d-switcher .gallery-top {
   margin: 40px;
   margin-bottom: 0;
+}
+
+.d-switcher .gallery-top .swiper-slide img {
+  width: 100%;
 }
 
 .d-switcher .gallery-top .swiper-slide span {
@@ -785,14 +830,14 @@
 
 .d-switcher .gallery-thumbs .swiper-slide {
   width: 100px;
-  height: 75px;
   opacity: 0.4;
   margin: 10px 0;
+  max-height: 200px;
+  overflow: hidden;
 }
 
 .d-switcher .gallery-thumbs .swiper-slide img {
-  width: 100px;
-  height: 75px;
+  width: 100%;
   cursor: pointer;
 }
 
