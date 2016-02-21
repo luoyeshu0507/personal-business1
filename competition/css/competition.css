@@ -1,3 +1,7 @@
+body {
+  font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
 /* list.html sass start */
 .c-list-selector {
   background-color: #ebeae8;
@@ -1397,5 +1401,32 @@
 }
 
 .d-comment dd .d-comment-text button.d-disabled {
+  opacity: .5;
+}
+
+.d-comment-pagenation {
+  font-weight: 300;
+  color: #a6d6dc;
+  text-align: center;
+  margin: 30px;
+}
+
+.d-comment-pagenation span {
+  border: 1px solid #a6d6dc;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 9px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.d-comment-pagenation span.on {
+  color: #fff;
+  background-color: #a6d6dc;
+}
+
+.d-comment-pagenation span.unclick {
   opacity: .5;
 }

@@ -6,6 +6,7 @@ var cList={
         this.listDetailShow(); //list's detail click to show or hide
         this.someVisionEvent(); //some event which will ont be changed by ajax
         this.displayImage(); //display one image when clicked on fullscreen
+        this.like(); //like,collect,share..
     },
     badgesSwipe:function(){ //competition list badges swiper
         $('.c-list-middle .swiper-container').each(function(){
@@ -113,7 +114,7 @@ var cList={
 
         //badges swiper
         $('.c-list-badges-swiper span,.c-list-badges-swiper i').click(function(){
-            cLsit.swipBadges($(this).data('direction'));
+            cList.swipBadges($(this).data('direction'));
         });
 
         $(".c-container").on("mouseover",'.c-list-right li',function(){
@@ -202,6 +203,7 @@ var cList={
             data: o,
             success: function(data){
                 if(data.result=="success"){
+                    console.log(data);
                     cList.renderCompetitionList(data);
                 } else{
                     console.log('get competition list error');
@@ -230,7 +232,7 @@ var cList={
                                     (function(badges){
                                         var html='';
                                         for(var j=0;j<badges.length;j++){
-                                            html+='<div class="swiper-slide"><img src="'+badges[i]+'"></div>';
+                                            html+='<div class="swiper-slide"><img src="'+badges[j]+'"></div>';
                                         }
                                         return html;
                                     })(list[i].badge)+
@@ -242,15 +244,15 @@ var cList={
                             '<a href="javascript:void(0);" class="c-list-openbtn">展开作品</a>'+
                             '<ul class="c-list-likes">'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" class="g-icon g-icon-heart"></a>'+
+                                    '<a href="javascript:void(0);" data-interaction="0" class="g-icon g-icon-heart"></a>'+
                                     '<i>'+list[i].like_num+'</i>'+
                                 '</li>'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" class="g-icon g-icon-see"></a>'+
+                                    '<a href="javascript:void(0);" data-interaction="1" class="g-icon g-icon-see"></a>'+
                                     '<i>'+list[i].collect_num+'</i>'+
                                 '</li>'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" class="g-icon g-icon-share"></a>'+
+                                    '<a href="javascript:void(0);" data-interaction="4" class="g-icon g-icon-share"></a>'+
                                     '<i>'+list[i].share_num+'</i>'+
                                 '</li>'+
                             '</ul>'+
@@ -340,6 +342,38 @@ var cList={
                 }
             });
         }
+    },
+    like:function(){
+        $('.c-container').on('click','.c-list-likes .g-icon',function(){
+            var $self=$(this);
+            var service_id=$self.parents('.c-list-wrap').data('id');
+            var interaction_type=$self.data('interaction');
+            if(interaction_type!='0'&&interaction_type!='1') return;
+            var o={
+                "current_user":1,
+                "interaction_type":interaction_type,
+                "service_type":'2',
+                "service_id":$self.parents('.c-list-wrap').data('id'),
+                "author_id":78
+            }
+            $.ajax({
+                url: "http://139.196.195.4/interaction/operate",
+                type:'POST',
+                dataType:"JSONP",
+                jsonp:"callbackparam",
+                data: o,
+                success: function(data){
+                    if(data.result=='success'){
+                        $self.toggleClass('g-icon-disabled');
+                    } else{
+                        console.log('like error');
+                    }
+                },
+                error:function(e){
+                    console.log('like error');
+                }
+            });
+        });
     }
 };
 
