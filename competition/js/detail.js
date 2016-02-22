@@ -257,7 +257,32 @@ var cDetail={
         });
         if(current_user){
             $('.d-comment-text button').click(function(){
-                console.log(1);
+                var comment=$(this).parent().find('textarea').val().trim();
+                if(!comment) return;
+                var o={
+                    "current_user":current_user,
+                    "content":comment,
+                    "service_type":2,
+                    "service_id":service_id,
+                    "author_id":author_id
+                };
+                $.ajax({
+                    url: "http://139.196.195.4/comment",
+                    type:'POST',
+                    dataType:"JSONP",
+                    jsonp:"callbackparam",
+                    data: o,
+                    success: function(data){
+                        if(data.result=='success'){
+                            cDetail.getCommentList(1);
+                        } else{
+                            console.log('comment error');
+                        }
+                    },
+                    error:function(e){
+                        console.log('comment error');
+                    }
+                });
             });
         } else{
             $('.d-comment-text button').addClass('d-disabled');
