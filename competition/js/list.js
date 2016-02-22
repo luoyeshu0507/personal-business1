@@ -350,7 +350,7 @@ var cList={
             var interaction_type=$self.data('interaction');
             if(interaction_type!='0'&&interaction_type!='1') return;
             var o={
-                "current_user":1,
+                "current_user":current_user,
                 "interaction_type":interaction_type,
                 "service_type":'2',
                 "service_id":$self.parents('.c-list-wrap').data('id'),
