@@ -6,6 +6,8 @@ var cDetail={
         this.badgesSwiper();
         this.markeScore();
         this.followSomeone();
+        this.getCommentList(1);
+        this.comment();
     },
     bannerSwiper:function(){ //banner swiper
         var galleryTop = new Swiper('.gallery-top', {
@@ -136,8 +138,8 @@ var cDetail={
         $('.d-about-artist button').click(function(){
             var $self=$(this);
             var o={
-                "service_id": 60,
-                "current_user": 1
+                "service_id": service_id,
+                "current_user": $self.data('id')
             }
             $.ajax({
                 url: "http://139.196.195.4/follow",
@@ -212,7 +214,7 @@ var cDetail={
         var o={
                 "page_num":n,
                 "service_type":'2',
-                "service_id":3,
+                "service_id":service_id,
                 "page_size":5
             };
         $.ajax({
@@ -222,18 +224,20 @@ var cDetail={
             jsonp:"callbackparam",
             data: o,
             success: function(data){
-                console.log(data);
-                return;
                 if(data.result=='success'){
                     var html='';
                     var list=data.comments;
                     for(var i=0;i<list.length;i++){
                         html+='<dd>'+
-                                '<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=9"></a>'+
+                                '<a class="d-comment-img" href="javascript:void(0);"><img src="'+list[i].user_photo+'"></a>'+
                                 '<p class="d-comment-text">'+
-                                    '<span class="d-comment-name"><a href="">Ryan Gosting</a> - 2 days ago</span>'+
-                                    '<i>Ryan GoslingRyan</i>'+
+                                    '<span class="d-comment-name"><a href="javascript:void(0);">'+list[i].user+'</a> - '+list[i].create_time+'</span>'+
+                                    '<i>'+list[i].content+'</i>'+
                                 '</p></dd>';
+                    }
+                    $('.d-comment dl').find('dd:gt(0)').remove().end().append(html);
+                    if(data.total_page>1){
+                        $('.d-comment-pagenation').html(cDetail.getPagenation(data.total_page,n));
                     }
                 } else{
                     console.log('get comments list error');
@@ -243,12 +247,26 @@ var cDetail={
                 console.log('get comments list error');
             }
         });
+    },
+    comment:function(){
+        $('.d-comment-pagenation').on('click','span',function(){ //comments pagenation event
+            var i=$(this).data('page');
+            if(i){
+                cDetail.getCommentList(i);
+            }
+        });
+        if(current_user){
+            $('.d-comment-text button').click(function(){
+                console.log(1);
+            });
+        } else{
+            $('.d-comment-text button').addClass('d-disabled');
+        }
     }
 };
 
 
 $(function(){
     cDetail.init(); //start page js
-    cDetail.getCommentList(1);
 });
 
