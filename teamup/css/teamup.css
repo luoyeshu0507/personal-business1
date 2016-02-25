@@ -1,4 +1,4 @@
-body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
+body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 300; }
 
 /* list.html sass start */
 .c-list-selector { background-color: #ebeae8; margin-bottom: 54px; overflow: hidden; }
@@ -90,6 +90,64 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 .c-list-selector .g-container .c-list-month-selector .c-list-listimgs .swiper-slide a img { width: 95px; height: 133px; }
 
 .c-list-selector .g-container .c-list-month-selector .c-list-listimgs .swiper-pagination-bullet-active { background-color: #fff; }
+
+.c-container { border-left: 3px solid #fff; border-bottom: 3px solid #fff; padding-bottom: 34px; position: relative; }
+
+.c-container:after { position: absolute; content: ""; background-color: #fff; width: 6px; display: block; height: 200px; right: -50px; top: 50%; margin-top: -100px; }
+
+.c-container .c-list-wrap { margin-left: 37px; }
+
+.c-container .c-list-wrap .c-list-shownpart { overflow: hidden; background-color: #fafaf9; padding: 10px 0 20px 34px; margin-bottom: 64px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-img { display: block; float: left; margin: 18px 54px 0 0; position: relative; width: 320px; height: 450px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-img img { width: 320px; height: 450px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-img.c-list-closed:after { position: absolute; top: 10px; right: -12px; content: ''; display: block; width: 63px; height: 20px; background: url("../../libs/images/icons.png") no-repeat 0 -100px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle { float: left; width: 260px; color: #221f1f; margin-right: 54px; position: relative; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle h3 { font-size: 18px; font-weight: 300; line-height: 24px; width: 260px; text-align: center; overflow: hidden; max-height: 48px; margin-top: 18px; margin-bottom: 10px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container { padding: 0 15px; margin-bottom: 26px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-slide { width: 45px; height: 30px; text-align: center; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-slide img { width: 34px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-button-next, .c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-button-prev { width: 15px; height: 30px; background-image: url("../../libs/images/icons.png"); background-repeat: no-repeat; top: 0; background-size: auto; margin-top: auto; background-color: #fafaf9; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-button-next { background-position: -108px -33px; right: 0; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-button-prev { background-position: -76px -33px; left: 0; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .c-list-detail { overflow: hidden; font-size: 14px; line-height: 20px; font-weight: 300; border-top: 1px solid #ecebeb; width: 590px; padding-top: 18px; height: 80px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info { position: absolute; width: 270px; right: -320px; top: 20px; text-align: center; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info .t-user-img { display: block; width: 144px; height: 144px; margin: auto; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info .t-user-img img { width: 144px; height: 144px; border-radius: 50%; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info i { display: block; line-height: 38px; font-size: 16px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info span { display: block; line-height: 1; font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info button { display: block; margin: auto; width: 170px; line-height: 34px; color: #fff; background-color: #ef6367; border: 1px solid #f8b7b9; cursor: pointer; font-size: 18px; outline: none; margin-top: 20px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info button.d-disabled, .c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info button:hover { opacity: .5; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-right { width: 260px; overflow: hidden; min-height: 170px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-right li { line-height: 18px; max-height: 36px; color: #838386; font-size: 14px; margin-bottom: 14px; font-weight: 300; overflow: hidden; -webkit-transition: max-height .3s; transition: max-height .3s; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-right li:hover { max-height: 90px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-right li i { float: left; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-right li em { overflow: hidden; display: block; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-right li em b { font-weight: 700; }
 
 .c-scores { width: 1000px; margin: 40px auto; overflow: hidden; font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
 
