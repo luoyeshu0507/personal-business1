@@ -364,6 +364,8 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .d-about-artist li .swiper-container .swiper-slide { width: 59px; height: 30px; text-align: center; }
 
+.d-about-artist li .swiper-container .swiper-slide img { width: 34px; height: 30px; }
+
 .d-about-artist li .swiper-container .swiper-button-next, .d-about-artist li .swiper-container .swiper-button-prev { width: 35px; height: 30px; background-image: url("../../libs/images/icons.png"); background-repeat: no-repeat; top: 0; background-size: auto; margin-top: auto; background-color: #fff; }
 
 .d-about-artist li .swiper-container .swiper-button-next { background-position: -98px -33px; right: 0; }
