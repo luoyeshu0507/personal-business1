@@ -221,7 +221,7 @@ body{
 						width:14px;
 						border-bottom:2px solid #fff;
 						border-right: 2px solid #fff;
-						&:nth-child(2n){
+						&:nth-child(3n){
 							width:15px;
 						}
 						&.on{
@@ -353,6 +353,95 @@ body{
 					width:590px;
 					padding-top: 18px;
 					height: 80px;
+				}
+				.t-team-member{
+					width:580px;
+					height:48px;
+					margin-top: 35px;
+					li{
+						float:left;
+						width:48px;
+						height:48px;
+						img{
+							width:38px;
+							height:38px;
+							border-radius: 50%;
+						}
+						i{
+							display:block;
+							width:34px;
+							height:34px;
+							border:2px dotted #e3e1df;
+							border-radius: 19px;
+							position:relative;
+							&:after{
+								content:'';
+								position:absolute;
+								border-bottom: 2px dotted #e3e1df;
+								width:19px;
+								top:16px;
+								left:7px;
+							}
+							&:before{
+								content:'';
+								position:absolute;
+								border-left: 2px dotted #e3e1df;
+								height:19px;
+								left:16px;
+								top:7px;
+							}
+						}
+					}
+				}
+				.t-join{
+					color:#fff;
+					text-align: center;
+					font-size:14px;
+					margin:28px auto auto 24px;
+					i{
+						display:block;
+						float:left;
+						position:relative;
+						width:38px;
+						height:38px;
+						border-radius: 19px;
+						background-color: #ebe9e7;
+						line-height: 38px;
+						margin-right: 15px;
+						span{
+							display:block;
+							width:28px;
+							height:28px;
+							font-size:12px;
+							border-radius: 14px;
+							background-color: #f28d90;
+							position:absolute;
+							top:5px;
+							left:-23px;
+							line-height: 18px;
+							&:after{
+								content:'LEFT';
+								display:block;
+								position:absolute;
+								bottom:0;
+								left:0;
+								width:28px;
+								font-size:12px;
+								line-height: 14px;
+								transform:scale(.67);
+							}
+						}
+					}
+					a{
+						display:block;
+						color:#fff;
+						float:left;
+						width:38px;
+						height:38px;
+						border-radius: 19px;
+						background-color: #f28d90;
+						line-height: 38px;
+					}
 				}
 				.t-user-info{
 					position:absolute;

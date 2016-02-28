@@ -380,26 +380,4 @@ var cList={
 
 $(function(){
     cList.init(); //start js
-
-    var o={
-        "content_score": 3.37273, 
-        "form_score": 1.89092, 
-        "result": "success", 
-        "technique_score": 3.27273, 
-        "total_rated": 22, 
-        "total_score": 2.85557
-    };
-    $.ajax({
-        url: "http://139.196.195.4/competition/vote",
-        type:'POST',
-        dataType:"JSONP",
-        jsonp:"callbackparam",
-        data: o,
-        success: function(data){
-            // console.log(data)
-        },
-        error:function(e){
-            console.log('vote error');
-        }
-    });
 });

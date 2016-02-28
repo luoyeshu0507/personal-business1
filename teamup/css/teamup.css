@@ -79,7 +79,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-list-selector .g-container .c-list-month-selector .c-list-years .t-months i { display: block; float: left; width: 14px; border-bottom: 2px solid #fff; border-right: 2px solid #fff; }
 
-.c-list-selector .g-container .c-list-month-selector .c-list-years .t-months i:nth-child(2n) { width: 15px; }
+.c-list-selector .g-container .c-list-month-selector .c-list-years .t-months i:nth-child(3n) { width: 15px; }
 
 .c-list-selector .g-container .c-list-month-selector .c-list-years .t-months i.on { background-color: #fff; }
 
@@ -122,6 +122,28 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 .c-container .c-list-wrap .c-list-shownpart .c-list-middle .swiper-container .swiper-button-prev { background-position: -76px -33px; left: 0; }
 
 .c-container .c-list-wrap .c-list-shownpart .c-list-middle .c-list-detail { overflow: hidden; font-size: 14px; line-height: 20px; font-weight: 300; border-top: 1px solid #ecebeb; width: 590px; padding-top: 18px; height: 80px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-team-member { width: 580px; height: 48px; margin-top: 35px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-team-member li { float: left; width: 48px; height: 48px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-team-member li img { width: 38px; height: 38px; border-radius: 50%; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-team-member li i { display: block; width: 34px; height: 34px; border: 2px dotted #e3e1df; border-radius: 19px; position: relative; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-team-member li i:after { content: ''; position: absolute; border-bottom: 2px dotted #e3e1df; width: 19px; top: 16px; left: 7px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-team-member li i:before { content: ''; position: absolute; border-left: 2px dotted #e3e1df; height: 19px; left: 16px; top: 7px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-join { color: #fff; text-align: center; font-size: 14px; margin: 28px auto auto 24px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-join i { display: block; float: left; position: relative; width: 38px; height: 38px; border-radius: 19px; background-color: #ebe9e7; line-height: 38px; margin-right: 15px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-join i span { display: block; width: 28px; height: 28px; font-size: 12px; border-radius: 14px; background-color: #f28d90; position: absolute; top: 5px; left: -23px; line-height: 18px; }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-join i span:after { content: 'LEFT'; display: block; position: absolute; bottom: 0; left: 0; width: 28px; font-size: 12px; line-height: 14px; -webkit-transform: scale(0.67); -ms-transform: scale(0.67); transform: scale(0.67); }
+
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-join a { display: block; color: #fff; float: left; width: 38px; height: 38px; border-radius: 19px; background-color: #f28d90; line-height: 38px; }
 
 .c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info { position: absolute; width: 270px; right: -320px; top: 20px; text-align: center; }
 
