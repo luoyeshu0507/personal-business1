@@ -153,9 +153,9 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info i { display: block; line-height: 38px; font-size: 16px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
-.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info span { display: block; line-height: 1; font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info span { display: block; line-height: 14px; font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
-.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info button { display: block; margin: auto; width: 170px; line-height: 34px; color: #fff; background-color: #ef6367; border: 1px solid #f8b7b9; cursor: pointer; font-size: 18px; outline: none; margin-top: 20px; }
+.c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info button { display: block; margin: auto; width: 170px; line-height: 34px; color: #fff; background-color: #ef6367; border: 1px solid #f8b7b9; cursor: pointer; font-size: 18px; outline: none; margin-top: 18px; }
 
 .c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info button.d-disabled, .c-container .c-list-wrap .c-list-shownpart .c-list-middle .t-user-info button:hover { opacity: .5; }
 
