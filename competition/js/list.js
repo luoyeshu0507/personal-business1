@@ -324,7 +324,7 @@ var cList={
                         var list=data.artworks;
                         var html='';
                         for(var i=0;i<list.length;i++){
-                            html+='<a data-id="'+list[i].id+'" href="#" class="c-list-imgswrap">'+
+                            html+='<a data-id="'+list[i].id+'" href="/competition/artwork/detail/'+list[i].id+'" class="c-list-imgswrap" target="_blank">'+
                                         '<span data-score="'+list[i].total_score+'" data-vote="'+list[i].total_vote+'">'+
                                             '<img src="'+list[i].img+'">'+
                                             '<em><b title="score:'+list[i].total_score+'">2.5</b><strong title="vote:'+list[i].total_vote+'"></strong></em>'+

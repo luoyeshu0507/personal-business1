@@ -103,11 +103,11 @@ var cDetail={
             if($self.hasClass("d-disabled")) return;
             var $scores=$('.d-mark-scoretips span');
             var o={
-                "content_score": $scores.eq(0).html()/10, 
-                "form_score": $scores.eq(1).html()/10, 
-                "technique_score": $scores.eq(2).html()/10, 
-                // "current_user": 123,
-                // "artwork_id":3
+                "content_score": $scores.eq(0).html(),
+                "form_score": $scores.eq(1).html(),
+                "technique_score": $scores.eq(2).html(),
+                "current_user": current_user,
+                "artwork_id":service_id
             };
             $.ajax({
                 url: "http://139.196.195.4/competition/vote",
