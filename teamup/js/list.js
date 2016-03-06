@@ -4,6 +4,7 @@ var tList={
         this.monthSelector(); //month selector event
         this.someVisionEvent(); //some event which will ont be changed by ajax
         this.badgesSwipe();
+        this.followSomeone();
     },
     badgesSwipe:function(){ //competition list badges swiper
         $('.c-list-middle .swiper-container').each(function(){
@@ -78,8 +79,124 @@ var tList={
         });
 
         //selector
-        // $('.c-list-badgewrap span,.c-list-month li,.c-list-years .swiper-slide').click(this.selector);
-        // this.selector();
+        $('.c-list-badgewrap span,.t-months i,.c-list-years .swiper-slide').click(this.selector);
+        this.selector();
+    },
+    selector:function(){ // the selector event on the top of the page
+        var postdata={
+            badge:[],
+            start_month:1,
+            end_month:12,
+            page_size:100,
+            page_num:1,
+            year:2016
+        };
+        var i=0,len=0;
+        var $activeBadges=$(".c-list-badgewrap .c-badge-active");
+        var $month=$('.t-months i.on');
+        for(i=0,len=$activeBadges.length;i<len;i++){
+            postdata.badge.push($activeBadges.eq(i).data('name'));
+        }
+        if($month.length>0){
+            postdata.start_month=$month.eq(0).index()+1;
+            postdata.end_month=$month.last().index()+1;
+        }
+        postdata.year=parseInt($(".c-year-active").text());
+        tList.ajaxTeamupList(postdata);
+    },
+    ajaxTeamupList:function(o){ // ajax for the competition's list after selector
+        $.ajax({
+            url: "http://139.196.195.4/team/homepage/list",
+            type:'POST',
+            dataType:"JSONP",
+            jsonp:"callbackparam",
+            data: o,
+            success: function(data){
+                if(data.result=="success"){
+                    console.log(data);
+                    tList.renderTeamupList(data);
+                } else{
+                    console.log('get teamup list error');
+                }
+            },
+            error:function(e){
+                console.log('get teamup list error');
+            }
+        });
+    },
+    renderTeamupList:function(data){ //render the competition list data got by ajax
+        var list=data.team;
+        var listhtml='';
+        var imgshtml='';
+        for(var i=0;i<list.length;i++){
+            listhtml+='<li data-id="'+list[i].team_id+'" class="c-list-wrap">'+
+                        '<div class="c-list-shownpart">'+
+                            '<a href="http://139.196.195.4/team/detail/'+list[i].team_id+'" target="_blank" class="c-list-img '+(list[i].open_status ? 'c-list-closed':'')+'">'+
+                                '<img src="'+list[i].team_cover+'">'+
+                            '</a>'+
+                            '<div class="c-list-middle">'+
+                                '<h3>'+list[i].title+'</h3>'+
+                                '<div class="swiper-container">'+
+                                    '<div class="swiper-wrapper">'+
+                                        (function(badges){
+                                            var html='';
+                                            for(var j=0;j<badges.length;j++){
+                                                html+='<div class="swiper-slide"><img src="'+badges[j]+'"></div>';
+                                            }
+                                            return html;
+                                        })(list[i].badge)+
+                                    '</div>'+
+                                    '<div class="swiper-button-next"></div>'+
+                                    '<div class="swiper-button-prev"></div>'+
+                                '</div>'+
+                                '<ul class="c-list-right">'+
+                                    '<li>'+
+                                        '<i>主题：</i>'+
+                                        '<em>'+list[i].title+'</em>'+
+                                    '</li>'+
+                                    '<li>'+
+                                        '<i>地点：</i>'+
+                                        '<em>'+list[i].address+'</em>'+
+                                    '</li>'+
+                                    '<li>'+
+                                        '<i>具体时间：</i>'+
+                                        '<em>'+list[i].start_time.split(' ')[0]+' ~ '+list[i].end_time.split(' ')[0]+'</em>'+
+                                    '</li>'+
+                                    '<li>'+
+                                        '<i>报名时间：</i>'+
+                                        '<em>'+list[i].start_time.split(' ')[0]+'</em>'+
+                                    '</li>'+
+                                '</ul>'+
+                                '<p class="c-list-detail">'+list[i].content+'</p>'+
+                                '<div class="t-user-info">'+
+                                    '<a href="'+list[i].author_url+'" class="t-user-img">'+
+                                        '<img src="'+list[i].author_img+'">'+
+                                    '</a>'+
+                                    '<i>'+list[i].author_name+'</i>'+
+                                    '<span>'+list[i].author_address+'</span>'+
+                                    '<button  data-id="1">FOLLOW</button>'+
+                                '</div>'+(function(type,obj){
+                                    var h='',j=0;
+                                    if(type=='team_up_team'){
+                                        h+='<ul class="t-team-member">';
+                                        for(j=0;j<obj.job_users.length;j++){
+                                            h+='<li><img src="'+obj.job_users[j]+'"></li>';
+                                        }
+                                        for(j=0;j<obj.total_job_num-obj.job_users.length;j++){
+                                            h+='<li><i></i></li>';
+                                        }
+                                        h+='</ul>'
+                                    } else if(type=='team_up_activity'){
+                                        h+='<div class="t-join"><i><span>'+obj.left_num+'</span>'+obj.activity_num+'</i><a href="http://139.196.195.4/team/detail/'+list[i].team_id+'">JOIN</a></div>';
+                                    }
+                                    return h;
+                                })(list[i].type,list[i])+
+                            '</div>'+
+                        '</div>'+
+                    '</li>';
+        }
+        $('#c-competition-list').html(listhtml);
+        tList.badgesSwipe(); //competition list badges swiper
     },
     swipBadges:function(direction){ //swip Badges
         var $badges=$('.c-list-badgewrap span');
@@ -103,136 +220,31 @@ var tList={
             }
         }
     },
-    selector:function(){ // the selector event on the top of the page
-        var postdata={
-            badge:[],
-            start_month:1,
-            end_month:12,
-            page_size:100,
-            page_num:1,
-            year:2016
-        };
-        var i=0,len=0;
-        var $activeBadges=$(".c-list-badgewrap .c-badge-active");
-        var $month=$('.c-list-month li.c-bright-point');
-        for(i=0,len=$activeBadges.length;i<len;i++){
-            postdata.badge.push($activeBadges.eq(i).data('name'));
-        }
-        if($month.length>0){
-            postdata.start_month=$month.eq(0).index()+1;
-            postdata.end_month=$month.last().index()+1;
-        }
-        postdata.year=parseInt($(".c-year-active").text());
-        tList.ajaxCompeitionList(postdata);
-    },
-    ajaxCompeitionList:function(o){ // ajax for the competition's list after selector
-        $.ajax({
-            url: "http://139.196.195.4/competition/homepage/list",
-            type:'POST',
-            dataType:"JSONP",
-            jsonp:"callbackparam",
-            data: o,
-            success: function(data){
-                if(data.result=="success"){
-                    console.log(data);
-                    tList.renderCompetitionList(data);
-                } else{
-                    console.log('get competition list error');
-                }
-            },
-            error:function(e){
-                console.log('get competition list error');
+    followSomeone:function(){ //follow someone or unfollow someone
+        $('.c-container').on('click','.t-user-info button',function(){
+            var $self=$(this);
+            var o={
+                "service_id": $self.data('id'),
+                "current_user": current_user
             }
+            $.ajax({
+                url: "http://139.196.195.4/follow",
+                type:'POST',
+                dataType:"JSONP",
+                jsonp:"callbackparam",
+                data: o,
+                success: function(data){
+                    if(data.result=='success'){
+                        $self.toggleClass('d-disabled');
+                    } else{
+                        console.log('follow error');
+                    }
+                },
+                error:function(e){
+                    console.log('follow error');
+                }
+            });
         });
-    },
-    renderCompetitionList:function(data){ //render the competition list data got by ajax
-        var list=data.competition;
-        var listhtml='';
-        var imgshtml='';
-        for(var i=0;i<list.length;i++){
-            listhtml+='<li class="c-list-wrap" data-id="'+list[i].id+'">'+
-                    '<div class="c-list-shownpart">'+
-                        '<a href="#" target="_blank" class="c-list-img '+(list[i].open_status ? 'c-list-closed':'')+'">'+
-                            '<img src="'+list[i].img+'" alt="">'+
-                        '</a>'+
-                        '<div class="c-list-middle">'+
-                            '<h3>'+list[i].title+'</h3>'+
-                            '<div class="c-list-tip">'+list[i].type+'</div>'+
-                            '<div class="swiper-container">'+
-                                '<div class="swiper-wrapper">'+
-                                    (function(badges){
-                                        var html='';
-                                        for(var j=0;j<badges.length;j++){
-                                            html+='<div class="swiper-slide"><img src="'+badges[j]+'"></div>';
-                                        }
-                                        return html;
-                                    })(list[i].badge)+
-                                '</div>'+
-                                '<div class="swiper-button-next"></div>'+
-                                '<div class="swiper-button-prev"></div>'+
-                            '</div>'+
-                            '<p class="c-list-detail">'+list[i].content+'</p>'+
-                            '<a href="javascript:void(0);" class="c-list-openbtn">展开作品</a>'+
-                            '<ul class="c-list-likes">'+
-                                '<li>'+
-                                    '<a href="javascript:void(0);" data-interaction="0" class="g-icon g-icon-heart"></a>'+
-                                    '<i>'+list[i].like_num+'</i>'+
-                                '</li>'+
-                                '<li>'+
-                                    '<a href="javascript:void(0);" data-interaction="1" class="g-icon g-icon-see"></a>'+
-                                    '<i>'+list[i].collect_num+'</i>'+
-                                '</li>'+
-                                '<li>'+
-                                    '<a href="javascript:void(0);" data-interaction="4" class="g-icon g-icon-share"></a>'+
-                                    '<i>'+list[i].share_num+'</i>'+
-                                '</li>'+
-                            '</ul>'+
-                        '</div>'+
-                        '<ul class="c-list-right">'+
-                            '<li>'+
-                                '<i>主办者：</i>'+
-                                '<em>'+list[i].organizer.join(" ")+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>赞助方/ainmal：</i>'+
-                                '<em>'+list[i].sponsor+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>参赛费用：</i>'+
-                                '<em>'+list[i].fee+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>评判标准：</i>'+
-                                '<em>'+list[i].rule+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>颁发奖项：</i>'+
-                                '<em>希特勒艺术基金 + Pigment</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>联络方式：</i>'+
-                                '<em>'+list[i].contact+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>收件期限：</i>'+
-                                '<em>截止到2016年5月7日（上传皆可评选）</em>'+
-                            '</li>'+
-                        '</ul>'+
-                    '</div>'+
-                    '<div class="c-list-hiddenpart clearfix">'+
-                        '<i class="c-list-arrow"></i>'+
-                        '<button class="c-list-subbtn">SUBMIT</button>'+
-                    '</div>'+
-                '</li>';
-            imgshtml+='<div class="swiper-slide">'+
-                            '<a href="javascript:void(0);">'+
-                                '<img src="'+list[i].img+'" alt="">'+
-                            '</a>'+
-                        '</div>';
-        }
-        $('#c-competition-list').html(listhtml);
-        $('.c-list-listimgs .swiper-wrapper').html(imgshtml);
-        tList.badgesSwipe(); //competition list badges swiper
     }
 };
 
