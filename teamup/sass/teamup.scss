@@ -468,7 +468,7 @@ body{
 					}
 					span{
 						display:block;
-						line-height: 14px;
+						line-height: 16px;
 						font-size: 12px;
 						@include cliptext;
 					}
@@ -483,7 +483,7 @@ body{
 						cursor: pointer;
 						font-size: 18px;
 						outline: none;
-						margin-top:18px;
+						margin-top:16px;
 						&.d-disabled,&:hover{
 							opacity:.5;
 						}
@@ -718,12 +718,24 @@ body{
 				font-size: 12px;
 				text-align: center;
 				width:210px;
+				margin-bottom: 30px;
 				li{
 					float:left;
 					width:50%;
 					cursor:pointer;
 					&.on{
 						background-color:#e3e4e5;
+					}
+				}
+			}
+			.t-richtext-wrap{
+				font-size: 14px;
+				line-height: 20px;
+				color:#221f1f;
+				.t-richtext-item{
+					display:none;
+					&.show{
+						display:block;
 					}
 				}
 			}

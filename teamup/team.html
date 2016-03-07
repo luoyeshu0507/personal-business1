@@ -10,7 +10,9 @@
 	<script type="text/javascript" src="../libs/js/swiper.min.js"></script>
 	<script type="text/javascript" src="js/team.js"></script>
 	<script type="text/javascript">
-		var current_user=1;
+		var current_user=1;//user id
+		var service_id=3; // 作品id 用来评论用
+		var author_id=1;
 	</script>
 </head>
 <body>
@@ -56,8 +58,8 @@
 					<dd>
 						<ul>
 							<li>
-								<img src="https://placem.at/people?w=64&h=64&random=4">
-								<button data-id='60'>FOLLOW</button>
+								<a href="#"><img src="https://placem.at/people?w=64&h=64&random=4"></a>
+								<button class="t-follow">FOLLOW</button>
 							</li>
 							<li>
 								<div class="g-about-artist-title">
@@ -73,6 +75,10 @@
 					<li class="on">PROPOSAL</li>
 					<li>RESULT</li>
 				</ul>
+				<div class="t-richtext-wrap">  <!-- 两个richtext的容器 -->
+					<div class="t-richtext-item show">text1</div>
+					<div class="t-richtext-item">text2</div>
+				</div>
 			</div>
 			<div class="t-item d-comment">
 				<dl>
