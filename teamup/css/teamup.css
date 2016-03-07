@@ -265,7 +265,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .t-richtext-container .t-richtext-right .t-item .t-tips a { line-height: 16px; height: 16px; display: inline-block; background-color: #f1f0ee; color: #939395; border: 1px solid #e3e4e4; border-radius: 8px; font-size: 13px; padding: 0 5px; margin-bottom: 6px; margin-left: 4px; }
 
-.t-richtext-container .t-richtext-right .t-item .t-position { color: #656569; margin: -5px 0 5px; font-size: 12px; }
+.t-richtext-container .t-richtext-right .t-item .t-position { color: #656569; margin: -5px 0 5px; font-size: 16px; }
 
 .t-richtext-container .t-richtext-right .t-item .t-position dt { text-align: center; line-height: 1; margin-bottom: 12px; }
 
@@ -300,6 +300,26 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 .t-richtext-container .t-richtext-right .t-item .t-position dd.on span { background-color: #74C274; }
 
 .t-richtext-container .t-richtext-right .t-item .t-position dd.on span:before, .t-richtext-container .t-richtext-right .t-item .t-position dd.on span:after { background-color: #efefef; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join { color: #808083; line-height: 22px; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join p { font-size: 14px; margin-bottom: 35px; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join .t-num { font-size: 12px; overflow: hidden; width: 85%; margin: auto; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join .t-num span, .t-richtext-container .t-richtext-right .t-item .t-join .t-num i { display: block; float: left; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join .t-num span { width: 70%; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join .t-num span strong { border: 1px solid #ef595d; display: block; margin-top: 4px; width: 70%; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join .t-num span strong em { display: block; height: 12px; background-color: #ef595d; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join .t-num i { width: 30%; color: #ef595d; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join button { display: block; width: 70px; line-height: 18px; color: #fff; background-color: #e85c5f; font-weight: 300; border: 1px solid #f8b7b9; cursor: pointer; font-size: 12px; margin: 35px auto 10px; outline: none; }
+
+.t-richtext-container .t-richtext-right .t-item .t-join button.d-disabled { opacity: .5; }
 
 .d-comment dl { overflow: hidden; padding-left: 34px; font-weight: 300; }
 

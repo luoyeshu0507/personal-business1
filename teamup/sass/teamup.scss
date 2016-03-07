@@ -781,7 +781,7 @@ body{
 			.t-position{
 				color:#656569;
 				margin:-5px 0 5px;
-				font-size: 12px;
+				font-size: 16px;
 				dt{
 					text-align: center;
 					line-height: 1;
@@ -880,6 +880,58 @@ body{
 								background-color: #efefef;
 							}
 						}
+					}
+				}
+			}
+			.t-join{
+				color:#808083;
+				line-height: 22px;
+				p{
+					font-size: 14px;
+					margin-bottom: 35px;
+				}
+				.t-num{
+					font-size: 12px;
+					overflow:hidden;
+					width:85%;
+					margin:auto;
+					span,i{
+						display:block;
+						float:left;
+					}
+					span{
+						width:70%;
+						strong{
+							border:1px solid #ef595d;
+							display:block;
+							margin-top: 4px;
+							width:70%;
+							em{
+								display:block;
+								height:12px;
+								background-color: #ef595d;
+							}
+						}
+					}
+					i{
+						width:30%;
+						color:#ef595d;
+					}
+				}
+				button{
+					display:block;
+					width:70px;
+					line-height: 18px;
+					color:#fff;
+					background-color: #e85c5f;
+					font-weight: 300;
+					border:1px solid #f8b7b9;
+					cursor: pointer;
+					font-size: 12px;
+					margin:35px auto 10px;
+					outline: none;
+					&.d-disabled{
+						opacity:.5;
 					}
 				}
 			}
