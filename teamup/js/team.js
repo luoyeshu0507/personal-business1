@@ -102,7 +102,7 @@ var tTeam={
     getCommentList:function(n){
         var o={
                 "page_num":n,
-                "service_type":'2',
+                "service_type":3,
                 "service_id":service_id,
                 "page_size":5
             };
@@ -151,7 +151,7 @@ var tTeam={
                 var o={
                     "current_user":current_user,
                     "content":comment,
-                    "service_type":2,
+                    "service_type":3,
                     "service_id":service_id,
                     "author_id":author_id
                 };
@@ -163,6 +163,7 @@ var tTeam={
                     data: o,
                     success: function(data){
                         if(data.result=='success'){
+                            $('.d-comment-text textarea').val("");
                             tTeam.getCommentList(1);
                         } else{
                             console.log('comment error');

@@ -755,12 +755,13 @@ body{
 					border-bottom: 1px solid #eeefef;
 					line-height: 26px;
 					height:26px;
-					font-size: 12px;
+					font-size: 14px;
 					color:#939395;
 					@include cliptext;
 					.g-icon{
 						float:left;
 						margin-right: 10px;
+						cursor:pointer;
 					}
 				}
 			}
@@ -772,7 +773,7 @@ body{
 				color:#939395;
 				border:1px solid #e3e4e4;
 				border-radius: 8px;
-				font-size: 12px;
+				font-size: 13px;
 				padding: 0 5px;
 				margin-bottom: 6px;
 				margin-left: 4px;

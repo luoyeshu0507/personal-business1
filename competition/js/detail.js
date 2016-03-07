@@ -274,6 +274,7 @@ var cDetail={
                     data: o,
                     success: function(data){
                         if(data.result=='success'){
+                            $('.d-comment-text textarea').val("");
                             cDetail.getCommentList(1);
                         } else{
                             console.log('comment error');
