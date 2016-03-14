@@ -906,6 +906,7 @@ body{
 							display:block;
 							margin-top: 4px;
 							width:70%;
+							overflow:hidden;
 							em{
 								display:block;
 								height:12px;
@@ -1036,6 +1037,10 @@ body{
 			opacity:.5;
 		}
 	}
+}
+.t-alert-text{
+	line-height: 100px;
+	text-align: center;
 }
 
 

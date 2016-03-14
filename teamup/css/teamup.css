@@ -311,7 +311,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .t-richtext-container .t-richtext-right .t-item .t-join .t-num span { width: 70%; }
 
-.t-richtext-container .t-richtext-right .t-item .t-join .t-num span strong { border: 1px solid #ef595d; display: block; margin-top: 4px; width: 70%; }
+.t-richtext-container .t-richtext-right .t-item .t-join .t-num span strong { border: 1px solid #ef595d; display: block; margin-top: 4px; width: 70%; overflow: hidden; }
 
 .t-richtext-container .t-richtext-right .t-item .t-join .t-num span strong em { display: block; height: 12px; background-color: #ef595d; }
 
@@ -352,3 +352,5 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 .d-comment-pagenation span.on { color: #fff; background-color: #a6d6dc; }
 
 .d-comment-pagenation span.unclick { opacity: .5; }
+
+.t-alert-text { line-height: 100px; text-align: center; }

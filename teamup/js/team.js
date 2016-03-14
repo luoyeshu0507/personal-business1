@@ -5,6 +5,7 @@ var tTeam={
         this.followSomeone();
         this.getCommentList(1);
         this.comment();
+        this.ajaxPositionList();
     },
     richtextSwiper:function(){
         $('.t-switcher li').click(function(){
@@ -177,11 +178,93 @@ var tTeam={
         } else{
             $('.d-comment-text button').addClass('d-disabled');
         }
+    },
+    ajaxPositionList:function(){
+        if(!current_user) return;
+        var o={
+            team_id:team_id,
+            current_user:current_user
+        }
+        $.ajax({
+            url: "http://139.196.195.4/team/position/list",
+            type:'POST',
+            dataType:"JSONP",
+            jsonp:"callbackparam",
+            data: o,
+            success: function(data){
+                if(data.result=='success'){
+                    tTeam.renderPositionList(data.positions);
+                } else{
+                    console.log('position list error');
+                }
+            },
+            error:function(e){
+                console.log('position list error');
+            }
+        });
+    },
+    renderPositionList:function(list){
+        var $container=$('.t-position');
+        var html='';
+        var isIn=false;
+        var one=null;
+        for(var i=0;i<list.length;i++){
+            one=list[i];
+            if(one.winner){
+                if(one.position_status=='apply'){
+                    html+='<dd class="wait on"><span></span>';
+                } else if(one.position_status=='not_apply'){
+                    html+='<dd><a href="javascript:void(0);"><img src="'+one.winner+'"></a>';
+                } else if(one.position_status=='got'){
+                    html+='<dd><a href="javascript:void(0);"><img src="'+one.winner+'"></a><strong></strong>';
+                }
+            } else{
+                if(one.position_status=='apply'){
+                    html+='<dd class="wait on"><span></span>';
+                } else if(one.position_status=='not_apply'){
+                    html+='<dd class="wait"><span></span>';
+                }
+            }
+            html+='<i>'+one.job_name+'</i>'+
+                    '<ul class="t-requirement"><li>'+
+                        one.job_requirement.join('</li><li>')+
+                    '</li></ul>'+
+                '</dd>';
+        }
+        $container.append(html);
+        
+    },
+    alert:function(width,height,title,content,callback){//alert something
+        $('.g-opacity-bg').remove();
+        var $body=$('body');
+        $body.append('<div class="g-opacity-bg"></div>');
+        var alertHtml='<div class="g-alert-content" style="margin:-'+height/2+'px auto auto -'+width/2+'px;width:'+width+'px;height:'+height+'px;"><div class="g-alert-title">'+title+'<span class="g-alert-close">X</span></div><div class="g-alert-body" style="height:'+(height-30)+'px;">';
+        var alertContent=content;
+        if((typeof callback)=='function'){
+            alertContent+='<div class="g-alert-btns"><em>取消</em><i>确定</i></div>';
+        }
+        alertHtml+=alertContent+'</div></div>';
+        $body.append(alertHtml);
+        if((typeof callback)=='function'){
+            var $btns=$('.g-alert-btns');
+            $btns.find('em').click(tTeam.closeAlert);
+            $btns.find('i').click(function(){
+                tTeam.closeAlert();
+                callback();
+            });
+        }
+        $('.g-opacity-bg,.g-alert-close').click(tTeam.closeAlert);
+    },
+    closeAlert:function(){
+        $('.g-opacity-bg,.g-alert-content').remove();
     }
 };
 
 
 $(function(){
     tTeam.init(); //start page js
+    // tTeam.alert(400,180,'提示','<div class="t-alert-text">加入成功将扣除100点金币，确认加入么？</div>',function(){
+    //     console.log('success');
+    // });
 });
 
