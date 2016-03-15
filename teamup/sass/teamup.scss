@@ -791,6 +791,22 @@ body{
 					height:36px;
 					margin-bottom: 12px;
 					position:relative;
+					strong{
+						display:block;
+						background-color: #F06468;
+						border-radius: 10px;
+						width:14px;
+						height:14px;
+						position:absolute;
+						left:24px;
+						top:-1px;
+						text-align: center;
+						color:#fff;
+						line-height: 16px;
+						font-size: 10px;
+						font-family: '微软雅黑';
+						cursor:pointer;
+					}
 					i{
 						line-height: 36px;
 						@include cliptext;

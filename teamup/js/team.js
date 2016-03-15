@@ -212,17 +212,17 @@ var tTeam={
             one=list[i];
             if(one.winner){
                 if(one.position_status=='apply'){
-                    html+='<dd class="wait on"><span></span>';
+                    html+='<dd data-id="'+one.id+'" class="wait on"><span></span>';
                 } else if(one.position_status=='not_apply'){
-                    html+='<dd><a href="javascript:void(0);"><img src="'+one.winner+'"></a>';
+                    html+='<dd data-id="'+one.id+'"><a href="javascript:void(0);"><img src="'+one.winner+'"></a>';
                 } else if(one.position_status=='got'){
-                    html+='<dd><a href="javascript:void(0);"><img src="'+one.winner+'"></a><strong></strong>';
+                    html+='<dd data-id="'+one.id+'"><a href="javascript:void(0);"><img src="'+one.winner+'"></a><strong>X</strong>';
                 }
             } else{
                 if(one.position_status=='apply'){
-                    html+='<dd class="wait on"><span></span>';
+                    html+='<dd data-id="'+one.id+'" class="wait on"><span></span>';
                 } else if(one.position_status=='not_apply'){
-                    html+='<dd class="wait"><span></span>';
+                    html+='<dd data-id="'+one.id+'" class="wait"><span></span>';
                 }
             }
             html+='<i>'+one.job_name+'</i>'+
@@ -231,8 +231,80 @@ var tTeam={
                     '</li></ul>'+
                 '</dd>';
         }
-        $container.append(html);
-        
+        $container.append(html)
+        .on('click','.wait',function(){
+            var $self=$(this);
+            if(apply_cost>0&&!$self.hasClass('on')){
+                tTeam.alert(400,180,'提示','<div class="t-alert-text">加入成功将扣除'+apply_cost+'点金币，确认加入么？</div>',function(){
+                    tTeam.dealPosition($self);
+                });
+            } else {
+                tTeam.dealPosition($self);
+            }
+        })
+        .on('click','dd strong',function(){
+            var $self=$(this);
+            if(apply_cost!=0){
+                tTeam.alert(400,180,'提示','<div class="t-alert-text">退出将不退回已扣除的'+Math.abs(apply_cost)+'点金币，确认退出么？</div>',function(){
+                    tTeam.cancelPosition($self);
+                });
+            } else {
+                tTeam.dealPosition($self);
+            }
+        });
+    },
+    dealPosition:function(pos){
+        var $self=pos;
+        if(apply_cost>0&&!$self.hasClass('on')) apply_cost=-apply_cost;
+        var o={
+            position_id:$self.data('id'),
+            current_user:current_user
+        }
+        $.ajax({
+            url: "http://139.196.195.4/team/position/deal",
+            type:'POST',
+            dataType:"JSONP",
+            jsonp:"callbackparam",
+            data: o,
+            success: function(data){
+                if(data.result=='success'){
+                    if(data.msg=='add'){
+                        $self.addClass('on');
+                    } else if(data.msg=='delete'){
+                        $self.removeClass('on');
+                    }
+                } else{
+                    console.log('apply position error');
+                }
+            },
+            error:function(e){
+                console.log('apply position error');
+            }
+        });
+    },
+    cancelPosition:function(pos){
+        var $self=pos.parents('dd');
+        var o={
+            position_id:$self.data('id'),
+            current_user:current_user
+        }
+        $.ajax({
+            url: "http://139.196.195.4/team/position/deal",
+            type:'POST',
+            dataType:"JSONP",
+            jsonp:"callbackparam",
+            data: o,
+            success: function(data){
+                if(data.result=='success'){
+                    location.href=location.href;
+                } else{
+                    console.log('cancel position error');
+                }
+            },
+            error:function(e){
+                console.log('cancel position error');
+            }
+        });
     },
     alert:function(width,height,title,content,callback){//alert something
         $('.g-opacity-bg').remove();
@@ -263,8 +335,5 @@ var tTeam={
 
 $(function(){
     tTeam.init(); //start page js
-    // tTeam.alert(400,180,'提示','<div class="t-alert-text">加入成功将扣除100点金币，确认加入么？</div>',function(){
-    //     console.log('success');
-    // });
 });
 

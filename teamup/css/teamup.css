@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 300; }
 
 /* list.html sass start */
@@ -270,6 +271,8 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 .t-richtext-container .t-richtext-right .t-item .t-position dt { text-align: center; line-height: 1; margin-bottom: 12px; }
 
 .t-richtext-container .t-richtext-right .t-item .t-position dd { height: 36px; margin-bottom: 12px; position: relative; }
+
+.t-richtext-container .t-richtext-right .t-item .t-position dd strong { display: block; background-color: #F06468; border-radius: 10px; width: 14px; height: 14px; position: absolute; left: 24px; top: -1px; text-align: center; color: #fff; line-height: 16px; font-size: 10px; font-family: '微软雅黑'; cursor: pointer; }
 
 .t-richtext-container .t-richtext-right .t-item .t-position dd i { line-height: 36px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block; }
 
