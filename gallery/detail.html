@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gallery Detail</title>
+	<link rel="stylesheet" type="text/css" href="../libs/css/g-global.css">
+	<link rel="stylesheet" type="text/css" href="../libs/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/gallery.css">
+	<script type="text/javascript" src="../libs/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../libs/js/swiper.min.js"></script>
+	<script type="text/javascript" src="../libs/js/circle-progress.js"></script>
+	<script type="text/javascript" src="js/detail.js"></script>
+	<script type="text/javascript">
+		var current_user=1;
+		var service_id=3;
+		var author_id=1;
+	</script>
+</head>
+<body>
+	<!-- header-start -->
+	<div class="h-header">
+		<div class="g-container">
+			<a href="#" class="h-logo">Pigment &gt;&gt;</a>
+			<a href="#" class="h-login-btn">LOGIN</a>
+		</div>
+	</div>
+	<div class="g-pt65"></div>
+	<!-- header-end -->
+	
+	<!-- images switcher start -->
+	<div class="d-switcher g-container d-container">
+	    <div class="swiper-container gallery-top">
+	        <div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=1">
+					<span>Placemat will add your requested dimensions to the returned image by default, but you can bypass that by passing txt=0. If you want to display custom text, just send along something like txt=Hello+World!</span>
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=550&random=2">
+					<span>Placemat will add your requested dimensions to the returned image by default, but you can bypass that by passing txt=0. If you want to display custom text, just send along something like txt=Hello+World!</span>
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=3">
+					<span>Placemat will add your requested dimensions to the returned image by default, but you can bypass that by passing txt=0. If you want to display custom text, just send along something like txt=Hello+World!</span>
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=650&random=4">
+					<span>Placemat will add your requested dimensions to the returned image by default, but you can bypass that by passing txt=0. If you want to display custom text, just send along something like txt=Hello+World!</span>
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=5">
+					<span>Placemat will add your requested dimensions to the returned image by default, but you can bypass that by passing txt=0. If you want to display custom text, just send along something like txt=Hello+World!</span>
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=6">
+					<span>Placemat will add your requested dimensions to the returned image by default, but you can bypass that by passing txt=0. If you want to display custom text, just send along something like txt=Hello+World!</span>
+				</div>
+	        </div>
+	        <div class="swiper-button-next swiper-button-white"></div>
+	        <div class="swiper-button-prev swiper-button-white"></div>
+	    </div>
+	    <div class="swiper-container gallery-thumbs">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=1">
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=2">
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=3">
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=4">
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=5">
+				</div>
+				<div class="swiper-slide">
+					<img src="https://placem.at/things?w=1000&h=750&random=6">
+				</div>
+	        </div>
+	    </div>
+	</div>
+	<!-- images switcher end -->
+
+	<!-- about artist start -->
+	<div class="g-container d-container d-about-artist">
+		<ul>
+			<li>
+				<img src="https://placem.at/people?w=64&h=64&random=4">
+				<button data-id='60'>FOLLOW</button>
+			</li>
+			<li>
+				<div class="g-about-artist-title">
+					<span>Starry Night</span>
+					<em> / Nov.15.2016</em>
+					<i>LINK</i>
+				</div>
+				<div class="g-about-artist-name">by Fan Gogo</div>
+			</li>
+			<li>
+				<div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			            <div class="swiper-slide"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></div>
+			        </div>
+			        <div class="swiper-button-next"></div>
+			        <div class="swiper-button-prev"></div>
+			    </div>
+			</li>
+		</ul>
+	</div>
+	<!-- about artist end -->
+
+	<!-- other artists start -->
+	<div class="g-container d-container d-otherartists">
+		<div class="d-otherartists-tip">You may also like...</div>
+		<ul>
+			<li>
+				<a href="">
+					<img src="https://placem.at/people?w=64&h=64&random=1">
+					<i>Tom Daley</i>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<img src="https://placem.at/people?w=64&h=64&random=2">
+					<i>Tom Daley</i>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<img src="https://placem.at/people?w=64&h=64&random=3">
+					<i>Tom Daley</i>
+				</a>
+			</li>
+		</ul>
+		<a href="#" class="ga-works"><img src="http://zhanweitu.com/80x90"></a>
+		<a href="#" class="ga-works"><img src="http://zhanweitu.com/80x90"></a>
+		<a href="#" class="ga-works"><img src="http://zhanweitu.com/80x90"></a>
+		<a href="#" class="ga-works"><img src="http://zhanweitu.com/80x90"></a>
+	</div>
+	<!-- other artists end -->
+	
+	<!-- comment start -->
+	<div class="g-container d-container d-comment">
+		<dl>
+			<dt>Add a comment...</dt>
+			<dd>
+				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=6"></a>
+				<p class="d-comment-text">
+					<span class="d-comment-name"><a href="">Ryan Gosting</a></span>
+					<textarea></textarea>
+					<button>COMMENT</button>
+				</p>
+			</dd>
+			<dd>
+				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=7"></a>
+				<p class="d-comment-text">
+					<span class="d-comment-name"><a href="">Ryan Gosting</a> - 2 days ago</span>
+					<i>
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+					</i>
+				</p>
+			</dd>
+			<dd>
+				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=8"></a>
+				<p class="d-comment-text">
+					<span class="d-comment-name"><a href="">Ryan Gosting</a> - 2 days ago</span>
+					<i>
+						Ryan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan GoslingRyan Gosling
+					</i>
+				</p>
+			</dd>
+			<dd>
+				<a class="d-comment-img" href=""><img src="https://placem.at/people?w=48&h=48&random=9"></a>
+				<p class="d-comment-text">
+					<span class="d-comment-name"><a href="">Ryan Gosting</a> - 2 days ago</span>
+					<i>
+						Ryan GoslingRyan
+					</i>
+				</p>
+			</dd>
+		</dl>
+		<div class="d-comment-pagenation">
+			<span data-page='6' class='prev unclick'>prev</span><span data-page='1'>1</span>...<span data-page='5'>5</span><span data-page='6'>6</span><span data-page='7' class='on'>7</span><span data-page='8'>8</span><span data-page='9'>9</span>...<span data-page='15'>15</span><span class='next' data-page='8'>next</span>
+		</div>
+	</div>
+	<!-- comment end -->
+
+	<!-- footer-start -->
+	<div class="f-footer">
+		<div class="g-container">
+			<div class="f-third-websites">
+				<h3>Pigment</h3>
+				<a href=""><img src="../libs/images/youtobe.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/google.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/t.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/twitter.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/rss.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/blog.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/lt.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/in.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/dian.jpg" alt=""></a>
+				<a href=""><img src="../libs/images/fr.jpg" alt=""></a>
+			</div>
+			<div class="f-urlmap">
+	        	<ul>
+	        		<li>
+	                	<h3>Subscribe</h3>
+	                	<a href="">Newsletter</a>
+	                    <a href="">RSS Feed</a>
+	                    <a href="">Rss to Email</a>
+	                </li>
+	        		<li>
+	                	<h3>Company</h3>
+						<a href="">About</a>
+						<a href="">Stories</a>
+						<a href="">Online activity</a>
+						<a href="">Academy</a>
+						<a href="">Business</a>
+	                </li>
+	        		<li>
+	                	<h3>Resources</h3>
+	                	<a href="">Articles</a>
+	                    <a href="">Schools</a>
+	                </li>
+	                <li>
+	                	<h3>Wechat</h3>
+	                	<img src="../libs/images/wechat_ewm.png">
+	                </li>
+	        	</ul>
+	        </div>
+		</div>
+		<div class="g-wline"></div>
+		<div class="g-container f-footer-bottom">
+			<span class="g-fleft">Privacy Policy | Terms</span>
+			<span class="g-fright">English ︾</span>
+			<span>Made in NYC © 2015 LOGO</span>
+		</div>
+	</div>
+	<!-- footer-end -->
+</body>
+</html>
