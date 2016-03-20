@@ -252,10 +252,10 @@ body{
 			}
 		}
 		.ga-list-text{
-			width:185px;
+			width:200px;
 			float:left;
 			overflow:hidden;
-			margin-right: 80px;
+			margin-right: 55px;
 			color:#808083;
 			h2{
 				text-align: center;
@@ -290,13 +290,13 @@ body{
 			color:#221f1f;
 			li{
 				float:left;
-				width:61px;
+				width:66px;
 				.g-icon{
 					float:left;
 				}
 				i{
 					float:left;
-					width:35px;
+					width:40px;
 					@include cliptext;
 				}
 			}
@@ -305,7 +305,7 @@ body{
 			width: 230px;
 			text-align: center;
 			float:left;
-			margin-right: 30px;
+			margin-right: 40px;
 			.t-user-img{
 				display:block;
 				width:144px;

@@ -91,7 +91,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-container .c-list-wrap .ga-list-imga img { display: block; width: 230px; height: 300px; }
 
-.c-container .c-list-wrap .ga-list-text { width: 185px; float: left; overflow: hidden; margin-right: 80px; color: #808083; }
+.c-container .c-list-wrap .ga-list-text { width: 200px; float: left; overflow: hidden; margin-right: 55px; color: #808083; }
 
 .c-container .c-list-wrap .ga-list-text h2 { text-align: center; color: #221f1f; font-size: 22px; line-height: 24px; padding: 10px 0; }
 
@@ -103,13 +103,13 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-container .c-list-wrap .c-list-likes { clear: both; overflow: hidden; line-height: 26px; font-size: 12px; font-weight: 300; color: #221f1f; }
 
-.c-container .c-list-wrap .c-list-likes li { float: left; width: 61px; }
+.c-container .c-list-wrap .c-list-likes li { float: left; width: 66px; }
 
 .c-container .c-list-wrap .c-list-likes li .g-icon { float: left; }
 
-.c-container .c-list-wrap .c-list-likes li i { float: left; width: 35px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.c-container .c-list-wrap .c-list-likes li i { float: left; width: 40px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
-.c-container .c-list-wrap .t-user-info { width: 230px; text-align: center; float: left; margin-right: 30px; }
+.c-container .c-list-wrap .t-user-info { width: 230px; text-align: center; float: left; margin-right: 40px; }
 
 .c-container .c-list-wrap .t-user-info .t-user-img { display: block; width: 144px; height: 144px; margin: 20px auto 20px; }
 
