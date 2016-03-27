@@ -135,6 +135,56 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-container .c-list-wrap .swiper-container .swiper-button-prev { background-position: 6px -133px; top: 0; }
 
+.w-worklist { border-left: 3px solid #fff; border-bottom: 3px solid #fff; padding-bottom: 34px; position: relative; }
+
+.w-worklist:after { position: absolute; content: ""; background-color: #fff; width: 6px; display: block; height: 200px; right: -50px; top: 50%; margin-top: -100px; }
+
+.w-worklist .w-works { overflow: hidden; margin-left: 37px; width: 1045px; }
+
+.w-worklist .w-works li { float: left; margin: 0 5px 5px 0; width: 204px; height: 240px; overflow: hidden; position: relative; background-color: #fff; }
+
+.w-worklist .w-works li a { display: block; }
+
+.w-worklist .w-works li a img { width: 100%; height: 100%; display: block; }
+
+.w-worklist .w-works li:hover .w-work-imga { opacity: .6; }
+
+.w-worklist .w-works li:hover .w-work-title, .w-worklist .w-works li:hover .w-work-author { display: block; }
+
+.w-worklist .w-works .w-work-imga { width: 100%; height: 100%; }
+
+.w-worklist .w-works .w-work-title { position: absolute; height: 44px; top: 0; display: none; left: 0; width: 100%; padding: 0 7px; box-sizing: border-box; line-height: 44px; color: #fff; font-size: 16px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; background-color: rgba(0, 0, 0, 0.2); }
+
+.w-worklist .w-works .w-work-author { position: absolute; width: 100px; height: 100px; bottom: 5px; right: 5px; display: none; }
+
+.w-worklist .w-works .w-work-author img { border-radius: 50%; }
+
+.w-waterfall { border-left: 3px solid #fff; border-bottom: 3px solid #fff; padding-bottom: 34px; position: relative; }
+
+.w-waterfall:after { position: absolute; content: ""; background-color: #fff; width: 6px; display: block; height: 200px; right: -50px; top: 50%; margin-top: -100px; }
+
+.w-waterfall .w-waterfall-items { overflow: hidden; margin-left: 37px; width: 1080px; }
+
+.w-waterfall .w-waterfall-items li { float: left; margin-right: 40px; width: 320px; overflow: hidden; }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item { margin-bottom: 40px; background-color: #fff; overflow: hidden; }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-imga { display: block; overflow: hidden; position: relative; }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-imga img { display: block; width: 100%; -webkit-transition: -webkit-transform .4s ease; transition: -webkit-transform .4s ease; transition: transform .4s ease; transition: transform .4s ease, -webkit-transform .4s ease; }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-imga span { display: block; position: absolute; bottom: 0; left: 15px; width: 290px; background-color: #fff; box-sizing: border-box; padding: 11px 17px; line-height: 24px; font-size: 16px; color: #000; }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item:hover .w-waterfall-imga img { -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-text { margin: 18px; font-size: 14px; color: #b2b2b2; line-height: 22px; font-size: 14px; }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-tips { margin: 18px; text-align: center; }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-tips a { display: inline-block; padding: 1px 6px; line-height: 20px; color: #fff; margin: 4px; background-color: #adadad; font-size: 12px; }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-tips a:hover { background-color: #a6d6dc; }
+
 .c-scores { width: 1000px; margin: 40px auto; overflow: hidden; font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
 
 .c-scores li { width: 248px; border-right: 2px solid #fafafa; float: left; height: 70px; }
