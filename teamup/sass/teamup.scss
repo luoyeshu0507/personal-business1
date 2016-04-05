@@ -397,6 +397,7 @@ body{
 					color:#fff;
 					text-align: center;
 					font-size:14px;
+					width:400px;
 					margin:28px auto auto 24px;
 					i{
 						display:block;
@@ -441,6 +442,35 @@ body{
 						border-radius: 19px;
 						background-color: #f28d90;
 						line-height: 38px;
+					}
+					.t-num{
+						font-size: 12px;
+						overflow:hidden;
+						margin:auto;
+						float:left;
+						line-height: 12px;
+						margin: 12px 0 0 20px;
+						span,b{
+							display:block;
+							float:left;
+						}
+						span{
+							width:100px;
+							strong{
+								border:1px solid #ef595d;
+								display:block;
+								overflow:hidden;
+								em{
+									display:block;
+									height:12px;
+									background-color: #ef595d;
+								}
+							}
+						}
+						b{
+							width:40px;
+							color:#ef595d;
+						}
 					}
 				}
 				.t-user-info{
@@ -723,8 +753,9 @@ body{
 					float:left;
 					width:50%;
 					cursor:pointer;
+					background-color:#e3e4e5;
 					&.on{
-						background-color:#e3e4e5;
+						background-color:#fff;
 					}
 				}
 			}

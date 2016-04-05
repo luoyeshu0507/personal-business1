@@ -1,47 +1,11 @@
-var cList={
+var gList={
     init:function(){
         this.badgesEvent(); //badges's hover and click events
-        this.monthSelector(); //month selector event
-        this.listCircleProcesser(); //list's circle processer
-        this.listDetailShow(); //list's detail click to show or hide
+        this.authorSelector(); //author selector event
         this.someVisionEvent(); //some event which will ont be changed by ajax
-        this.displayImage(); //display one image when clicked on fullscreen
         this.like(); //like,collect,share..
     },
-    badgesSwipe:function(){ //competition list badges swiper
-        $('.c-list-middle .swiper-container').each(function(){
-            $(this).swiper({
-                nextButton: $(this).find('.swiper-button-next'),
-                prevButton: $(this).find('.swiper-button-prev'),
-                slidesPerView: 5,
-                slidesPerGroup : 5,
-                freeMode: true
-            });
-        });
-    },
-    listCircleProcesser:function(){ //list's circle processer
-        $('.c-container').on('mouseenter','.c-list-imgswrap span',function(){
-            if($(this).find('canvas').length) return;
-            var score=$(this).data('score');
-            var vote=$(this).data('vote');
-            var $em=$(this).find('em');
-            var $b=$em.find("b");
-            var $strong=$em.find("strong");
-            $em.circleProgress({
-                value: score/10,
-                size: 72,
-                thickness:9,
-                fill: {
-                    gradient: ["#4dbf84"]
-                },
-                emptyFill:'#cceddc'
-            }).on('circle-animation-progress',function(event, animationProgress, stepValue){
-                $b.html((animationProgress*score).toFixed(1));
-                $strong.html((animationProgress*vote).toFixed(0));
-            });
-        });
-    },
-    monthSelector:function(){ //month selector event
+    authorSelector:function(){ //month selector event
         $('.c-list-month li').click(function(){
             var $self=$(this);
             var $list=$('.c-list-month li');
@@ -71,105 +35,57 @@ var cList={
             }
         }); 
     },
-    listDetailShow:function(){ //list's detail click to show or hide
-        $('.c-container').on("click",".c-list-openbtn",function(){
-            var $self=$(this);
-            var $parent=$self.parents(".c-list-wrap");
-            $parent.find('.c-list-hiddenpart').stop().slideToggle();
-            if($self.html()=="展开") {
-                cList.ajaxCompeitionWorks($parent);
-                $self.html('收起');
-                $parent.find('.c-list-detail').animate({'max-height':'300px'},300);
-            } else {
-                $self.html('展开');
-                $parent.find('.c-list-detail').animate({'max-height':'140px'},300);
-            }
-        });
-    },
     badgesEvent:function(){ //badges's hover and click events
         var $bigbadge=$('.c-list-bigbadge');
         var $badgeText=$('.c-list-badgetext');
         $('.c-list-badgewrap span').mouseover(function() {
             var $self=$(this);
-            $self.css("z-index",'1').siblings().css('z-index','auto');
             $bigbadge.attr('src',$self.find('img').attr('src'));
             $badgeText.html($self.data('note'));
         }).click(function(){
-            $(this).toggleClass('c-badge-active');
+            var $self=$(this);
+            $self.toggleClass('c-badge-active');
+            if($self.is("#weekly_star")){
+                $self.siblings().removeClass('c-badge-active');
+            } else{
+                $("#weekly_star").removeClass('c-badge-active');
+            }
+            gList.ajaxAuthorList();
         });
     },
     someVisionEvent:function(){ //some event which will ont be changed by ajax
-        //years swiper
-        $('.c-list-years').swiper({
-            slidesPerView: 3,
-            slidesPerGroup : 3,
-            centeredSlides: false,
-            spaceBetween: 0,
-            nextButton: $('.c-list-years').find('.swiper-next'),
-            prevButton: $('.c-list-years').find('.swiper-prev')
-        }).slideTo(100,0);
-        $('.c-list-years').find('.swiper-slide').click(function(){
-            $(this).addClass("c-year-active").siblings().removeClass('c-year-active');
-        }).last().addClass("c-year-active");
-
-        //badges swiper
-        $('.c-list-badges-swiper span,.c-list-badges-swiper i').click(function(){
-            cList.swipBadges($(this).data('direction'));
-        });
-
-        $(".c-container").on("mouseover",'.c-list-right li',function(){
-            $(this).css('max-height','none');
-        }).end().on("mouseout",'.c-list-right li',function(){
-            $(this).css('max-height','36px');
-        })
-
+        gList.ajaxAuthorList();  //ajax author list
+        return;
         //selector
         $('.c-list-badgewrap span,.c-list-month li,.c-list-years .swiper-slide').click(this.selector);
         this.selector();
     },
-    swipBadges:function(direction){ //swip Badges
-        var $badges=$('.c-list-badgewrap span');
-        var $shownBadges=$badges.not(":hidden");
-        var $nextall=$shownBadges.last().nextAll();
-        var $prevall=$shownBadges.first().prevAll();
-        var len=8;
-        $badges.stop(true,true).fadeOut(200);
-        if(direction=='prev'){
-            if($prevall.length>0){
-                $prevall.slice(-len).stop(true,true).fadeIn(200);
-            } else {
-                var last=$badges.length%len||len;
-                $badges.slice(-last).stop(true,true).fadeIn(200);
-            }
-        } else if(direction=='next'){
-            if($nextall.length>0){
-                $nextall.slice(0,len).stop(true,true).fadeIn(200);
-            } else {
-                $badges.slice(0,len).stop(true,true).fadeIn(200);
-            }
+    ajaxAuthorList:function(){
+        var o={
+            badge:[]
+        };
+        var i=0,len=0;
+        var $activeBadges=$(".c-list-badgewrap .c-badge-active");
+        for(i=0,len=$activeBadges.length;i<len;i++){
+            o.badge.push($activeBadges.eq(i).data('name'));
         }
-    },
-    swipListImgs:function(){ // swip ListImgs
-        $('.c-list-listimgs').swiper({
-            pagination: '.swiper-pagination',
-            slidesPerView: 6,
-            slidesPerGroup : 6,
-            centeredSlides: false,
-            paginationClickable: true,
-            spaceBetween: 28
-        });
-    },
-    displayImage:function(){
-        $('body').on('click','.c-list-listimgs .swiper-slide img,.c-list-img img',function(){
-            $body=$('body').append($('<div id="c-display-imgbg"></div>'))
-            .append($('<div class="c-display-imgwrap"></div>').append($('<img>').attr('src',$(this).attr('src'))));
-            $('#c-display-imgbg,.c-display-imgwrap').click(function(){
-                $('#c-display-imgbg,.c-display-imgwrap').remove();
-            });
-            $('.c-display-imgwrap img').click(function(){
-                return false;
-            });
-            return false;
+        $.ajax({
+            url: "http://139.196.195.4/gallery/artist",
+            type:'POST',
+            dataType:"JSONP",
+            jsonp:"callbackparam",
+            data: o,
+            success: function(data){
+                if(data.result=="success"){
+                    console.log(data);
+                    // gList.renderCompetitionList(data);
+                } else{
+                    console.log('ajaxAuthorList error');
+                }
+            },
+            error:function(e){
+                console.log('ajaxAuthorList error');
+            }
         });
     },
     selector:function(){ // the selector event on the top of the page
@@ -192,7 +108,7 @@ var cList={
             postdata.end_month=$month.last().index()+1;
         }
         postdata.year=parseInt($(".c-year-active").text());
-        cList.ajaxCompeitionList(postdata);
+        gList.ajaxCompeitionList(postdata);
     },
     ajaxCompeitionList:function(o){ // ajax for the competition's list after selector
         $.ajax({
@@ -204,7 +120,7 @@ var cList={
             success: function(data){
                 if(data.result=="success"){
                     console.log(data);
-                    cList.renderCompetitionList(data);
+                    gList.renderCompetitionList(data);
                 } else{
                     console.log('get competition list error');
                 }
@@ -241,7 +157,7 @@ var cList={
                                 '<div class="swiper-button-prev"></div>'+
                             '</div>'+
                             '<p class="c-list-detail">'+list[i].content+'</p>'+
-                            '<a href="javascript:void(0);" class="c-list-openbtn">展开</a>'+
+                            '<a href="javascript:void(0);" class="c-list-openbtn">展开作品</a>'+
                             '<ul class="c-list-likes">'+
                                 '<li>'+
                                     '<a href="javascript:void(0);" data-interaction="0" class="g-icon g-icon-heart"></a>'+
@@ -301,8 +217,6 @@ var cList={
         }
         $('#c-competition-list').html(listhtml);
         $('.c-list-listimgs .swiper-wrapper').html(imgshtml);
-        cList.badgesSwipe(); //competition list badges swiper
-        cList.swipListImgs(); //swipe list images
     },
     ajaxCompeitionWorks:function($obj){ //after click '展开作品', get the works with ajax
         var cid=$obj.data('id');
@@ -379,5 +293,5 @@ var cList={
 
 
 $(function(){
-    cList.init(); //start js
+    gList.init(); //start js
 });
