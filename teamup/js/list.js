@@ -134,7 +134,7 @@ var tList={
                             '<a href="http://139.196.195.4/team/detail/'+list[i].team_id+'" target="_blank" class="c-list-img '+(list[i].open_status ? 'c-list-closed':'')+'">'+
                                 '<img src="'+list[i].team_cover+'">'+
                             '</a>'+
-                            '<div class="c-list-middle">'+
+                            '<div class="c-list-middle"><div style="width:100%;margin-left:20px;">'+
                                 '<h3>'+list[i].title+'</h3>'+
                                 '<div class="swiper-container">'+
                                     '<div class="swiper-wrapper">'+
@@ -166,7 +166,7 @@ var tList={
                                         '<i>报名时间：</i>'+
                                         '<em>'+list[i].start_time.split(' ')[0]+'</em>'+
                                     '</li>'+
-                                '</ul>'+
+                                '</ul></div>'+
                                 '<p class="c-list-detail">'+list[i].content+'</p>'+
                                 '<div class="t-user-info">'+
                                     '<a href="'+list[i].author_url+'" class="t-user-img">'+

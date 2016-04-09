@@ -204,7 +204,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .t-richtext-container .t-richtext-left .t-item { padding: 24px 40px; background-color: #fff; border-radius: 10px; margin-bottom: 15px; }
 
-.t-richtext-container .t-richtext-left .t-item h1 { line-height: 40px; font-size: 24px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 40px; }
+.t-richtext-container .t-richtext-left .t-item h1 { line-height: 40px; font-size: 26px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 40px; }
 
 .t-richtext-container .t-richtext-left .t-item .t-sub-title { color: #7f7f82; font-size: 14px; line-height: 28px; }
 
