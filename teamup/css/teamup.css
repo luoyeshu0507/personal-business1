@@ -184,20 +184,6 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-container .c-list-wrap .c-list-shownpart .c-list-right li em b { font-weight: 700; }
 
-.c-scores { width: 1000px; margin: 40px auto; overflow: hidden; font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
-
-.c-scores li { width: 248px; border-right: 2px solid #fafafa; float: left; height: 70px; }
-
-.c-scores li:last-child { border-right: none; }
-
-.c-scores li em, .c-scores li i { float: right; width: 160px; line-height: 320px; margin-right: 10px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-overflow: clip; }
-
-.c-scores li em { color: #EA2127; font-size: 36px; line-height: 44px; font-weight: 100; text-align: center; }
-
-.c-scores li i { font-size: 18px; text-align: center; line-height: 24px; color: #ABAAAB; font-weight: 300; }
-
-.c-scores li .g-icon { margin: 22px 0 0 48px; float: left; }
-
 .t-richtext-container { margin: 60px auto; }
 
 .t-richtext-container .t-richtext-left { width: 845px; float: left; }

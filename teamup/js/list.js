@@ -8,6 +8,14 @@ var tList={
         this.badgesSwipe();
         this.followSomeone();
         this.loadmoreEvent();
+        this.gobacktop();
+    },
+    gobacktop:function(){
+        var $gobackbtn=$('<div class="go-top-btn"><i class="g-icon g-icon-gotop"></i></div>');
+        $("body").append($gobackbtn);
+        $gobackbtn.click(function(){
+            $("body,html").animate({'scrollTop':0}, 200);
+        });
     },
     badgesSwipe:function(){ //competition list badges swiper
         $('.c-list-middle .swiper-container').each(function(){

@@ -22,6 +22,12 @@
 	src: local('Oswald Bold'), local('Oswald-Bold'), url(https://fonts.gstatic.com/s/oswald/v10/bH7276GfdCjMjApa_dkG6ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
 }
 
+@mixin cliptext{
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+
 /* common css */
 .g-container{
 	width: 1080px;
@@ -67,25 +73,61 @@ body{
 	background: url("../images/icons.png") no-repeat;
 }
 .g-icon-fav{
-	background-position: 2px 0;
+	width:40px;
+	height:40px;
+	background: url("../images/star.png") no-repeat;
 }
 .g-icon-comments{
-	background-position: -31px 0;
+	width:40px;
+	height:40px;
+	background: url("../images/comment.png") no-repeat;
 }
 .g-icon-likes{
-	background-position: -67px -1px;
+	width:40px;
+	height:40px;
+	background: url("../images/heart.png") no-repeat;
 }
 .g-icon-uploads{
+	width:40px;
+	height:40px;
+	background: url("../images/upload.png") no-repeat;
+}
+.g-icon-gotop{
 	background-position: -103px -1px;
 }
 .g-icon-heart{
-	background-position: 6px -74px;
+	background: url("../images/heart.png") no-repeat center;
+	background-size:20px;
+	opacity:.5;
+	&:hover{
+		opacity:1;
+	}
+	&.on{
+		background-image:url("../images/heartcolor.png");
+		opacity:1;
+	}
 }
 .g-icon-see{
-	background-position: -37px -74px;
+	background: url("../images/star.png") no-repeat center;
+	background-size:20px;
+	opacity:.5;
+	&:hover{
+		opacity:1;
+	}
+	&.on{
+		background-image:url("../images/starcolor.png");
+		opacity:1;
+	}
 }
 .g-icon-share{
-	background-position: -81px -74px;
+	background: url("../images/share.png") no-repeat center;
+	background-size:20px;
+	opacity:.5;
+	transition:all .3s ease;
+	&:hover{
+		opacity:1;
+		transform:rotate(90deg);
+	}
 }
 .g-icon-refresh{
 	width:36px;
@@ -175,5 +217,57 @@ body{
 		cursor:pointer;
 	}
 }
+.go-top-btn{
+	position:fixed;
+	left:50%;
+	bottom:40px;
+	margin-left:560px;
+	height:26px;
+	width:26px;
+	cursor:pointer;
+}
 
+.c-scores{
+	width: 1000px;
+	margin: 40px auto;
+	overflow:hidden;
+	font-family:Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	li{
+		width:248px;
+		border-right: 2px solid #fafafa;
+		float:left;
+		height:70px;
+		&:last-child{
+			border-right: none;
+		}
+		em,i{
+			float:right;
+			width:156px;
+			line-height: 320px;
+			margin-right: 10px;
+			@include cliptext;
+			text-overflow:clip;
+		}
+		em{
+			color: #EA2127;
+			font-size: 36px;
+			line-height: 44px;
+			font-weight: 100;
+			text-align: center;
 
+		}
+		i{
+			font-size: 18px;
+			text-align: center;
+			line-height: 24px;
+			color: #ABAAAB;
+			font-weight: 300;
+		}
+		.g-icon{
+			margin:13px 0 0 38px;
+			float:left;
+			opacity:.4;
+			transform:scale(.7);
+		}
+	}
+}

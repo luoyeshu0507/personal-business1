@@ -6,6 +6,14 @@ var tTeam={
         this.getCommentList(1);
         this.comment();
         this.ajaxPositionList();
+        this.gobacktop();
+    },
+    gobacktop:function(){
+        var $gobackbtn=$('<div class="go-top-btn"><i class="g-icon g-icon-gotop"></i></div>');
+        $("body").append($gobackbtn);
+        $gobackbtn.click(function(){
+            $("body,html").animate({'scrollTop':0}, 200);
+        });
     },
     richtextSwiper:function(){
         $('.t-switcher li').click(function(){

@@ -77,19 +77,31 @@ body { background-color: #efeeec; font-size: 16px; }
 
 .g-icon { display: inline-block; width: 26px; height: 26px; background: url("../images/icons.png") no-repeat; }
 
-.g-icon-fav { background-position: 2px 0; }
+.g-icon-fav { width: 40px; height: 40px; background: url("../images/star.png") no-repeat; }
 
-.g-icon-comments { background-position: -31px 0; }
+.g-icon-comments { width: 40px; height: 40px; background: url("../images/comment.png") no-repeat; }
 
-.g-icon-likes { background-position: -67px -1px; }
+.g-icon-likes { width: 40px; height: 40px; background: url("../images/heart.png") no-repeat; }
 
-.g-icon-uploads { background-position: -103px -1px; }
+.g-icon-uploads { width: 40px; height: 40px; background: url("../images/upload.png") no-repeat; }
 
-.g-icon-heart { background-position: 6px -74px; }
+.g-icon-gotop { background-position: -103px -1px; }
 
-.g-icon-see { background-position: -37px -74px; }
+.g-icon-heart { background: url("../images/heart.png") no-repeat center; background-size: 20px; opacity: .5; }
 
-.g-icon-share { background-position: -81px -74px; }
+.g-icon-heart:hover { opacity: 1; }
+
+.g-icon-heart.on { background-image: url("../images/heartcolor.png"); opacity: 1; }
+
+.g-icon-see { background: url("../images/star.png") no-repeat center; background-size: 20px; opacity: .5; }
+
+.g-icon-see:hover { opacity: 1; }
+
+.g-icon-see.on { background-image: url("../images/starcolor.png"); opacity: 1; }
+
+.g-icon-share { background: url("../images/share.png") no-repeat center; background-size: 20px; opacity: .5; -webkit-transition: all .3s ease; transition: all .3s ease; }
+
+.g-icon-share:hover { opacity: 1; -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
 
 .g-icon-refresh { width: 36px; height: 29px; background-position: -89px -103px; }
 
@@ -114,3 +126,19 @@ body { background-color: #efeeec; font-size: 16px; }
 .g-alert-content .g-alert-btns i { background-color: #5CB85C; border: 1px solid #c7e6c7; }
 
 .loadmore span { display: block; height: 23px; width: 100px; margin: 0 auto; background: url("../images/icons.png") no-repeat -100px -146px; color: #fff; text-align: right; line-height: 23px; cursor: pointer; }
+
+.go-top-btn { position: fixed; left: 50%; bottom: 40px; margin-left: 560px; height: 26px; width: 26px; cursor: pointer; }
+
+.c-scores { width: 1000px; margin: 40px auto; overflow: hidden; font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
+
+.c-scores li { width: 248px; border-right: 2px solid #fafafa; float: left; height: 70px; }
+
+.c-scores li:last-child { border-right: none; }
+
+.c-scores li em, .c-scores li i { float: right; width: 156px; line-height: 320px; margin-right: 10px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-overflow: clip; }
+
+.c-scores li em { color: #EA2127; font-size: 36px; line-height: 44px; font-weight: 100; text-align: center; }
+
+.c-scores li i { font-size: 18px; text-align: center; line-height: 24px; color: #ABAAAB; font-weight: 300; }
+
+.c-scores li .g-icon { margin: 13px 0 0 38px; float: left; opacity: .4; -webkit-transform: scale(0.7); -ms-transform: scale(0.7); transform: scale(0.7); }

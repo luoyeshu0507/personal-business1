@@ -62,7 +62,7 @@ var gList={
     },
     ajaxAuthorList:function(){
         var o={
-            badge:[]
+            badge:["magazine_weekly_star","gallery_controversy"]
         };
         var i=0,len=0;
         var $activeBadges=$(".c-list-badgewrap .c-badge-active");

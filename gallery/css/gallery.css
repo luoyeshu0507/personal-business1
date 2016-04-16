@@ -5,7 +5,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-list-selector .g-container { margin-top: 50px; min-height: 200px; position: relative; }
 
-.c-list-selector .g-container .g-icon-refresh { display: block; position: absolute; right: 20px; top: 200px; cursor: pointer; }
+.c-list-selector .g-container .g-icon-refresh { display: block; position: absolute; right: -61px; top: 200px; cursor: pointer; }
 
 .c-list-selector .g-container .c-list-badges { width: 351px; height: 540px; float: left; background: url("../images/badgesbg.png") no-repeat; position: relative; }
 
@@ -71,7 +71,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-list-selector .g-container .gl-artist-imglist { width: 672px; float: right; }
 
-.c-list-selector .g-container .gl-artist-imglist li { float: left; width: 146px; border-left: 2px solid #fff; text-align: center; color: #808083; height: 154px; }
+.c-list-selector .g-container .gl-artist-imglist li { float: left; width: 166px; border-left: 2px solid #fff; text-align: center; color: #808083; height: 154px; }
 
 .c-list-selector .g-container .gl-artist-imglist li a { border: 3px solid #fff; border-radius: 50%; display: block; width: 104px; height: 104px; margin: 0 auto; }
 
@@ -167,37 +167,25 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .w-waterfall .w-waterfall-items li { float: left; margin-right: 40px; width: 320px; overflow: hidden; }
 
-.w-waterfall .w-waterfall-items li .w-waterfall-item { margin-bottom: 40px; background-color: #fff; overflow: hidden; }
+.w-waterfall .w-waterfall-items li .w-waterfall-item { margin-bottom: 10px; overflow: hidden; }
 
 .w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-imga { display: block; overflow: hidden; position: relative; }
 
 .w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-imga img { display: block; width: 100%; -webkit-transition: -webkit-transform .4s ease; transition: -webkit-transform .4s ease; transition: transform .4s ease; transition: transform .4s ease, -webkit-transform .4s ease; }
 
-.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-imga span { display: block; position: absolute; bottom: 0; left: 15px; width: 290px; background-color: #fff; box-sizing: border-box; padding: 11px 17px; line-height: 24px; font-size: 16px; color: #000; }
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-textwrap { margin: -30px 15px 30px; background-color: #fff; z-index: 1; position: relative; overflow: hidden; box-shadow: 0px 2px 6px 0px rgba(163, 163, 163, 0.48); }
+
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-textwrap .w-waterfall-title { background-color: #fff; margin: 11px 17px; line-height: 24px; font-size: 16px; max-height: 72px; display: block; text-align: center; overflow: hidden; color: #777; font-weight: 500; }
 
 .w-waterfall .w-waterfall-items li .w-waterfall-item:hover .w-waterfall-imga img { -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); }
 
-.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-text { margin: 18px; font-size: 14px; color: #b2b2b2; line-height: 22px; font-size: 14px; }
+.w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-text { margin: 10px 18px; font-size: 14px; color: #404040; line-height: 22px; max-height: 88px; overflow: hidden; font-size: 14px; }
 
 .w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-tips { margin: 18px; text-align: center; }
 
 .w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-tips a { display: inline-block; padding: 1px 6px; line-height: 20px; color: #fff; margin: 4px; background-color: #adadad; font-size: 12px; }
 
 .w-waterfall .w-waterfall-items li .w-waterfall-item .w-waterfall-tips a:hover { background-color: #a6d6dc; }
-
-.c-scores { width: 1000px; margin: 40px auto; overflow: hidden; font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
-
-.c-scores li { width: 248px; border-right: 2px solid #fafafa; float: left; height: 70px; }
-
-.c-scores li:last-child { border-right: none; }
-
-.c-scores li em, .c-scores li i { float: right; width: 160px; line-height: 320px; margin-right: 10px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-overflow: clip; }
-
-.c-scores li em { color: #EA2127; font-size: 36px; line-height: 44px; font-weight: 100; text-align: center; }
-
-.c-scores li i { font-size: 18px; text-align: center; line-height: 24px; color: #ABAAAB; font-weight: 300; }
-
-.c-scores li .g-icon { margin: 22px 0 0 48px; float: left; }
 
 .d-comment dl { width: 900px; margin: 20px auto; overflow: hidden; padding-left: 34px; font-weight: 300; }
 

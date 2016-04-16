@@ -597,48 +597,6 @@ body{
 }
 
 
-.c-scores{
-	width: 1000px;
-	margin: 40px auto;
-	overflow:hidden;
-	font-family:Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-	li{
-		width:248px;
-		border-right: 2px solid #fafafa;
-		float:left;
-		height:70px;
-		&:last-child{
-			border-right: none;
-		}
-		em,i{
-			float:right;
-			width:160px;
-			line-height: 320px;
-			margin-right: 10px;
-			@include cliptext;
-			text-overflow:clip;
-		}
-		em{
-			color: #EA2127;
-			font-size: 36px;
-			line-height: 44px;
-			font-weight: 100;
-			text-align: center;
-
-		}
-		i{
-			font-size: 18px;
-			text-align: center;
-			line-height: 24px;
-			color: #ABAAAB;
-			font-weight: 300;
-		}
-		.g-icon{
-			margin:22px 0 0 48px;
-			float:left;
-		}
-	}
-}
 #c-display-imgbg{
 	position:fixed;
 	top:0;
