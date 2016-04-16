@@ -112,3 +112,5 @@ body { background-color: #efeeec; font-size: 16px; }
 .g-alert-content .g-alert-btns em { margin-right: 20px; background-color: #E85C5F; border: 1px solid #f5b5b7; }
 
 .g-alert-content .g-alert-btns i { background-color: #5CB85C; border: 1px solid #c7e6c7; }
+
+.loadmore span { display: block; height: 23px; width: 100px; margin: 0 auto; background: url("../images/icons.png") no-repeat -100px -146px; color: #fff; text-align: right; line-height: 23px; cursor: pointer; }

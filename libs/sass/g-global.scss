@@ -162,6 +162,18 @@ body{
 		}
 	}
 }
-
+.loadmore{
+	span{
+		display:block;
+		height:23px;
+		width:100px;
+		margin:0 auto;
+		background:url("../images/icons.png") no-repeat -100px -146px;
+		color:#fff;
+		text-align:right;
+		line-height:23px;
+		cursor:pointer;
+	}
+}
 
 

@@ -1,10 +1,13 @@
 var tList={
+    pageIndex:1,
+    pageSize:10,
     init:function(){
         this.badgesEvent(); //badges's hover and click events
         this.monthSelector(); //month selector event
         this.someVisionEvent(); //some event which will ont be changed by ajax
         this.badgesSwipe();
         this.followSomeone();
+        this.loadmoreEvent();
     },
     badgesSwipe:function(){ //competition list badges swiper
         $('.c-list-middle .swiper-container').each(function(){
@@ -15,6 +18,11 @@ var tList={
                 slidesPerGroup : 5,
                 freeMode: true
             });
+        });
+    },
+    loadmoreEvent:function(){
+        $(".c-container").on("click",".loadmore span",function(){
+            tList.selector(1);
         });
     },
     monthSelector:function(){ //month selector event
@@ -79,17 +87,21 @@ var tList={
         });
 
         //selector
-        $('.c-list-badgewrap span,.t-months i,.c-list-years .swiper-slide').click(this.selector);
+        $('.c-list-badgewrap span,.t-months i,.c-list-years .swiper-slide').click(function(){
+            tList.selector();
+        });
         this.selector();
     },
-    selector:function(){ // the selector event on the top of the page
+    selector:function(page){ // the selector event on the top of the page
+        tList.pageIndex=page&&(tList.pageIndex+1)||1;
         var postdata={
             badge:[],
+            page_num:tList.pageIndex,
             start_month:1,
             end_month:12,
-            page_size:100,
-            page_num:1,
-            year:2016
+            page_size:tList.pageSize,
+            year:2016,
+            location:bound_location
         };
         var i=0,len=0;
         var $activeBadges=$(".c-list-badgewrap .c-badge-active");
@@ -113,7 +125,6 @@ var tList={
             data: o,
             success: function(data){
                 if(data.result=="success"){
-                    console.log(data);
                     tList.renderTeamupList(data);
                 } else{
                     console.log('get teamup list error');
@@ -125,9 +136,14 @@ var tList={
         });
     },
     renderTeamupList:function(data){ //render the competition list data got by ajax
+        console.log(1,tList.pageIndex);
         var list=data.team;
         var listhtml='';
         var imgshtml='';
+        var $con=$('#c-competition-list');
+        if(tList.pageIndex==1){
+            $con.html("");
+        }
         for(var i=0;i<list.length;i++){
             listhtml+='<li data-id="'+list[i].team_id+'" class="c-list-wrap">'+
                         '<div class="c-list-shownpart">'+
@@ -195,7 +211,11 @@ var tList={
                         '</div>'+
                     '</li>';
         }
-        $('#c-competition-list').html(listhtml);
+        $('.loadmore').remove();
+        $con.append(listhtml);
+        if(tList.pageIndex*tList.pageSize<data.total_num){
+            $con.append('<li class="loadmore"><span>LOAD MORE</span></li>');
+        }
         tList.badgesSwipe(); //competition list badges swiper
     },
     swipBadges:function(direction){ //swip Badges
