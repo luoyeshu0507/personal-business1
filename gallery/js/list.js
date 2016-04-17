@@ -1,9 +1,44 @@
 var gList={
+    pageIndex:1,
+    pageSize:10,
     init:function(){
         this.badgesEvent(); //badges's hover and click events
         this.authorSelector(); //author selector event
         this.someVisionEvent(); //some event which will ont be changed by ajax
         this.like(); //like,collect,share..
+        this.loadmoreEvent();
+        this.followSomeone();
+    },
+    followSomeone:function(){ //follow someone or unfollow someone
+        $('.c-container').on("click",".t-user-info button",function(){
+            var $self=$(this);
+            var o={
+                "service_id": $self.data('id'),
+                "current_user": current_user
+            }
+            $.ajax({
+                url: "http://139.196.195.4/follow",
+                type:'POST',
+                dataType:"JSONP",
+                jsonp:"callbackparam",
+                data: o,
+                success: function(data){
+                    if(data.result=='success'){
+                        $self.toggleClass('d-disabled');
+                    } else{
+                        console.log('follow error');
+                    }
+                },
+                error:function(e){
+                    console.log('follow error');
+                }
+            });
+        });
+    },
+    loadmoreEvent:function(){
+        $(".c-container").on("click",".loadmore span",function(){
+            gList.ajaxGalleryList(1);
+        });
     },
     authorSelector:function(){ //month selector event
         $('.c-list-month li').click(function(){
@@ -55,14 +90,15 @@ var gList={
     },
     someVisionEvent:function(){ //some event which will ont be changed by ajax
         gList.ajaxAuthorList();  //ajax author list
-        return;
-        //selector
-        $('.c-list-badgewrap span,.c-list-month li,.c-list-years .swiper-slide').click(this.selector);
-        this.selector();
+        $(".g-icon-refresh").click(gList.ajaxAuthorList);
+        $(".gl-artist-imglist").on("click","li",function(){
+            $(this).toggleClass('on');
+            gList.ajaxGalleryList();
+        });
     },
     ajaxAuthorList:function(){
         var o={
-            badge:["magazine_weekly_star","gallery_controversy"]
+            badge:[]
         };
         var i=0,len=0;
         var $activeBadges=$(".c-list-badgewrap .c-badge-active");
@@ -77,8 +113,7 @@ var gList={
             data: o,
             success: function(data){
                 if(data.result=="success"){
-                    console.log(data);
-                    // gList.renderCompetitionList(data);
+                    gList.renderAuthorList(data);
                 } else{
                     console.log('ajaxAuthorList error');
                 }
@@ -88,39 +123,38 @@ var gList={
             }
         });
     },
-    selector:function(){ // the selector event on the top of the page
-        var postdata={
-            badge:[],
-            start_month:1,
-            end_month:12,
-            page_size:100,
-            page_num:1,
-            year:2016
-        };
-        var i=0,len=0;
-        var $activeBadges=$(".c-list-badgewrap .c-badge-active");
-        var $month=$('.c-list-month li.c-bright-point');
-        for(i=0,len=$activeBadges.length;i<len;i++){
-            postdata.badge.push($activeBadges.eq(i).data('name'));
+    renderAuthorList:function(data){
+        var html="";
+        var list=data.artists;
+        var len=Math.min(list.length,12);
+        for(var i=0;i<len;i++){
+            html+='<li data-id="'+list[i].artist_id+'"><a href="javascript:void(0);"><img src="'+list[i].artist_img+'" alt=""></a><span>'+list[i].artist_name+'</span></li>';
         }
-        if($month.length>0){
-            postdata.start_month=$month.eq(0).index()+1;
-            postdata.end_month=$month.last().index()+1;
-        }
-        postdata.year=parseInt($(".c-year-active").text());
-        gList.ajaxCompeitionList(postdata);
+        $(".gl-artist-imglist").html(html);
+        gList.ajaxGalleryList();
     },
-    ajaxCompeitionList:function(o){ // ajax for the competition's list after selector
+    ajaxGalleryList:function(page){ // ajax for the competition's list after selector
+        gList.pageIndex=page&&(gList.pageIndex+1)||1;
+        var o={
+            artist:[],
+            page_num:gList.pageIndex,
+            page_size:gList.pageSize,
+            type:2
+        };
+        if($("#weekly_star").hasClass('c-badge-active')) o.type=1;
+        var $artists=$(".gl-artist-imglist li");
+        for(var i=0;i<$artists.length;i++){
+            o.artist.push($artists.eq(i).data("id"));
+        }
         $.ajax({
-            url: "http://139.196.195.4/competition/homepage/list",
+            url: "http://139.196.195.4/gallery/artist/gallery",
             type:'POST',
             dataType:"JSONP",
             jsonp:"callbackparam",
             data: o,
             success: function(data){
                 if(data.result=="success"){
-                    console.log(data);
-                    gList.renderCompetitionList(data);
+                    gList.renderGalleryList(data);
                 } else{
                     console.log('get competition list error');
                 }
@@ -130,93 +164,79 @@ var gList={
             }
         });
     },
-    renderCompetitionList:function(data){ //render the competition list data got by ajax
-        var list=data.competition;
+    badgesSwipe:function(){ //competition list badges swiper
+        $('.swiper-container').each(function(){
+            $(this).swiper({
+                nextButton: $(this).find('.swiper-button-next'),
+                prevButton: $(this).find('.swiper-button-prev'),
+                direction: 'vertical',
+                slidesPerView: 5,
+                slidesPerGroup : 5,
+                freeMode: true
+            });
+        });
+    },
+    renderGalleryList:function(data){ //render the competition list data got by ajax
+        var list=data.galleries;
         var listhtml='';
-        var imgshtml='';
+        var $con=$('#c-competition-list');
+        if(gList.pageIndex==1){
+            $con.html("");
+        }
         for(var i=0;i<list.length;i++){
-            listhtml+='<li class="c-list-wrap" data-id="'+list[i].id+'">'+
-                    '<div class="c-list-shownpart">'+
-                        '<a href="#" target="_blank" class="c-list-img '+(list[i].open_status ? 'c-list-closed':'')+'">'+
-                            '<img src="'+list[i].img+'" alt="">'+
+            listhtml+='<li class="c-list-wrap">'+
+                        '<a class="ga-list-imga">'+
+                            '<img src="'+list[i].gallery_img+'">'+
                         '</a>'+
-                        '<div class="c-list-middle">'+
-                            '<h3>'+list[i].title+'</h3>'+
-                            '<div class="c-list-tip">'+list[i].type+'</div>'+
-                            '<div class="swiper-container">'+
-                                '<div class="swiper-wrapper">'+
-                                    (function(badges){
-                                        var html='';
-                                        for(var j=0;j<badges.length;j++){
-                                            html+='<div class="swiper-slide"><img src="'+badges[j]+'"></div>';
-                                        }
-                                        return html;
-                                    })(list[i].badge)+
-                                '</div>'+
-                                '<div class="swiper-button-next"></div>'+
-                                '<div class="swiper-button-prev"></div>'+
-                            '</div>'+
-                            '<p class="c-list-detail">'+list[i].content+'</p>'+
-                            '<a href="javascript:void(0);" class="c-list-openbtn">展开作品</a>'+
+                        '<div class="ga-list-text">'+
+                            '<h2>'+list[i].title+'</h2>'+
+                            '<div class="ga-list-subtitle">'+list[i].title+'</div>'+
+                            '<div class="ga-list-year">'+list[i].title+'</div>'+
+                            '<div class="ga-list-description">'+list[i].content+'</div>'+
                             '<ul class="c-list-likes">'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" data-interaction="0" class="g-icon g-icon-heart"></a>'+
-                                    '<i>'+list[i].like_num+'</i>'+
+                                    '<a href="javascript:void(0);" class="g-icon g-icon-heart"></a>'+
+                                    '<i>'+list[i].like_number+'</i>'+
                                 '</li>'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" data-interaction="1" class="g-icon g-icon-see"></a>'+
-                                    '<i>'+list[i].collect_num+'</i>'+
+                                    '<a href="javascript:void(0);" class="g-icon g-icon-see"></a>'+
+                                    '<i>'+list[i].comment_number+'</i>'+
                                 '</li>'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" data-interaction="4" class="g-icon g-icon-share"></a>'+
-                                    '<i>'+list[i].share_num+'</i>'+
+                                    '<a href="javascript:void(0);" class="g-icon g-icon-share"></a>'+
+                                    '<i>'+list[i].collect_number+'</i>'+
                                 '</li>'+
                             '</ul>'+
                         '</div>'+
-                        '<ul class="c-list-right">'+
-                            '<li>'+
-                                '<i>主办者：</i>'+
-                                '<em>'+list[i].organizer.join(" ")+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>赞助方/ainmal：</i>'+
-                                '<em>'+list[i].sponsor+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>参赛费用：</i>'+
-                                '<em>'+list[i].fee+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>评判标准：</i>'+
-                                '<em>'+list[i].rule+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>颁发奖项：</i>'+
-                                '<em>希特勒艺术基金 + Pigment</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>联络方式：</i>'+
-                                '<em>'+list[i].contact+'</em>'+
-                            '</li>'+
-                            '<li>'+
-                                '<i>收件期限：</i>'+
-                                '<em>截止到2016年5月7日（上传皆可评选）</em>'+
-                            '</li>'+
-                        '</ul>'+
-                    '</div>'+
-                    '<div class="c-list-hiddenpart clearfix">'+
-                        '<i class="c-list-arrow"></i>'+
-                        '<button class="c-list-subbtn">SUBMIT</button>'+
-                    '</div>'+
-                '</li>';
-            imgshtml+='<div class="swiper-slide">'+
-                            '<a href="javascript:void(0);">'+
-                                '<img src="'+list[i].img+'" alt="">'+
+                        '<div class="t-user-info">'+
+                            '<a href="'+list[i].author_link_url+'" class="t-user-img">'+
+                                '<img src="'+list[i].author_img+'">'+
                             '</a>'+
-                        '</div>';
+                            '<i>'+list[i].author_name+'</i>'+
+                            '<span>'+list[i].author_address+'</span>'+
+                            '<button data-id="'+list[i].author_id+'" class="'+(list[i].follow_flag?'d-disabled':'')+'">FOLLOW</button>'+
+                        '</div>'+
+                        '<div class="swiper-container">'+
+                            '<div class="swiper-wrapper">'+
+                                (function(list){
+                                    var h="";
+                                    for(var i=0;i<list.length;i++){
+                                        h+='<div class="swiper-slide"><img src="'+list[i]+'"></div>';
+                                    }
+                                    return h;
+                                })(list[i].author_badge)+
+                            '</div>'+
+                            '<div class="swiper-button-next"></div>'+
+                            '<div class="swiper-button-prev"></div>'+
+                        '</div>'+
+                    '</li>';
         }
-        $('#c-competition-list').html(listhtml);
-        $('.c-list-listimgs .swiper-wrapper').html(imgshtml);
+        $('.loadmore').remove();
+        $con.append(listhtml);
+        if(gList.pageIndex*gList.pageSize<data.total_num){
+            $con.append('<li class="loadmore"><span>LOAD MORE</span></li>');
+        }
+        gList.badgesSwipe(); //competition list badges swiper
     },
     ajaxCompeitionWorks:function($obj){ //after click '展开作品', get the works with ajax
         var cid=$obj.data('id');

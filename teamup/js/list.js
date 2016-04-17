@@ -144,7 +144,6 @@ var tList={
         });
     },
     renderTeamupList:function(data){ //render the competition list data got by ajax
-        console.log(1,tList.pageIndex);
         var list=data.team;
         var listhtml='';
         var imgshtml='';
