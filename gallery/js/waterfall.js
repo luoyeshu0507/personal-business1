@@ -1,8 +1,9 @@
-var gList={
+var wList={
     pageIndex:1,
     pageSize:10,
     type:1,
     typeChanged:false,
+    itemIndex:0,
     init:function(){
         this.badgesEvent(); //badges's hover and click events
         this.authorSelector(); //author selector event
@@ -39,10 +40,10 @@ var gList={
     },
     loadmoreEvent:function(){
         $("body").on("click",".loadmore span",function(){
-            if(gList.type==1){
-                gList.ajaxGalleryWeeklyStarList(1);
+            if(wList.type==1){
+                wList.ajaxGalleryWeeklyStarList(1);
             } else{
-                gList.ajaxGalleryStarList(1);
+                wList.ajaxGalleryStarList(1);
             }
         });
     },
@@ -79,7 +80,7 @@ var gList={
     badgesEvent:function(){ //badges's hover and click events
         var $bigbadge=$('.c-list-bigbadge');
         var $badgeText=$('.c-list-badgetext');
-        var $con=$("#c-competition-list,.w-worklist");
+        var $con=$("#c-competition-list,.w-waterfall");
         $('.c-list-badgewrap span').mouseover(function() {
             var $self=$(this);
             $bigbadge.attr('src',$self.find('img').attr('src'));
@@ -88,39 +89,39 @@ var gList={
             var $self=$(this);
             $self.toggleClass('c-badge-active');
             if($self.is("#weekly_star")){
-                if(gList.type==2){
-                    gList.type=1;
-                    gList.typeChanged=true;
+                if(wList.type==2){
+                    wList.type=1;
+                    wList.typeChanged=true;
                     $con.hide();
                 }
                 $self.addClass("c-badge-active").siblings().removeClass('c-badge-active');
             } else{
-                if(gList.type==1){
-                    gList.type=2;
-                    gList.typeChanged=true;
+                if(wList.type==1){
+                    wList.type=2;
+                    wList.typeChanged=true;
                     $con.hide();
                 }
                 if($('.c-badge-active:not("#weekly_star")').length==0){
                     $("#weekly_star").addClass('c-badge-active');
-                    gList.type=1;
-                    gList.typeChanged=true;
+                    wList.type=1;
+                    wList.typeChanged=true;
                     $con.hide();
                 } else{
                     $("#weekly_star").removeClass('c-badge-active');
                 }
             }
-            gList.ajaxAuthorList();
+            wList.ajaxAuthorList();
         });
     },
     someVisionEvent:function(){ //some event which will ont be changed by ajax
-        gList.ajaxAuthorList();  //ajax author list
-        $(".g-icon-refresh").click(gList.ajaxAuthorList);
+        wList.ajaxAuthorList();  //ajax author list
+        $(".g-icon-refresh").click(wList.ajaxAuthorList);
         $(".gl-artist-imglist").on("click","li",function(){
             $(this).toggleClass('on');
-            if(gList.type==1){
-                gList.ajaxGalleryWeeklyStarList();
+            if(wList.type==1){
+                wList.ajaxGalleryWeeklyStarList();
             } else{
-                gList.ajaxGalleryStarList();
+                wList.ajaxGalleryStarList();
             }
         });
     },
@@ -134,14 +135,14 @@ var gList={
             o.badge.push($activeBadges.eq(i).data('name'));
         }
         $.ajax({
-            url: "http://139.196.195.4/gallery/artist",
+            url: "http://139.196.195.4/magazines/artist",
             type:'POST',
             dataType:"JSONP",
             jsonp:"callbackparam",
             data: o,
             success: function(data){
                 if(data.result=="success"){
-                    gList.renderAuthorList(data);
+                    wList.renderAuthorList(data);
                 } else{
                     console.log('ajaxAuthorList error');
                 }
@@ -155,22 +156,23 @@ var gList={
         var html="";
         var list=data.artists;
         var len=Math.min(list.length,12);
+        console.log(data);
         for(var i=0;i<len;i++){
             html+='<li data-id="'+list[i].artist_id+'"><a href="javascript:void(0);"><img src="'+list[i].artist_img+'" alt=""></a><span>'+list[i].artist_name+'</span></li>';
         }
         $(".gl-artist-imglist").html(html);
-        if(gList.type==1){
-            gList.ajaxGalleryWeeklyStarList();
+        if(wList.type==1){
+            wList.ajaxGalleryWeeklyStarList();
         } else{
-            gList.ajaxGalleryStarList();
+            wList.ajaxGalleryStarList();
         }
     },
     ajaxGalleryWeeklyStarList:function(page){ // ajax for the competition's list after selector
-        gList.pageIndex=page&&(gList.pageIndex+1)||1;
+        wList.pageIndex=page&&(wList.pageIndex+1)||1;
         var o={
             artist:[],
-            page_num:gList.pageIndex,
-            page_size:gList.pageSize,
+            page_num:wList.pageIndex,
+            page_size:wList.pageSize,
             type:1
         };
         var $artists=$(".gl-artist-imglist li");
@@ -185,7 +187,7 @@ var gList={
             data: o,
             success: function(data){
                 if(data.result=="success"){
-                    gList.renderGalleryWeeklyStarList(data);
+                    wList.renderGalleryWeeklyStarList(data);
                 } else{
                     console.log('get competition list error');
                 }
@@ -199,10 +201,10 @@ var gList={
         var list=data.galleries;
         var listhtml='';
         var $con=$('#c-competition-list');
-        if(gList.pageIndex==1||gList.typeChanged){
+        if(wList.pageIndex==1||wList.typeChanged){
             $con.html("").show();
-            $(".w-worklist").hide();
-            gList.typeChanged=false;
+            $(".w-waterfall").hide();
+            wList.typeChanged=false;
         }
         for(var i=0;i<list.length;i++){
             listhtml+='<li class="c-list-wrap">'+
@@ -254,17 +256,17 @@ var gList={
         }
         $('.loadmore').remove();
         $con.append(listhtml);
-        if(gList.pageIndex*gList.pageSize<data.total_num){
+        if(wList.pageIndex*wList.pageSize<data.total_num){
             $con.append('<li class="loadmore"><span>LOAD MORE</span></li>');
         }
-        gList.badgesSwipe(); //competition list badges swiper
+        wList.badgesSwipe(); //competition list badges swiper
     },
     ajaxGalleryStarList:function(page){ // ajax for the competition's list after selector
-        gList.pageIndex=page&&(gList.pageIndex+1)||1;
+        wList.pageIndex=page&&(wList.pageIndex+1)||1;
         var o={
             artist:[1,3],
-            page_num:gList.pageIndex,
-            page_size:gList.pageSize+5,
+            page_num:wList.pageIndex,
+            page_size:wList.pageSize,
             type:2
         };
         var $artists=$(".gl-artist-imglist li");
@@ -272,14 +274,14 @@ var gList={
             o.artist.push($artists.eq(i).data("id"));
         }
         $.ajax({
-            url: "http://139.196.195.4/gallery/artist/gallery",
+            url: "http://139.196.195.4/magazines/artist/magazine",
             type:'POST',
             dataType:"JSONP",
             jsonp:"callbackparam",
             data: o,
             success: function(data){
                 if(data.result=="success"){
-                    gList.renderGalleryStarList(data);
+                    wList.renderGalleryStarList(data);
                 } else{
                     console.log('get competition list error');
                 }
@@ -290,27 +292,45 @@ var gList={
         });
     },
     renderGalleryStarList:function(data){ //render the competition list data got by ajax
-        var list=data.galleries;
-        var listhtml='';
-        var $con=$('.w-works');
-        if(gList.pageIndex==1||gList.typeChanged){
-            $con.html("").parent().show();
+        var list=data.magazines;
+        var listhtml={
+            html0:"",
+            html1:"",
+            html2:""
+        };
+        var $con=$('.w-waterfall-items li');
+        var rank=0;
+        if(wList.pageIndex==1||wList.typeChanged){
+            $con.html("").parent().parent().show();
             $('#c-competition-list').hide();
-            gList.typeChanged=false;
+            wList.typeChanged=false;
+            wList.itemIndex=0;
         }
+        console.log(data);
         for(var i=0;i<list.length;i++){
-            listhtml+='<li>'+
-                        '<a class="w-work-imga" href="'+list[i].gallery_detail_url+'"><img src="'+list[i].gallery_img+'" alt=""></a>'+
-                        '<a href="'+list[i].gallery_detail_url+'" class="w-work-title">'+list[i].title+'</a>'+
-                        '<a href="'+list[i].author_link_url+'" class="w-work-author"><img src="'+list[i].author_img+'" alt=""></a>'+
-                    '</li>';
+            rank=wList.itemIndex++%3;
+            listhtml["html"+rank]+='<div class="w-waterfall-item">'+
+                                        '<a href="'+list[i].magazine_detail_url+'" class="w-waterfall-imga">'+
+                                            '<img src="'+list[i].magazine_img+'" alt="">'+
+                                        '</a>'+
+                                        '<div class="w-waterfall-textwrap">'+
+                                            '<a href="'+list[i].magazine_detail_url+'" class="w-waterfall-title">'+list[i].title+'</a>'+
+                                            '<div class="w-waterfall-text">'+list[i].content+'</div>'+
+                                            '<div class="w-waterfall-tips">'+
+                                                '<a href="">food and drink</a>'+
+                                                '<a href="">ps</a>'+
+                                                '<a href="">people</a>'+
+                                            '</div>'+
+                                        '</div>'+
+                                    '</div>';
         }
         $('.loadmore').remove();
-        $con.append(listhtml);
-        if(gList.pageIndex*(gList.pageSize+5)<data.total_num){
-            $con.append('<li class="loadmore"><span>LOAD MORE</span></li>');
+        $con.eq(0).append(listhtml["html0"]);
+        $con.eq(1).append(listhtml["html1"]);
+        $con.eq(2).append(listhtml["html2"]);
+        if(wList.pageIndex*wList.pageSize<data.total_num){
+            $(".w-waterfall").append('<div class="loadmore"><span>LOAD MORE</span></div>');
         }
-        gList.badgesSwipe(); //competition list badges swiper
     },
     badgesSwipe:function(){ //competition list badges swiper
         $('.swiper-container').each(function(){
@@ -360,5 +380,5 @@ var gList={
 
 
 $(function(){
-    gList.init(); //start js
+    wList.init(); //start js
 });

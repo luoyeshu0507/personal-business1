@@ -95,6 +95,8 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-container .c-list-wrap .ga-list-text h2 { text-align: center; color: #221f1f; font-size: 22px; line-height: 24px; padding: 10px 0; }
 
+.c-container .c-list-wrap .ga-list-text .ga-list-subtitle { display: none; }
+
 .c-container .c-list-wrap .ga-list-text .ga-list-subtitle, .c-container .c-list-wrap .ga-list-text .ga-list-year { text-align: center; font-size: 16px; line-height: 24px; height: 24px; }
 
 .c-container .c-list-wrap .ga-list-text h2, .c-container .c-list-wrap .ga-list-text .ga-list-subtitle, .c-container .c-list-wrap .ga-list-text .ga-list-year { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
@@ -135,7 +137,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .c-container .c-list-wrap .swiper-container .swiper-button-prev { background-position: 6px -133px; top: 0; }
 
-.w-worklist { border-left: 3px solid #fff; border-bottom: 3px solid #fff; padding-bottom: 34px; position: relative; }
+.w-worklist { border-left: 3px solid #fff; border-bottom: 3px solid #fff; padding-bottom: 34px; position: relative; display: none; }
 
 .w-worklist:after { position: absolute; content: ""; background-color: #fff; width: 6px; display: block; height: 200px; right: -50px; top: 50%; margin-top: -100px; }
 
@@ -159,7 +161,7 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .w-worklist .w-works .w-work-author img { border-radius: 50%; }
 
-.w-waterfall { border-left: 3px solid #fff; border-bottom: 3px solid #fff; padding-bottom: 34px; position: relative; }
+.w-waterfall { border-left: 3px solid #fff; border-bottom: 3px solid #fff; padding-bottom: 34px; position: relative; display: none; }
 
 .w-waterfall:after { position: absolute; content: ""; background-color: #fff; width: 6px; display: block; height: 200px; right: -50px; top: 50%; margin-top: -100px; }
 

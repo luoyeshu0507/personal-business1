@@ -125,6 +125,8 @@ body { background-color: #efeeec; font-size: 16px; }
 
 .g-alert-content .g-alert-btns i { background-color: #5CB85C; border: 1px solid #c7e6c7; }
 
+.loadmore { width: 100% !important; height: 23px !important; padding-top: 20px !important; background-color: transparent !important; }
+
 .loadmore span { display: block; height: 23px; width: 100px; margin: 0 auto; background: url("../images/icons.png") no-repeat -100px -146px; color: #fff; text-align: right; line-height: 23px; cursor: pointer; }
 
 .go-top-btn { position: fixed; left: 50%; bottom: 40px; margin-left: 560px; height: 26px; width: 26px; cursor: pointer; }

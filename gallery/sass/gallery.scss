@@ -264,6 +264,9 @@ body{
 				line-height: 24px;
 				padding:10px 0;
 			}
+			.ga-list-subtitle{
+				display:none;
+			}
 			.ga-list-subtitle,.ga-list-year{
 				text-align: center;
 				font-size: 16px;
@@ -390,6 +393,7 @@ body{
 	border-bottom: 3px solid #fff;
 	padding-bottom: 34px;
 	position:relative;
+	display:none;
 	&:after{
 		position:absolute;
 		content:"";
@@ -468,6 +472,7 @@ body{
 	border-bottom: 3px solid #fff;
 	padding-bottom: 34px;
 	position:relative;
+	display:none;
 	&:after{
 		position:absolute;
 		content:"";

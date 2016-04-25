@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/gallery.css">
 	<script type="text/javascript" src="../libs/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../libs/js/swiper.min.js"></script>
-	<script type="text/javascript" src="js/list.js"></script>
+	<script type="text/javascript" src="js/waterfall.js"></script>
 	<script type="text/javascript">
 		var current_user=1;
 	</script>
@@ -29,8 +29,8 @@
 		<div class="g-container">
 			<div class="c-list-badges">
 				<div class="c-list-badgewrap">
-					<span data-name="competition_fine_art" data-note="To get the “Fine Art” badge through the efforts of posting your fine art works in gallery."><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_fine_art.png"></span>
-					<span data-name="competition_design" data-note="Design – 上传设计作品"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></span>
+					<span id="weekly_star" class="c-badge-active" data-name="magazine_weekly_star" data-note="To get the “Fine Art” badge through the efforts of posting your fine art works in gallery."><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_fine_art.png"></span>
+					<span data-name="magazine_controversy" data-note="Design – 上传设计作品"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_design.png"></span>
 					<span data-name="competition_photograph" data-note="Photograph – 上传摄影作品"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_photograph.png"></span>
 					<span data-name="competition_video" data-note="Video – 上传影音作品"><img src="http://7xo8k3.com5.z0.glb.clouddn.com/gallery_video.png"></span>
 					<span data-name="competition_judger" data-note="To get the “Judger” badge through the efforts of rating others’ works in competition."><img src="http://7xo8k3.com5.z0.glb.clouddn.com/judger.png"></span>
@@ -52,161 +52,20 @@
 					<span  data-direction="next"></span>
 				</div> -->
 			</div>
-			<ul class="gl-artist-imglist">
-				<li class="on"><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-				<li><a href="javascript:void(0);"><img src="http://zhanweitu.com/120x120" alt=""></a><span>hello</span></li>
-			</ul>
+			<ul class="gl-artist-imglist"></ul>
 			<i class="g-icon-refresh g-icon"></i>
 		</div>
 	</div>
 	<!-- selector-end -->
+	
+	<ul id="c-competition-list" class="g-container c-container"></ul>
 
 	<!-- list-start -->
 	<div class="g-container w-waterfall">
 		<ul class="w-waterfall-items">
-			<li>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x290" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x240" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x210" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x270" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x200" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x180" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x320" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x280" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-				<div class="w-waterfall-item">
-					<a href="#" class="w-waterfall-imga">
-						<img src="http://zhanweitu.com/320x220" alt="">
-					</a>
-					<div class="w-waterfall-textwrap">
-						<a href="#" class="w-waterfall-title">Durable Town Hall Munasdasd askjdhas Town Hall Munasdasd askjdhas </a>
-						<div class="w-waterfall-text">Singles’ Day, China’s annual online shopping spree no has extended its reach to 232 countries and regions. Sales for the November 11 spend-a-thon reached 41.7 billion</div>
-						<div class="w-waterfall-tips">
-							<a href="">food and drink</a>
-							<a href="">ps</a>
-							<a href="">people</a>
-						</div>
-					</div>
-				</div>
-			</li>
-
+			<li></li>
+			<li></li>
+			<li></li>
 		</ul>
 	</div>
 	<!-- list-end -->

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn1.luoyeshu.com/js/jquery.js"></script>
+</head>
+<body>
+</body>
+</html>
+<script>
+	function getQueryString(url,name) {
+	    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+	    var a=document.createElement("a");
+	    a.href=url;
+	    var r = a.search.substr(1).match(reg);
+	    if (r != null) {
+	        return unescape(r[2]);
+	    }
+	    return null;
+	}
+	function jsonp(url,callback){
+		var s=document.createElement("script");
+		s.src=url;
+		var callbackname=getQueryString(url,'callback');
+		var old=window[callbackname];
+		window[callbackname]=callback;
+		var s=document.createElement("script");
+		s.src=url;
+		document.body.appendChild(s);
+		s.onload=function(){
+			window.setTimeout(function(){
+				document.body.removeChild(s);
+				window[callbackname]=old;
+				console.log(1);
+			},0)
+		}
+	}
+	jsonp("http://luoyeshu.com/demo/testjsonp/index.php?callback=test&name=lzw",function(data){
+		console.log(data);
+		setTimeout(function(){
+			console.log(data);
+		},1000)
+	});
+//	var $a=$("<script src='http://luoyeshu.com/demo/testjsonp/index.php?hh=tt'>");
+//	var $b=$("<div>xxx</div>")
+//	$("body").append($a);
+//	$("body").append($b);
+</script>
