@@ -7,6 +7,7 @@ var tActivity={
         this.comment();
         this.joinActivity();
         this.gobacktop();
+        this.like();
     },
     gobacktop:function(){
         var $gobackbtn=$('<div class="go-top-btn"><i class="g-icon g-icon-gotop"></i></div>');
@@ -226,6 +227,44 @@ var tActivity={
         } else{
             $('.d-comment-text button').addClass('d-disabled');
         }
+    },
+    like:function(){
+        $('.t-likes').on('click','.g-icon',function(){
+            var $self=$(this);
+            var interaction_type=$self.data('interaction');
+            if(interaction_type!='0'&&interaction_type!='1') return;
+            var o={
+                "current_user":current_user,
+                "interaction_type":interaction_type,
+                "service_type":3,
+                "service_id":service_id,
+                "author_id":author_id
+            }
+            $.ajax({
+                url: "http://139.196.195.4/interaction/operate",
+                type:'POST',
+                dataType:"JSONP",
+                jsonp:"callbackparam",
+                data: o,
+                success: function(data){
+                    if(data.result=='success'){
+                        $self.toggleClass('on');
+                        var num=$self.next().html()-1+1;
+                        if($self.hasClass('on')){
+                            num++;
+                        } else{
+                            num=num&&--num;
+                        }
+                        $self.next().html(num);
+                    } else{
+                        console.log('like error');
+                    }
+                },
+                error:function(e){
+                    console.log('like error');
+                }
+            });
+        });
     }
 };
 

@@ -244,11 +244,11 @@ var cList={
                             '<a href="javascript:void(0);" class="c-list-openbtn">展开</a>'+
                             '<ul class="c-list-likes">'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" data-interaction="0" class="g-icon g-icon-heart"></a>'+
+                                    '<a href="javascript:void(0);" data-interaction="0" class="g-icon g-icon-heart '+(list[i].like_flag?'on':'')+'"></a>'+
                                     '<i>'+list[i].like_num+'</i>'+
                                 '</li>'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" data-interaction="1" class="g-icon g-icon-see"></a>'+
+                                    '<a href="javascript:void(0);" data-interaction="1" class="g-icon g-icon-see '+(list[i].collect_flag?'on':'')+'"></a>'+
                                     '<i>'+list[i].collect_num+'</i>'+
                                 '</li>'+
                                 '<li>'+
@@ -353,7 +353,7 @@ var cList={
                 "current_user":current_user,
                 "interaction_type":interaction_type,
                 "service_type":'2',
-                "service_id":$self.parents('.c-list-wrap').data('id'),
+                "service_id":service_id,
                 "author_id":78
             }
             $.ajax({
@@ -364,7 +364,14 @@ var cList={
                 data: o,
                 success: function(data){
                     if(data.result=='success'){
-                        $self.toggleClass('g-icon-disabled');
+                        $self.toggleClass('on');
+                        var num=$self.next().html()-1+1;
+                        if($self.hasClass('on')){
+                            num++;
+                        } else{
+                            num=num&&--num;
+                        }
+                        $self.next().html(num);
                     } else{
                         console.log('like error');
                     }

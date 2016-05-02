@@ -196,7 +196,7 @@ var gList={
         });
     },
     renderGalleryWeeklyStarList:function(data){ //render the competition list data got by ajax
-        var list=data.galleries;
+        var list=data.galleries;console.log(data);
         var listhtml='';
         var $con=$('#c-competition-list');
         if(gList.pageIndex==1||gList.typeChanged){
@@ -205,7 +205,7 @@ var gList={
             gList.typeChanged=false;
         }
         for(var i=0;i<list.length;i++){
-            listhtml+='<li class="c-list-wrap">'+
+            listhtml+='<li class="c-list-wrap" data-id="'+list[i].gallery_id+'">'+
                         '<a class="ga-list-imga">'+
                             '<img src="'+list[i].gallery_img+'">'+
                         '</a>'+
@@ -329,13 +329,14 @@ var gList={
             var $self=$(this);
             var service_id=$self.parents('.c-list-wrap').data('id');
             var interaction_type=$self.data('interaction');
+            var author_id=$self.parents('.c-list-wrap').find("button").data("id");
             if(interaction_type!='0'&&interaction_type!='1') return;
             var o={
                 "current_user":current_user,
                 "interaction_type":interaction_type,
-                "service_type":'2',
-                "service_id":$self.parents('.c-list-wrap').data('id'),
-                "author_id":78
+                "service_type":0,
+                "service_id":service_id,
+                "author_id":author_id
             }
             $.ajax({
                 url: "http://139.196.195.4/interaction/operate",
@@ -346,6 +347,13 @@ var gList={
                 success: function(data){
                     if(data.result=='success'){
                         $self.toggleClass('on');
+                        var num=$self.next().html()-1+1;
+                        if($self.hasClass('on')){
+                            num++;
+                        } else{
+                            num=num&&--num;
+                        }
+                        $self.next().html(num);
                     } else{
                         console.log('like error');
                     }
