@@ -741,8 +741,8 @@ body{
 				margin-bottom: 12px;
 				li{
 					border-bottom: 1px solid #eeefef;
-					line-height: 26px;
-					height:26px;
+					line-height: 32px;
+					height:32px;
 					font-size: 14px;
 					color:#939395;
 					@include cliptext;
@@ -750,6 +750,7 @@ body{
 						float:left;
 						margin-right: 10px;
 						cursor:pointer;
+						margin-top:3px;
 					}
 				}
 			}

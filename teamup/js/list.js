@@ -210,7 +210,9 @@ var tList={
                                         }
                                         h+='</ul>'
                                     } else if(type=='team_up_activity'){
-                                        h+='<div class="t-join"><i><span>'+obj.left_num+'</span>'+obj.activity_num+'</i><a href="http://139.196.195.4/team/detail/'+list[i].team_id+'">JOIN</a></div>';
+                                        h+='<div class="t-join"><i><span>'+obj.left_num+'</span>'+obj.activity_num+'</i><a href="http://139.196.195.4/team/detail/'+list[i].team_id+'">JOIN</a>';
+                                        var per=Math.min(((obj.activity_num-obj.left_num)/obj.activity_num*100).toFixed(0),100);
+                                        h+='<div class="t-num"><span><strong><em style="width:'+per+'%"></em></strong></span><b>'+per+'%</b></div></div>';
                                     }
                                     return h;
                                 })(list[i].type,list[i])+

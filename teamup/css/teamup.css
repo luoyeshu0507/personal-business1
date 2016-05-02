@@ -258,9 +258,9 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .t-richtext-container .t-richtext-right .t-item .t-likes { margin-bottom: 12px; }
 
-.t-richtext-container .t-richtext-right .t-item .t-likes li { border-bottom: 1px solid #eeefef; line-height: 26px; height: 26px; font-size: 14px; color: #939395; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.t-richtext-container .t-richtext-right .t-item .t-likes li { border-bottom: 1px solid #eeefef; line-height: 32px; height: 32px; font-size: 14px; color: #939395; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
-.t-richtext-container .t-richtext-right .t-item .t-likes li .g-icon { float: left; margin-right: 10px; cursor: pointer; }
+.t-richtext-container .t-richtext-right .t-item .t-likes li .g-icon { float: left; margin-right: 10px; cursor: pointer; margin-top: 3px; }
 
 .t-richtext-container .t-richtext-right .t-item .t-tips a { line-height: 16px; height: 16px; display: inline-block; background-color: #f1f0ee; color: #939395; border: 1px solid #e3e4e4; border-radius: 8px; font-size: 13px; padding: 0 5px; margin-bottom: 6px; margin-left: 4px; }
 

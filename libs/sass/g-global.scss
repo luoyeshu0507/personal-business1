@@ -129,6 +129,24 @@ body{
 		transform:rotate(90deg);
 	}
 }
+.g-icon-drop{
+	background: url("../images/drop.png") no-repeat center;
+	background-size:20px;
+	opacity:.5;
+	transition:all .3s ease;
+	&:hover{
+		opacity:1;
+	}
+}
+.g-icon-money{
+	background: url("../images/money.png") no-repeat center;
+	background-size:20px;
+	opacity:.5;
+	transition:all .3s ease;
+	&:hover{
+		opacity:1;
+	}
+}
 .g-icon-refresh{
 	width:36px;
 	height:29px;

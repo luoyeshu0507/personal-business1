@@ -218,11 +218,11 @@ var wList={
                             '<div class="ga-list-description">'+list[i].content+'</div>'+
                             '<ul class="c-list-likes">'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" class="g-icon g-icon-heart '+(list[i].like_flag?"on":"")+'"></a>'+
+                                    '<a data-interaction="0" href="javascript:void(0);" class="g-icon g-icon-heart '+(list[i].like_flag?"on":"")+'"></a>'+
                                     '<i>'+list[i].like_number+'</i>'+
                                 '</li>'+
                                 '<li>'+
-                                    '<a href="javascript:void(0);" class="g-icon g-icon-see '+(list[i].collect_flag?"on":"")+'"></a>'+
+                                    '<a data-interaction="1" href="javascript:void(0);" class="g-icon g-icon-see '+(list[i].collect_flag?"on":"")+'"></a>'+
                                     '<i>'+list[i].comment_number+'</i>'+
                                 '</li>'+
                                 '<li>'+
