@@ -1000,7 +1000,7 @@ $circlemargin:100px;
 		font-weight: 300;
 		.g-about-artist-title{
 			line-height: 32px;
-			span,em,i{
+			span,em,a{
 				display:inline-block;
 				vertical-align: middle;
 			}
@@ -1016,16 +1016,15 @@ $circlemargin:100px;
 				margin-right: 10px;
 				line-height: 24px;
 			}
-			i{
+			a{
 				color:#fff;
 				background-color: #f1f0ee;
 				width:24px;
 				height:24px;
-				border-radius: 12px;
-				font-size: 10px;
-				line-height: 24px;
-				text-align: center;
 				vertical-align: middle;
+				background:url("../../libs/images/link.png") no-repeat center;
+				background-size:24px;
+				opacity:.7;
 			}
 		}
 		.g-about-artist-name{
