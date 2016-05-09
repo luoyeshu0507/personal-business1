@@ -933,11 +933,10 @@ $circlemargin:100px;
 						width:27px * 6;
 						height:12px;
 						margin-top:7px;
-						em{
+						a{
 							float:left;
 							height:12px;
 							width:27px;
-							cursor:pointer;
 							&:hover{
 								transform:scale(1.4);
 								box-shadow: 1px 1px 2px rgba(0,0,0,0.3);

@@ -315,13 +315,13 @@ body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,c
 
 .d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars { float: left; width: 162px; height: 12px; margin-top: 7px; }
 
-.d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars em { float: left; height: 12px; width: 27px; cursor: pointer; }
+.d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars a { float: left; height: 12px; width: 27px; }
 
-.d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars em:hover { -webkit-transform: scale(1.4); -ms-transform: scale(1.4); transform: scale(1.4); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+.d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars a:hover { -webkit-transform: scale(1.4); -ms-transform: scale(1.4); transform: scale(1.4); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
 
-.d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars em:first-child { border-radius: 3px 0 0 3px; }
+.d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars a:first-child { border-radius: 3px 0 0 3px; }
 
-.d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars em:last-child { border-radius: 0 3px 3px 0; }
+.d-about-artist .ga-about-container .ga-about-right .t-likes li .color-bars a:last-child { border-radius: 0 3px 3px 0; }
 
 .d-about-artist .ga-about-container .ga-about-right .t-tips { width: 290px; margin: 10px auto; }
 
