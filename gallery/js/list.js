@@ -173,7 +173,8 @@ var gList={
             page_size:gList.pageSize,
             type:1
         };
-        var $artists=$(".gl-artist-imglist li");
+        var $artists=$(".gl-artist-imglist li.on");
+        $artists.length||($artists=$(".gl-artist-imglist li");
         for(var i=0;i<$artists.length;i++){
             o.artist.push($artists.eq(i).data("id"));
         }
@@ -262,12 +263,13 @@ var gList={
     ajaxGalleryStarList:function(page){ // ajax for the competition's list after selector
         gList.pageIndex=page&&(gList.pageIndex+1)||1;
         var o={
-            artist:[1,3],
+            artist:[],
             page_num:gList.pageIndex,
             page_size:gList.pageSize+5,
             type:2
         };
-        var $artists=$(".gl-artist-imglist li");
+        var $artists=$(".gl-artist-imglist li.on");
+        $artists.length||($artists=$(".gl-artist-imglist li");
         for(var i=0;i<$artists.length;i++){
             o.artist.push($artists.eq(i).data("id"));
         }
