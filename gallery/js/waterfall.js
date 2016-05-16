@@ -176,7 +176,7 @@ var wList={
             type:1
         };
         var $artists=$(".gl-artist-imglist li.on");
-        $artists.length||($artists=$(".gl-artist-imglist li");
+        $artists.length||($artists=$(".gl-artist-imglist li"));
         for(var i=0;i<$artists.length;i++){
             o.artist.push($artists.eq(i).data("id"));
         }
@@ -209,7 +209,7 @@ var wList={
         }
         for(var i=0;i<list.length;i++){
             listhtml+='<li class="c-list-wrap" data-id="'+list[i].gallery_id+'">'+
-                        '<a class="ga-list-imga">'+
+                        '<a class="ga-list-imga" href="'+list[i].gallery_detail_url+'" target="_blank">'+
                             '<img src="'+list[i].gallery_img+'">'+
                         '</a>'+
                         '<div class="ga-list-text">'+
@@ -271,7 +271,7 @@ var wList={
             type:2
         };
         var $artists=$(".gl-artist-imglist li.on");
-        $artists.length||($artists=$(".gl-artist-imglist li");
+        $artists.length||($artists=$(".gl-artist-imglist li"));
         for(var i=0;i<$artists.length;i++){
             o.artist.push($artists.eq(i).data("id"));
         }
