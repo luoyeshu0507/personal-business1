@@ -1,6 +1,4 @@
 @charset "UTF-8";
-body { font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 300; }
-
 /* list.html sass start */
 .c-list-selector { background-color: #ebeae8; margin-bottom: 54px; overflow: hidden; }
 

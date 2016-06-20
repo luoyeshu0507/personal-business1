@@ -67,7 +67,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 a { outline: none; text-decoration: none; }
 
-body { background-color: #efeeec; font-size: 16px; }
+body { background-color: #efeeec; font-size: 16px; font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-weight: 300; }
 
 .g-wline { height: 1px; background-color: #fff; overflow: hidden; clear: both; }
 
