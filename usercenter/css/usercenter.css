@@ -1,1 +1,113 @@
 .u-usercenter .userinfo { text-align: center; font-size: 22px; }
+
+.u-usercenter .userinfo .name { color: #455258; margin-top: 60px; margin-bottom: 60px; }
+
+.u-usercenter .userinfo .name span { display: inline-block; font-size: 32px; font-weight: normal; position: relative; line-height: 40px; margin-bottom: 15px; }
+
+.u-usercenter .userinfo .name span i { font-weight: 300; font-size: 12px; position: absolute; right: -70px; border: 1px solid #909294; color: #909294; width: 50px; height: 16px; line-height: 16px; top: 14px; cursor: pointer; }
+
+.u-usercenter .userinfo .name em { display: block; font-size: 18px; font-weight: normal; }
+
+.u-usercenter .userinfo .user-profile { width: 1000px; height: 450px; position: relative; margin: 0 auto; }
+
+.u-usercenter .userinfo .user-profile .user-img { position: absolute; top: 38px; width: 195px; height: 169px; left: 403px; }
+
+.u-usercenter .userinfo .user-profile .user-img-cover { position: absolute; top: 31px; width: 207px; height: 181px; left: 397px; background: url("../images/userImgCover.png") no-repeat; border: 0 none; outline: 0 none; }
+
+.u-usercenter .userinfo .user-profile .user-profile-lines { position: absolute; top: 17px; left: 165px; width: 670px; height: 210px; background: url("../images/userInfoBg.png") no-repeat; }
+
+.u-usercenter .userinfo .user-profile .follower, .u-usercenter .userinfo .user-profile .following, .u-usercenter .userinfo .user-profile .address, .u-usercenter .userinfo .user-profile .job { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; position: absolute; font-weight: normal; padding: 0 10px; }
+
+.u-usercenter .userinfo .user-profile .follower, .u-usercenter .userinfo .user-profile .following { height: 30px; line-height: 30px; width: 135px; border: 2px solid #fff; font-size: 14px; color: #455258; }
+
+.u-usercenter .userinfo .user-profile .follower { top: 2px; left: 130px; }
+
+.u-usercenter .userinfo .user-profile .following { top: 46px; left: 170px; }
+
+.u-usercenter .userinfo .user-profile .address, .u-usercenter .userinfo .user-profile .job { height: 46px; line-height: 46px; background-color: #fff; color: #455258; }
+
+.u-usercenter .userinfo .user-profile .address { font-size: 12px; top: 23px; right: 104px; width: 220px; }
+
+.u-usercenter .userinfo .user-profile .job { font-size: 13px; width: 145px; left: 80px; top: 140px; }
+
+.u-usercenter .userinfo .user-profile .about { border: 2px solid #fff; position: absolute; font-weight: normal; padding: 15px; font-size: 13px; text-align: left; line-height: 24px; width: 265px; background-color: #79888f; right: 47px; top: 140px; color: #fff; max-height: 86px; overflow: hidden; }
+
+.u-usercenter .info-tab .title { color: #455258; margin-top: 60px; margin-bottom: 60px; font-size: 32px; text-align: center; font-weight: normal; line-height: 40px; }
+
+.u-usercenter .info-tab .tabs-wrap { width: 1000px; margin: 0 auto; overflow: hidden; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar { width: 140px; float: left; padding: 40px 0; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li { position: relative; text-align: center; cursor: pointer; height: 85px; color: #909294; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon { display: inline-block; width: 40px; height: 40px; background: url("../images/icons.png") no-repeat; background-size: 80px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-statistic { background-position: 0 0; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-profile { background-position: 0 -40px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-gallery { background-position: 0 -80px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-magazine { background-position: 0 -120px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-competition { background-position: 0 -160px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-team { background-position: 0 -200px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-social { background-position: 0 -240px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-mail { background-position: 0 -280px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li .u-icon.u-icon-setting { background-position: 0 -320px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on { color: #455258; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-statistic { background-position: -40px 0; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-profile { background-position: -40px -40px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-gallery { background-position: -40px -80px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-magazine { background-position: -40px -120px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-competition { background-position: -40px -160px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-team { background-position: -40px -200px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-social { background-position: -40px -240px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-mail { background-position: -40px -280px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li.on .u-icon-setting { background-position: -40px -320px; }
+
+.u-usercenter .info-tab .tabs-wrap .side-bar li span { display: block; line-height: 24px; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs { width: 856px; border: 2px solid #fff; float: right; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item { display: none; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item.on { display: block; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar { text-align: center; overflow: hidden; cursor: pointer; line-height: 28px; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span { float: left; position: relative; border-bottom: 2px solid #fff; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span.on { background-color: #f4f4f2; border-bottom: 2px solid #f4f4f2; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span:not(:last-child):after { content: ""; height: 30px; width: 2px; background-color: #fff; position: absolute; right: 0; top: 0; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar.divide-2 span { width: 50%; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar.divide-3 span { width: 33.333333%; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar.divide-4 span { width: 25%; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar.divide-5 span { width: 20%; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar.divide-6 span { width: 16.6666666%; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar.divide-7 span { width: 14.2857143%; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .tab-wrap .tab { display: none; background-color: #f4f4f2; min-height: 800px; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .tab-wrap .tab.on { display: block; }
