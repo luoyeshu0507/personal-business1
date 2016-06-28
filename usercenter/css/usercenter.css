@@ -8,7 +8,7 @@
 
 .u-usercenter .userinfo .name em { display: block; font-size: 18px; font-weight: normal; }
 
-.u-usercenter .userinfo .user-profile { width: 1000px; height: 450px; position: relative; margin: 0 auto; }
+.u-usercenter .userinfo .user-profile { width: 1000px; height: 420px; position: relative; margin: 0 auto; }
 
 .u-usercenter .userinfo .user-profile .user-img { position: absolute; top: 38px; width: 195px; height: 169px; left: 403px; }
 
@@ -32,7 +32,105 @@
 
 .u-usercenter .userinfo .user-profile .about { border: 2px solid #fff; position: absolute; font-weight: normal; padding: 15px; font-size: 13px; text-align: left; line-height: 24px; width: 265px; background-color: #79888f; right: 47px; top: 140px; color: #fff; max-height: 86px; overflow: hidden; }
 
-.u-usercenter .info-tab .title { color: #455258; margin-top: 60px; margin-bottom: 60px; font-size: 32px; text-align: center; font-weight: normal; line-height: 40px; }
+.u-usercenter .user-badges .title { color: #455258; margin-bottom: 60px; font-size: 32px; text-align: center; font-weight: normal; line-height: 40px; }
+
+.u-usercenter .user-badges .badges { position: relative; width: 1050px; height: 449px; background: url("../images/badgesbg.png") no-repeat; margin: 0 auto 150px; }
+
+.u-usercenter .user-badges .badges span { position: absolute; width: 70px; height: 61px; }
+
+.u-usercenter .user-badges .badges span img { width: 70px; height: 61px; }
+
+.u-usercenter .user-badges .badges span.badge-1 { top: 70px; left: 1px; }
+
+.u-usercenter .user-badges .badges span.badge-2 { top: 39px; left: 52px; }
+
+.u-usercenter .user-badges .badges span.badge-3 { top: 98px; left: 53px; }
+
+.u-usercenter .user-badges .badges span.badge-4 { top: 157px; left: 53px; }
+
+.u-usercenter .user-badges .badges span.badge-5 { top: 10px; left: 104px; }
+
+.u-usercenter .user-badges .badges span.badge-6 { top: 69px; left: 104px; }
+
+.u-usercenter .user-badges .badges span.badge-7 { top: 128px; left: 103px; }
+
+.u-usercenter .user-badges .badges span.badge-8 { top: 187px; left: 103px; }
+
+.u-usercenter .user-badges .badges span.badge-9 { top: 39px; left: 155px; }
+
+.u-usercenter .user-badges .badges span.badge-10 { top: 98px; left: 154px; }
+
+.u-usercenter .user-badges .badges span.badge-11 { top: 157px; left: 154px; }
+
+.u-usercenter .user-badges .badges span.badge-12 { top: 128px; left: 205px; }
+
+.u-usercenter .user-badges .badges span.badge-13 { top: 187px; left: 204px; }
+
+.u-usercenter .user-badges .badges span.badge-14 { top: 39px; left: 257px; }
+
+.u-usercenter .user-badges .badges span.badge-15 { top: 98px; left: 257px; }
+
+.u-usercenter .user-badges .badges span.badge-16 { top: 10px; left: 308px; }
+
+.u-usercenter .user-badges .badges span.badge-17 { top: 69px; left: 308px; }
+
+.u-usercenter .user-badges .badges span.badge-18 { top: 128px; left: 309px; }
+
+.u-usercenter .user-badges .badges span.badge-19 { top: 187px; left: 309px; }
+
+.u-usercenter .user-badges .badges span.badge-20 { top: 39px; left: 359px; }
+
+.u-usercenter .user-badges .badges span.badge-21 { top: 98px; left: 360px; }
+
+.u-usercenter .user-badges .badges span.badge-22 { top: 157px; left: 360px; }
+
+.u-usercenter .user-badges .badges span.badge-23 { top: 68px; left: 412px; }
+
+.u-usercenter .user-badges .badges span.badge-24 { top: 128px; left: 412px; }
+
+.u-usercenter .user-badges .badges span.badge-25 { top: 39px; left: 464px; }
+
+.u-usercenter .user-badges .badges span.badge-26 { top: 98px; left: 464px; }
+
+.u-usercenter .user-badges .badges span.badge-27 { top: 8px; left: 515px; }
+
+.u-usercenter .user-badges .badges span.badge-28 { top: 68px; left: 515px; }
+
+.u-usercenter .user-badges .badges span.badge-29 { top: 128px; left: 515px; }
+
+.u-usercenter .user-badges .badges span.badge-30 { top: 38px; left: 566px; }
+
+.u-usercenter .user-badges .badges span.badge-31 { top: 97px; left: 566px; }
+
+.u-usercenter .user-badges .badges span.badge-32 { top: 157px; left: 567px; }
+
+.u-usercenter .user-badges .badges span.badge-33 { top: 8px; left: 618px; }
+
+.u-usercenter .user-badges .badges span.badge-34 { top: 68px; left: 618px; }
+
+.u-usercenter .user-badges .badges span.badge-35 { top: 128px; left: 618px; }
+
+.u-usercenter .user-badges .badges span.badge-36 { top: 39px; left: 669px; }
+
+.u-usercenter .user-badges .badges span.badge-37 { top: 98px; left: 669px; }
+
+.u-usercenter .user-badges .badges span.badge-38 { top: 9px; left: 722px; }
+
+.u-usercenter .user-badges .badges span.badge-39 { top: 69px; left: 721px; }
+
+.u-usercenter .user-badges .badges span.badge-40 { top: 129px; left: 721px; }
+
+.u-usercenter .user-badges .badges span.badge-41 { top: 38px; left: 772px; }
+
+.u-usercenter .user-badges .badges span.badge-42 { top: 97px; left: 772px; }
+
+.u-usercenter .user-badges .badges span.badge-43 { top: 157px; left: 773px; }
+
+.u-usercenter .user-badges .badges span.badge-44 { top: 67px; left: 824px; }
+
+.u-usercenter .user-badges .badges span.badge-45 { top: 127px; left: 824px; }
+
+.u-usercenter .info-tab .title { color: #455258; margin-bottom: 60px; font-size: 32px; text-align: center; font-weight: normal; line-height: 40px; }
 
 .u-usercenter .info-tab .tabs-wrap { width: 1000px; margin: 0 auto; overflow: hidden; }
 
