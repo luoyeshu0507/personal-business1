@@ -18,7 +18,9 @@
 
 .u-usercenter .userinfo .user-profile .follower, .u-usercenter .userinfo .user-profile .following, .u-usercenter .userinfo .user-profile .address, .u-usercenter .userinfo .user-profile .job { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; position: absolute; font-weight: normal; padding: 0 10px; }
 
-.u-usercenter .userinfo .user-profile .follower, .u-usercenter .userinfo .user-profile .following { height: 30px; line-height: 30px; width: 135px; border: 2px solid #fff; font-size: 14px; color: #455258; }
+.u-usercenter .userinfo .user-profile .follower, .u-usercenter .userinfo .user-profile .following { height: 30px; line-height: 30px; width: 135px; border: 2px solid #fff; font-size: 14px; color: #455258; text-decoration: none; }
+
+.u-usercenter .userinfo .user-profile .follower:hover, .u-usercenter .userinfo .user-profile .following:hover { color: #5b6d75; }
 
 .u-usercenter .userinfo .user-profile .follower { top: 2px; left: 130px; }
 
@@ -26,109 +28,143 @@
 
 .u-usercenter .userinfo .user-profile .address, .u-usercenter .userinfo .user-profile .job { height: 46px; line-height: 46px; background-color: #fff; color: #455258; }
 
-.u-usercenter .userinfo .user-profile .address { font-size: 12px; top: 23px; right: 104px; width: 220px; }
+.u-usercenter .userinfo .user-profile .address { font-size: 12px; top: 23px; right: 104px; width: 210px; }
 
 .u-usercenter .userinfo .user-profile .job { font-size: 13px; width: 145px; left: 80px; top: 140px; }
 
-.u-usercenter .userinfo .user-profile .about { border: 2px solid #fff; position: absolute; font-weight: normal; padding: 15px; font-size: 13px; text-align: left; line-height: 24px; width: 265px; background-color: #79888f; right: 47px; top: 140px; color: #fff; max-height: 86px; overflow: hidden; }
+.u-usercenter .userinfo .user-profile .about { border: 2px solid #fff; position: absolute; font-weight: normal; padding: 15px; font-size: 13px; text-align: left; line-height: 24px; width: 265px; background-color: #79888f; right: 62px; top: 165px; color: #fff; max-height: 86px; overflow: hidden; }
 
 .u-usercenter .user-badges .title { color: #455258; margin-bottom: 60px; font-size: 32px; text-align: center; font-weight: normal; line-height: 40px; }
 
-.u-usercenter .user-badges .badges { position: relative; width: 1050px; height: 449px; background: url("../images/badgesbg.png") no-repeat; margin: 0 auto 150px; }
+.u-usercenter .user-badges .badge-wrap { position: relative; width: 1050px; height: 449px; background: url("../images/badgesbg.png") no-repeat; margin: 0 auto 150px; }
 
-.u-usercenter .user-badges .badges span { position: absolute; width: 70px; height: 61px; }
+.u-usercenter .user-badges .badge-wrap .badges { position: absolute; }
 
-.u-usercenter .user-badges .badges span img { width: 70px; height: 61px; }
+.u-usercenter .user-badges .badge-wrap .badges span { position: absolute; width: 70px; height: 61px; opacity: .6; cursor: pointer; -webkit-transition: -webkit-transform .2s ease; transition: -webkit-transform .2s ease; transition: transform .2s ease; transition: transform .2s ease, -webkit-transform .2s ease; }
 
-.u-usercenter .user-badges .badges span.badge-1 { top: 70px; left: 1px; }
+.u-usercenter .user-badges .badge-wrap .badges span img { width: 70px; height: 61px; }
 
-.u-usercenter .user-badges .badges span.badge-2 { top: 39px; left: 52px; }
+.u-usercenter .user-badges .badge-wrap .badges span:hover { z-index: 1; opacity: 1; -webkit-transform: scale(1.1); -ms-transform: scale(1.1); transform: scale(1.1); }
 
-.u-usercenter .user-badges .badges span.badge-3 { top: 98px; left: 53px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-1 { top: 70px; left: 1px; }
 
-.u-usercenter .user-badges .badges span.badge-4 { top: 157px; left: 53px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-2 { top: 39px; left: 52px; }
 
-.u-usercenter .user-badges .badges span.badge-5 { top: 10px; left: 104px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-3 { top: 98px; left: 53px; }
 
-.u-usercenter .user-badges .badges span.badge-6 { top: 69px; left: 104px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-4 { top: 157px; left: 53px; }
 
-.u-usercenter .user-badges .badges span.badge-7 { top: 128px; left: 103px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-5 { top: 10px; left: 104px; }
 
-.u-usercenter .user-badges .badges span.badge-8 { top: 187px; left: 103px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-6 { top: 69px; left: 104px; }
 
-.u-usercenter .user-badges .badges span.badge-9 { top: 39px; left: 155px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-7 { top: 128px; left: 103px; }
 
-.u-usercenter .user-badges .badges span.badge-10 { top: 98px; left: 154px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-8 { top: 187px; left: 103px; }
 
-.u-usercenter .user-badges .badges span.badge-11 { top: 157px; left: 154px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-9 { top: 39px; left: 155px; }
 
-.u-usercenter .user-badges .badges span.badge-12 { top: 128px; left: 205px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-10 { top: 98px; left: 154px; }
 
-.u-usercenter .user-badges .badges span.badge-13 { top: 187px; left: 204px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-11 { top: 157px; left: 154px; }
 
-.u-usercenter .user-badges .badges span.badge-14 { top: 39px; left: 257px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-12 { top: 128px; left: 205px; }
 
-.u-usercenter .user-badges .badges span.badge-15 { top: 98px; left: 257px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-13 { top: 187px; left: 204px; }
 
-.u-usercenter .user-badges .badges span.badge-16 { top: 10px; left: 308px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-14 { top: 39px; left: 257px; }
 
-.u-usercenter .user-badges .badges span.badge-17 { top: 69px; left: 308px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-15 { top: 98px; left: 257px; }
 
-.u-usercenter .user-badges .badges span.badge-18 { top: 128px; left: 309px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-16 { top: 10px; left: 308px; }
 
-.u-usercenter .user-badges .badges span.badge-19 { top: 187px; left: 309px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-17 { top: 69px; left: 308px; }
 
-.u-usercenter .user-badges .badges span.badge-20 { top: 39px; left: 359px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-18 { top: 128px; left: 309px; }
 
-.u-usercenter .user-badges .badges span.badge-21 { top: 98px; left: 360px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-19 { top: 187px; left: 309px; }
 
-.u-usercenter .user-badges .badges span.badge-22 { top: 157px; left: 360px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-20 { top: 39px; left: 359px; }
 
-.u-usercenter .user-badges .badges span.badge-23 { top: 68px; left: 412px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-21 { top: 98px; left: 360px; }
 
-.u-usercenter .user-badges .badges span.badge-24 { top: 128px; left: 412px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-22 { top: 157px; left: 360px; }
 
-.u-usercenter .user-badges .badges span.badge-25 { top: 39px; left: 464px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-23 { top: 68px; left: 412px; }
 
-.u-usercenter .user-badges .badges span.badge-26 { top: 98px; left: 464px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-24 { top: 128px; left: 412px; }
 
-.u-usercenter .user-badges .badges span.badge-27 { top: 8px; left: 515px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-25 { top: 39px; left: 464px; }
 
-.u-usercenter .user-badges .badges span.badge-28 { top: 68px; left: 515px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-26 { top: 98px; left: 464px; }
 
-.u-usercenter .user-badges .badges span.badge-29 { top: 128px; left: 515px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-27 { top: 8px; left: 515px; }
 
-.u-usercenter .user-badges .badges span.badge-30 { top: 38px; left: 566px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-28 { top: 68px; left: 515px; }
 
-.u-usercenter .user-badges .badges span.badge-31 { top: 97px; left: 566px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-29 { top: 128px; left: 515px; }
 
-.u-usercenter .user-badges .badges span.badge-32 { top: 157px; left: 567px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-30 { top: 38px; left: 566px; }
 
-.u-usercenter .user-badges .badges span.badge-33 { top: 8px; left: 618px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-31 { top: 97px; left: 566px; }
 
-.u-usercenter .user-badges .badges span.badge-34 { top: 68px; left: 618px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-32 { top: 157px; left: 567px; }
 
-.u-usercenter .user-badges .badges span.badge-35 { top: 128px; left: 618px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-33 { top: 8px; left: 618px; }
 
-.u-usercenter .user-badges .badges span.badge-36 { top: 39px; left: 669px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-34 { top: 68px; left: 618px; }
 
-.u-usercenter .user-badges .badges span.badge-37 { top: 98px; left: 669px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-35 { top: 128px; left: 618px; }
 
-.u-usercenter .user-badges .badges span.badge-38 { top: 9px; left: 722px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-36 { top: 39px; left: 669px; }
 
-.u-usercenter .user-badges .badges span.badge-39 { top: 69px; left: 721px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-37 { top: 98px; left: 669px; }
 
-.u-usercenter .user-badges .badges span.badge-40 { top: 129px; left: 721px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-38 { top: 9px; left: 722px; }
 
-.u-usercenter .user-badges .badges span.badge-41 { top: 38px; left: 772px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-39 { top: 69px; left: 721px; }
 
-.u-usercenter .user-badges .badges span.badge-42 { top: 97px; left: 772px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-40 { top: 129px; left: 721px; }
 
-.u-usercenter .user-badges .badges span.badge-43 { top: 157px; left: 773px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-41 { top: 38px; left: 772px; }
 
-.u-usercenter .user-badges .badges span.badge-44 { top: 67px; left: 824px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-42 { top: 97px; left: 772px; }
 
-.u-usercenter .user-badges .badges span.badge-45 { top: 127px; left: 824px; }
+.u-usercenter .user-badges .badge-wrap .badges span.badge-43 { top: 157px; left: 773px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-44 { top: 67px; left: 824px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-45 { top: 127px; left: 824px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-46 { top: 38px; left: 876px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-47 { top: 97px; left: 876px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-48 { top: 157px; left: 876px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-49 { top: 10px; left: 928px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-50 { top: 69px; left: 927px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-51 { top: 128px; left: 928px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-52 { top: 187px; left: 927px; }
+
+.u-usercenter .user-badges .badge-wrap .badges span.badge-53 { top: 97px; left: 979px; }
+
+.u-usercenter .user-badges .badge-wrap .note { position: absolute; color: #455258; font-size: 12px; line-height: 16px; top: 363px; left: 138px; width: 180px; height: 48px; overflow: hidden; }
+
+.u-usercenter .user-badges .badge-wrap .name { position: absolute; color: #fff; top: 381px; width: 95px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 20px; height: 20px; left: 372px; text-align: center; font-size: 16px; font-weight: normal; }
+
+.u-usercenter .user-badges .badge-wrap .big-badge { position: absolute; width: 130px; height: 114px; top: 335px; left: 487px; display: none; }
+
+.u-usercenter .user-badges .badge-wrap .level { position: absolute; color: #455258; top: 456px; width: 95px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 20px; height: 20px; left: 505px; text-align: center; font-size: 16px; font-weight: normal; }
+
+.u-usercenter .user-badges .badge-wrap .next-level { position: absolute; color: #fff; top: 381px; width: 95px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 20px; height: 20px; left: 635px; text-align: center; font-size: 16px; font-weight: normal; }
+
+.u-usercenter .user-badges .badge-wrap .target { position: absolute; }
+
+.u-usercenter .info-tab { margin-bottom: 100px; }
 
 .u-usercenter .info-tab .title { color: #455258; margin-bottom: 60px; font-size: 32px; text-align: center; font-weight: normal; line-height: 40px; }
 
@@ -190,7 +226,9 @@
 
 .u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span { float: left; position: relative; border-bottom: 2px solid #fff; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
-.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span.on { background-color: #f4f4f2; border-bottom: 2px solid #f4f4f2; }
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span.on { background-color: #f4f4f2; border-bottom: 2px solid #f4f4f2; font-weight: normal; }
+
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span:hover { color: #5b6d75; }
 
 .u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span:not(:last-child):after { content: ""; height: 30px; width: 2px; background-color: #fff; position: absolute; right: 0; top: 0; }
 
@@ -206,6 +244,42 @@
 
 .u-usercenter .info-tab .tabs-wrap .tabs .item .topbar.divide-7 span { width: 14.2857143%; }
 
-.u-usercenter .info-tab .tabs-wrap .tabs .item .tab-wrap .tab { display: none; background-color: #f4f4f2; min-height: 800px; }
+.u-usercenter .info-tab .tabs-wrap .tabs .item .tab-wrap .tab { display: none; overflow: hidden; background-color: #f4f4f2; min-height: 800px; }
 
 .u-usercenter .info-tab .tabs-wrap .tabs .item .tab-wrap .tab.on { display: block; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list { width: 720px; margin: 50px auto; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list ul { width: 800px; overflow: hidden; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li { float: left; width: 200px; margin-right: 60px; height: 306px; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .upload { width: 100%; height: 230px; display: block; background-color: #d0d1d2; position: relative; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .upload:before, .u-usercenter .info-tab .tabs-wrap .work-list li .upload:after { content: ""; display: block; position: absolute; background-color: #fff; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .upload:before { width: 16px; height: 78px; left: 92px; top: 76px; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .upload:after { height: 16px; width: 78px; top: 107px; left: 61px; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-img { width: 100%; height: 230px; display: block; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-img img { display: block; width: 100%; height: 230px; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-name { line-height: 30px; font-size: 14px; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width: 180px; margin: 0 auto; display: block; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-scores { line-height: 26px; width: 190px; margin: 0 auto; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-scores dt { float: right; height: 26px; width: 26px; position: relative; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); cursor: pointer; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-scores dt:before, .u-usercenter .info-tab .tabs-wrap .work-list li .work-scores dt:after { content: ""; display: block; position: absolute; background-color: red; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-scores dt:before { width: 4px; height: 18px; left: 11px; top: 4px; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-scores dt:after { height: 4px; width: 18px; top: 11px; left: 4px; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-scores dd { float: left; width: 54px; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-scores dd a { float: left; }
+
+.u-usercenter .info-tab .tabs-wrap .work-list li .work-scores dd i { float: left; font-size: 12px; width: 28px; overflow: hidden; }

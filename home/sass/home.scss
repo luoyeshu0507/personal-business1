@@ -1,0 +1,100 @@
+.home{
+	.bg-yellow{
+		background-color:#f4f3b8;
+	}
+	.bg-white{
+		background-color:#fff;
+	}
+	.bg-blue{
+		background-color:#a6d6dc;
+	}
+	.h-banner{
+		img{
+			width:100%;
+			display:block;
+		}
+		.swiper-button-next{
+			right:30px;
+		}
+		.swiper-button-prev{
+			left:30px;
+		}
+	}
+	.item-title{
+		text-align:center;
+		color:#455258;
+		font-size:32px;
+		font-weight:normal;
+		line-height:70px;
+	}
+	.item-detail{
+		text-align:center;
+		color:#455258;
+		font-size:18px;
+		margin-bottom:30px;
+	}
+	.blocks{
+		width:706px;
+		overflow:hidden;
+		margin:0 auto 40px;
+		text-align:center;
+		ul{
+			width:730px;
+			li{
+				width:222px;
+				margin:0 20px 20px 0;
+				height:282px;
+				float:left;
+				&.access-item{
+					cursor:pointer;
+					color:#455258;
+					span{
+						display:block;
+						height:174px;
+						line-height:174px;
+						font-size:18px;
+						font-weight:normal;
+						color:#fff;
+						background-size:cover;
+						background-position:center;
+						background-repeat:no-repeat;
+						transition:all .3s ease;
+					}
+					&:nth-child(1) span{
+						background-image:url("https://placem.at/things?w=222&h=174&random=1&txt=");
+					}
+					&:nth-child(2) span{
+						background-image:url("https://placem.at/things?w=222&h=174&random=2&txt=");
+					}
+					&:nth-child(3) span{
+						background-image:url("https://placem.at/things?w=222&h=174&random=3&txt=");
+					}
+					em{
+						display:block;
+						height:108px;
+						line-height:108px;
+						transition:all .3s ease;
+					}
+					&:hover{
+						span{
+							height:114px;
+							line-height:114px;
+						}
+						em{
+							height:168px;
+							line-height:168px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.service{
+		padding:50px 0;
+		background-color:#e6e5e2;
+	}
+	.access{
+		padding:50px 0;
+		background-color:#e9e8e5;
+	}
+}

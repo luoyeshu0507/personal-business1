@@ -109,6 +109,18 @@ body{
 		opacity:1;
 	}
 }
+.g-icon-comment{
+	background: url("../images/comment.png") no-repeat center;
+	background-size:20px;
+	opacity:.5;
+	&:hover{
+		opacity:1;
+	}
+	&.on{
+		background-image:url("../images/commentcolor.png");
+		opacity:1;
+	}
+}
 .g-icon-see{
 	background: url("../images/star.png") no-repeat center;
 	background-size:20px;

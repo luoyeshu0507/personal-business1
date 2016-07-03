@@ -82,6 +82,10 @@
 				border:2px solid #fff;
 				font-size:14px;
 				color:#455258;
+				text-decoration:none;
+				&:hover{
+					color:lighten(#455258,10%);
+				}
 			}
 			.follower{
 				top:2px;
@@ -101,7 +105,7 @@
 				font-size:12px;
 				top:23px;
 				right:104px;
-				width:220px;
+				width:210px;
 			}
 			.job{
 				font-size:13px;
@@ -119,8 +123,8 @@
 				line-height:24px;
 				width:265px;
 				background-color:#79888f;
-				right:47px;
-				top:140px;
+				right:62px;
+				top:165px;
 				color:#fff;
 				max-height:86px;
 				overflow:hidden;
@@ -136,205 +140,309 @@
 			font-weight:normal;
 			line-height:40px;
 		}
-		.badges{
+		.badge-wrap{
 			position:relative;
 			width:1050px;
 			height:449px;
 			background:url("../images/badgesbg.png") no-repeat;
 			margin:0 auto 150px;
-			span{
+			.badges{
 				position:absolute;
-				width:70px;
-				height:61px;
-				img{
+				span{
+					position:absolute;
 					width:70px;
 					height:61px;
+					opacity:.6;
+					cursor:pointer;
+				    transition: transform .2s ease;
+					img{
+						width:70px;
+						height:61px;
+					}
+					&:hover{
+						z-index:1;
+						opacity:1;
+						transform:scale(1.1);
+					}
+					&.badge-1{
+						top:70px;
+						left:1px;
+					}
+					&.badge-2{
+						top:39px;
+						left:52px;
+					}
+					&.badge-3{
+						top:98px;
+						left:53px;
+					}
+					&.badge-4{
+						top:157px;
+						left:53px;
+					}
+					&.badge-5{
+						top:10px;
+						left:104px;
+					}
+					&.badge-6{
+						top:69px;
+						left:104px;
+					}
+					&.badge-7{
+						top:128px;
+						left:103px;
+					}
+					&.badge-8{
+						top:187px;
+						left:103px;
+					}
+					&.badge-9{
+						top:39px;
+						left:155px;
+					}
+					&.badge-10{
+						top:98px;
+						left:154px;
+					}
+					&.badge-11{
+						top:157px;
+						left:154px;
+					}
+					&.badge-12{
+						top:128px;
+						left:205px;
+					}
+					&.badge-13{
+						top:187px;
+						left:204px;
+					}
+					&.badge-14{
+						top:39px;
+						left:257px;
+					}
+					&.badge-15{
+						top:98px;
+						left:257px;
+					}
+					&.badge-16{
+						top:10px;
+						left:308px;
+					}
+					&.badge-17{
+						top:69px;
+						left:308px;
+					}
+					&.badge-18{
+						top:128px;
+						left:309px;
+					}
+					&.badge-19{
+						top:187px;
+						left:309px;
+					}
+					&.badge-20{
+						top:39px;
+						left:359px;
+					}
+					&.badge-21{
+						top:98px;
+						left:360px;
+					}
+					&.badge-22{
+						top:157px;
+						left:360px;
+					}
+					&.badge-23{
+						top:68px;
+						left:412px;
+					}
+					&.badge-24{
+						top:128px;
+						left:412px;
+					}
+					&.badge-25{
+						top:39px;
+						left:464px;
+					}
+					&.badge-26{
+						top:98px;
+						left:464px;
+					}
+					&.badge-27{
+						top:8px;
+						left:515px;
+					}
+					&.badge-28{
+						top:68px;
+						left:515px;
+					}
+					&.badge-29{
+						top:128px;
+						left:515px;
+					}
+					&.badge-30{
+						top:38px;
+						left:566px;
+					}
+					&.badge-31{
+						top:97px;
+						left:566px;
+					}
+					&.badge-32{
+						top:157px;
+						left:567px;
+					}
+					&.badge-33{
+						top:8px;
+						left:618px;
+					}
+					&.badge-34{
+						top:68px;
+						left:618px;
+					}
+					&.badge-35{
+						top:128px;
+						left:618px;
+					}
+					&.badge-36{
+						top:39px;
+						left:669px;
+					}
+					&.badge-37{
+						top:98px;
+						left:669px;
+					}
+					&.badge-38{
+						top:9px;
+						left:722px;
+					}
+					&.badge-39{
+						top:69px;
+						left:721px;
+					}
+					&.badge-40{
+						top:129px;
+						left:721px;
+					}
+					&.badge-41{
+						top:38px;
+						left:772px;
+					}
+					&.badge-42{
+						top:97px;
+						left:772px;
+					}
+					&.badge-43{
+						top:157px;
+						left:773px;
+					}
+					&.badge-44{
+						top:67px;
+						left:824px;
+					}
+					&.badge-45{
+						top:127px;
+						left:824px;
+					}
+					&.badge-46{
+						top:38px;
+						left:876px;
+					}
+					&.badge-47{
+						top:97px;
+						left:876px;
+					}
+					&.badge-48{
+						top:157px;
+						left:876px;
+					}
+					&.badge-49{
+						top:10px;
+						left:928px;
+					}
+					&.badge-50{
+						top:69px;
+						left:927px;
+					}
+					&.badge-51{
+						top:128px;
+						left:928px;
+					}
+					&.badge-52{
+						top:187px;
+						left:927px;
+					}
+					&.badge-53{
+						top:97px;
+						left:979px;
+					}
 				}
-				&.badge-1{
-					top:70px;
-					left:1px;
-				}
-				&.badge-2{
-					top:39px;
-					left:52px;
-				}
-				&.badge-3{
-					top:98px;
-					left:53px;
-				}
-				&.badge-4{
-					top:157px;
-					left:53px;
-				}
-				&.badge-5{
-					top:10px;
-					left:104px;
-				}
-				&.badge-6{
-					top:69px;
-					left:104px;
-				}
-				&.badge-7{
-					top:128px;
-					left:103px;
-				}
-				&.badge-8{
-					top:187px;
-					left:103px;
-				}
-				&.badge-9{
-					top:39px;
-					left:155px;
-				}
-				&.badge-10{
-					top:98px;
-					left:154px;
-				}
-				&.badge-11{
-					top:157px;
-					left:154px;
-				}
-				&.badge-12{
-					top:128px;
-					left:205px;
-				}
-				&.badge-13{
-					top:187px;
-					left:204px;
-				}
-				&.badge-14{
-					top:39px;
-					left:257px;
-				}
-				&.badge-15{
-					top:98px;
-					left:257px;
-				}
-				&.badge-16{
-					top:10px;
-					left:308px;
-				}
-				&.badge-17{
-					top:69px;
-					left:308px;
-				}
-				&.badge-18{
-					top:128px;
-					left:309px;
-				}
-				&.badge-19{
-					top:187px;
-					left:309px;
-				}
-				&.badge-20{
-					top:39px;
-					left:359px;
-				}
-				&.badge-21{
-					top:98px;
-					left:360px;
-				}
-				&.badge-22{
-					top:157px;
-					left:360px;
-				}
-				&.badge-23{
-					top:68px;
-					left:412px;
-				}
-				&.badge-24{
-					top:128px;
-					left:412px;
-				}
-				&.badge-25{
-					top:39px;
-					left:464px;
-				}
-				&.badge-26{
-					top:98px;
-					left:464px;
-				}
-				&.badge-27{
-					top:8px;
-					left:515px;
-				}
-				&.badge-28{
-					top:68px;
-					left:515px;
-				}
-				&.badge-29{
-					top:128px;
-					left:515px;
-				}
-				&.badge-30{
-					top:38px;
-					left:566px;
-				}
-				&.badge-31{
-					top:97px;
-					left:566px;
-				}
-				&.badge-32{
-					top:157px;
-					left:567px;
-				}
-				&.badge-33{
-					top:8px;
-					left:618px;
-				}
-				&.badge-34{
-					top:68px;
-					left:618px;
-				}
-				&.badge-35{
-					top:128px;
-					left:618px;
-				}
-				&.badge-36{
-					top:39px;
-					left:669px;
-				}
-				&.badge-37{
-					top:98px;
-					left:669px;
-				}
-				&.badge-38{
-					top:9px;
-					left:722px;
-				}
-				&.badge-39{
-					top:69px;
-					left:721px;
-				}
-				&.badge-40{
-					top:129px;
-					left:721px;
-				}
-
-				&.badge-41{
-					top:38px;
-					left:772px;
-				}
-				&.badge-42{
-					top:97px;
-					left:772px;
-				}
-				&.badge-43{
-					top:157px;
-					left:773px;
-				}
-				&.badge-44{
-					top:67px;
-					left:824px;
-				}
-				&.badge-45{
-					top:127px;
-					left:824px;
-				}
+			}
+			.note{
+				position:absolute;
+				color:#455258;
+				font-size:12px;
+				line-height:16px;
+				top:363px;
+				left:138px;
+				width:180px;
+				height:48px;
+				overflow:hidden;
+			}
+			.name{
+				position:absolute;
+				color:#fff;
+				top:381px;
+				width:95px;
+				@include cliptext;
+				line-height:20px;
+				height:20px;
+				left:372px;
+				text-align:center;
+				font-size:16px;
+				font-weight:normal;
+			}
+			.big-badge{
+				position:absolute;
+				width:130px;
+				height:114px;
+				top:335px;
+				left:487px;
+				display:none;
+			}
+			.level{
+				position:absolute;
+				color:#455258;
+				top:456px;
+				width:95px;
+				@include cliptext;
+				line-height:20px;
+				height:20px;
+				left:505px;
+				text-align:center;
+				font-size:16px;
+				font-weight:normal;
+			}
+			.next-level{
+				position:absolute;
+				color:#fff;
+				top:381px;
+				width:95px;
+				@include cliptext;
+				line-height:20px;
+				height:20px;
+				left:635px;
+				text-align:center;
+				font-size:16px;
+				font-weight:normal;
+			}
+			.target{
+				position:absolute;
 			}
 		}
 	}
 	.info-tab{
+		margin-bottom:100px;
 		.title{
 			color:#455258;
 			margin-bottom:60px;
@@ -449,6 +557,10 @@
 							&.on{
 								background-color:#f4f4f2;
 								border-bottom:2px solid #f4f4f2;
+								font-weight:normal;
+							}
+							&:hover{
+								color:lighten(#455258,10%);
 							}
 							&:not(:last-child):after{
 								content:"";
@@ -483,10 +595,113 @@
 					.tab-wrap{
 						.tab{
 							display:none;
+							overflow:hidden;
 							background-color:#f4f4f2;
 							min-height:800px;
 							&.on{
 								display:block;
+							}
+						}
+					}
+				}
+			}
+			.work-list{
+				width:720px;
+				margin:50px auto;
+				ul{
+					width:800px;
+					overflow:hidden;
+				}
+				li{
+					float:left;
+					width:200px;
+					margin-right:60px;
+					height:306px;
+					.upload{
+						width:100%;
+						height:230px;
+						display:block;
+						background-color:#d0d1d2;
+						position:relative;
+						&:before,&:after{
+							content:"";
+							display:block;
+							position:absolute;
+							background-color:#fff;
+						}
+						&:before{
+							width:16px;
+							height:78px;
+							left:92px;
+							top:76px;
+						}
+						&:after{
+							height:16px;
+							width:78px;
+							top:107px;
+							left:61px;
+						}
+					}
+					.work-img{
+						width:100%;
+						height:230px;
+						display:block;
+						img{
+							display:block;
+							width:100%;
+							height:230px;
+						}
+					}
+					.work-name{
+						line-height:30px;
+						font-size:14px;
+						text-align:center;
+						@include cliptext;
+						width:180px;
+						margin:0 auto;
+						display:block;
+					}
+					.work-scores{
+						line-height:26px;
+						width:190px;
+						margin:0 auto;
+						dt{
+							float:right;
+							height:26px;
+							width:26px;
+							position:relative;
+							transform:rotate(45deg);
+							cursor:pointer;
+							&:before,&:after{
+								content:"";
+								display:block;
+								position:absolute;
+								background-color:red;
+							}
+							&:before{
+								width:4px;
+								height:18px;
+								left:11px;
+								top:4px;
+							}
+							&:after{
+								height:4px;
+								width:18px;
+								top:11px;
+								left:4px;
+							}
+						}
+						dd{
+							float:left;
+							width:54px;
+							a{
+								float:left;
+							}
+							i{
+								float:left;
+								font-size:12px;
+								width:28px;
+								overflow:hidden;
 							}
 						}
 					}

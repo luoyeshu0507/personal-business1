@@ -1,0 +1,41 @@
+.home .bg-yellow { background-color: #f4f3b8; }
+
+.home .bg-white { background-color: #fff; }
+
+.home .bg-blue { background-color: #a6d6dc; }
+
+.home .h-banner img { width: 100%; display: block; }
+
+.home .h-banner .swiper-button-next { right: 30px; }
+
+.home .h-banner .swiper-button-prev { left: 30px; }
+
+.home .item-title { text-align: center; color: #455258; font-size: 32px; font-weight: normal; line-height: 70px; }
+
+.home .item-detail { text-align: center; color: #455258; font-size: 18px; margin-bottom: 30px; }
+
+.home .blocks { width: 706px; overflow: hidden; margin: 0 auto 40px; text-align: center; }
+
+.home .blocks ul { width: 730px; }
+
+.home .blocks ul li { width: 222px; margin: 0 20px 20px 0; height: 282px; float: left; }
+
+.home .blocks ul li.access-item { cursor: pointer; color: #455258; }
+
+.home .blocks ul li.access-item span { display: block; height: 174px; line-height: 174px; font-size: 18px; font-weight: normal; color: #fff; background-size: cover; background-position: center; background-repeat: no-repeat; -webkit-transition: all .3s ease; transition: all .3s ease; }
+
+.home .blocks ul li.access-item:nth-child(1) span { background-image: url("https://placem.at/things?w=222&h=174&random=1&txt="); }
+
+.home .blocks ul li.access-item:nth-child(2) span { background-image: url("https://placem.at/things?w=222&h=174&random=2&txt="); }
+
+.home .blocks ul li.access-item:nth-child(3) span { background-image: url("https://placem.at/things?w=222&h=174&random=3&txt="); }
+
+.home .blocks ul li.access-item em { display: block; height: 108px; line-height: 108px; -webkit-transition: all .3s ease; transition: all .3s ease; }
+
+.home .blocks ul li.access-item:hover span { height: 114px; line-height: 114px; }
+
+.home .blocks ul li.access-item:hover em { height: 168px; line-height: 168px; }
+
+.home .service { padding: 50px 0; background-color: #e6e5e2; }
+
+.home .access { padding: 50px 0; background-color: #e9e8e5; }
