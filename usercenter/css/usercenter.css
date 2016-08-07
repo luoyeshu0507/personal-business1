@@ -162,7 +162,21 @@
 
 .u-usercenter .user-badges .badge-wrap .next-level { position: absolute; color: #fff; top: 381px; width: 95px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 20px; height: 20px; left: 635px; text-align: center; font-size: 16px; font-weight: normal; }
 
-.u-usercenter .user-badges .badge-wrap .target { position: absolute; }
+.u-usercenter .user-badges .badge-wrap .target { position: absolute; top: 373px; left: 779px; width: 167px; height: 34px; text-align: center; }
+
+.u-usercenter .user-badges .badge-wrap .target li { text-align: left; display: inline-block; width: 44px; color: #909294; padding-left: 6px; }
+
+.u-usercenter .user-badges .badge-wrap .target li.on { color: #455258; }
+
+.u-usercenter .user-badges .badge-wrap .target li:not(:last-child) { border-right: 1px solid #455258; }
+
+.u-usercenter .user-badges .badge-wrap .target li strong, .u-usercenter .user-badges .badge-wrap .target li span, .u-usercenter .user-badges .badge-wrap .target li em { display: block; line-height: 1; }
+
+.u-usercenter .user-badges .badge-wrap .target li strong { font-size: 16px; font-weight: normal; }
+
+.u-usercenter .user-badges .badge-wrap .target li span { font-size: 12px; }
+
+.u-usercenter .user-badges .badge-wrap .target li em { font-size: 14px; }
 
 .u-usercenter .info-tab { margin-bottom: 100px; }
 
@@ -222,7 +236,7 @@
 
 .u-usercenter .info-tab .tabs-wrap .tabs .item.on { display: block; }
 
-.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar { text-align: center; overflow: hidden; cursor: pointer; line-height: 28px; }
+.u-usercenter .info-tab .tabs-wrap .tabs .item .topbar { text-align: center; overflow: hidden; cursor: pointer; line-height: 28px; font-size: 14px; }
 
 .u-usercenter .info-tab .tabs-wrap .tabs .item .topbar span { float: left; position: relative; border-bottom: 2px solid #fff; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 

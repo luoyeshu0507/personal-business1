@@ -438,6 +438,38 @@
 			}
 			.target{
 				position:absolute;
+				top:373px;
+				left:779px;
+				width:167px;
+				height:34px;
+				text-align:center;
+				li{
+					text-align:left;
+					display:inline-block;
+					width:44px;
+					color:#909294;
+					padding-left:6px;
+					&.on{
+						color:#455258;
+					}
+					&:not(:last-child){
+						border-right:1px solid #455258;
+					}
+					strong,span,em{
+						display:block;
+						line-height:1;
+					}
+					strong{
+						font-size:16px;
+						font-weight:normal;
+					}
+					span{
+						font-size:12px;
+					}
+					em{
+						font-size:14px;
+					}
+				}
 			}
 		}
 	}
@@ -549,6 +581,7 @@
 						overflow:hidden;
 						cursor:pointer;
 						line-height:28px;
+						font-size:14px;
 						span{
 							float:left;
 							position:relative;
