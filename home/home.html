@@ -15,13 +15,27 @@
 </head>
 <body class="home">
 	<!-- header-start -->
-	<div class="h-header">
-		<div class="g-container">
-			<a href="#" class="h-logo">Pigment &gt;&gt;</a>
-			<a href="#" class="h-login-btn">LOGIN</a>
+	<div class="fixed-header">
+		<div class="nav">
+			<div class="pigment">Pigment</div>
+			<div class="nav-links">sss</div>
 		</div>
+		<div class="search">search</div>
 	</div>
-	<div class="g-pt65"></div>
+	<div class="g-pt44 bg-black"></div>
+	<script>
+		$(function(){
+			var $header=$(".fixed-header");
+			var $win=$(window);
+			$win.scroll(function(){
+				if($win.scrollTop()>100){
+					$header.addClass('active');
+				} else{
+					$header.removeClass('active');
+				}
+			});
+		});
+	</script>
 	<!-- header-end -->
 	
 	<!-- banner start -->

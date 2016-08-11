@@ -1,0 +1,70 @@
+.wrap{
+	width:400px;
+	background:#ddd;
+	margin:10px auto;
+	overflow:hidden;
+	perspective:650px;
+	div{
+		width:100px;
+		height:100px;
+		position:relative;
+		margin:150px;
+		transform-style:preserve-3d;
+		transform-origin:50% 50% 50px;
+		transition:transform 1s ease;
+		span{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100px;
+			height:100px;
+			opacity:.8;
+			transform-origin:50% 50% 50px;
+			transition:transform 1s ease;
+		}
+		span:nth-child(1){
+			background:url("https://placem.at/things?h=100&w=100&txt=&random=1") no-repeat;
+		}
+		span:nth-child(2){
+			background:url("https://placem.at/things?h=100&w=100&txt=&random=2") no-repeat;
+			transform:rotateX(90deg);
+		}
+		span:nth-child(3){
+			background:url("https://placem.at/things?h=100&w=100&txt=&random=3") no-repeat;
+			transform:rotateX(-90deg);
+		}
+		span:nth-child(4){
+			background:url("https://placem.at/things?h=100&w=100&txt=&random=4") no-repeat;
+			transform:rotateY(-90deg);
+		}
+		span:nth-child(5){
+			background:url("https://placem.at/things?h=100&w=100&txt=&random=5") no-repeat;
+			transform:rotateY(90deg);
+		}
+		span:nth-child(6){
+			background:url("https://placem.at/things?h=100&w=100&txt=&random=6") no-repeat;
+			transform:rotateX(180deg);
+		}
+	}
+	&:hover div{
+		transform:rotate3d(1,1,0,360deg);
+		span:nth-child(1){
+			transform:translate3d(0,0,-50px);
+		}
+		span:nth-child(2){
+			transform:rotateX(90deg) translate3d(0,0,-50px);
+		}
+		span:nth-child(3){
+			transform:rotateX(-90deg) translate3d(0,0,-50px);
+		}
+		span:nth-child(4){
+			transform:rotateY(-90deg) translate3d(0,0,-50px);
+		}
+		span:nth-child(5){
+			transform:rotateY(90deg) translate3d(0,0,-50px);
+		}
+		span:nth-child(6){
+			transform:rotateX(180deg) translate3d(0,0,-50px);
+		}
+	}
+}

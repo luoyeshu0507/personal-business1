@@ -13,13 +13,33 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-.h-header { position: fixed; top: 0; left: 0; width: 100%; line-height: 64px; height: 64px; background-color: #a6d6dc; box-shadow: 0px 4px 6px 0 #aeaba9; z-index: 99; }
+.h-header { position: fixed; top: 0; left: 0; width: 100%; line-height: 64px; height: 64px; background-color: #a6d6dc; box-shadow: 0px 4px 6px 0 #aeaba9; z-index: 999; }
 
 .h-header .h-logo { float: left; text-decoration: none; font-style: italic; color: #221f1f; font-size: 24px; font-weight: bold; }
 
 .h-header .h-login-btn { float: right; color: #fff; border: 2px solid #fff; display: block; line-height: 34px; padding: 0 28px; text-decoration: none; margin-top: 13px; }
 
 .h-header .h-login-btn:hover { color: #000; border-color: #000; }
+
+.fixed-header { position: fixed; height: 100px; width: 100%; top: 0; left: 0; overflow: hidden; z-index: 9999; }
+
+.fixed-header .nav { height: 24px; position: relative; z-index: 1; background-color: #000; }
+
+.fixed-header .nav .nav-links { height: 44px; position: absolute; text-align: center; top: 0; left: 0; width: 100%; background-color: #000; color: #fff; opacity: 1; transition: all .4s ease; }
+
+.fixed-header .nav .pigment { height: 44px; position: absolute; text-align: center; background-color: #000; font-size: 12px; font-weight: 700; color: #fff; top: 0; left: 0; width: 100%; transition: all .4s ease; line-height: 64px; }
+
+.fixed-header .search { height: 50px; text-align: center; background-color: #fff; display: none; }
+
+.fixed-header.active .nav-links { transform: translate(0, -20px); opacity: 0; }
+
+.fixed-header.active .pigment { transform: translate(0, -20px); }
+
+.fixed-header.active .search { display: block; }
+
+.fixed-header.active .nav:hover .nav-links { opacity: 1; transform: translate(0, 0); }
+
+.fixed-header.active .nav:hover .pigment { transform: translate(0, 0); }
 
 .f-footer { background-color: #dbd9d5; padding-top: 40px; }
 
@@ -58,6 +78,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 .g-container { width: 1080px; margin: 0 auto; box-sizing: border-box; font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
 
 .g-pt65 { padding-top: 65px; }
+
+.g-pt44 { padding-top: 44px; }
+
+.bg-black { background-color: #000; }
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 
