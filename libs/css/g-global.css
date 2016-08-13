@@ -25,11 +25,29 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .fixed-header .nav { height: 24px; position: relative; z-index: 1; background-color: #000; }
 
-.fixed-header .nav .nav-links { height: 44px; position: absolute; text-align: center; top: 0; left: 0; width: 100%; background-color: #000; color: #fff; opacity: 1; transition: all .4s ease; }
+.fixed-header .nav .nav-links { height: 44px; position: absolute; top: 0; left: 0; width: 100%; background-color: #000; color: #fff; opacity: 1; transition: all .4s ease; }
 
-.fixed-header .nav .pigment { height: 44px; position: absolute; text-align: center; background-color: #000; font-size: 12px; font-weight: 700; color: #fff; top: 0; left: 0; width: 100%; transition: all .4s ease; line-height: 64px; }
+.fixed-header .nav .nav-links .g-container { height: 100%; }
+
+.fixed-header .nav .nav-links .g-container ul { height: 100%; }
+
+.fixed-header .nav .nav-links .g-container ul li { height: 100%; display: inline-block; margin-right: 10px; }
+
+.fixed-header .nav .nav-links .g-container ul li a { line-height: 44px; display: inline-block; color: #fff; font-size: 14px; padding: 0 10px; height: 100%; }
+
+.fixed-header .nav .nav-links .g-container ul li a:hover { background-color: #222; }
+
+.fixed-header .nav .nav-links .g-container ul li a .g-icon { float: left; margin-top: 9px; margin-right: 10px; }
+
+.fixed-header .nav .pigment { height: 44px; position: absolute; background-color: #000; text-align: center; font-size: 12px; font-weight: 700; color: #fff; top: 0; left: 0; width: 100%; transition: all .4s ease; line-height: 64px; }
 
 .fixed-header .search { height: 50px; text-align: center; background-color: #fff; display: none; }
+
+.fixed-header .search .g-container { height: 100%; position: relative; }
+
+.fixed-header .search .g-container #g-keyword { width: 100%; height: 100%; box-sizing: border-box; border: 0 none; outline: 0 none; font-size: 18px; padding-left: 34px; }
+
+.fixed-header .search .g-container:after { width: 20px; height: 20px; position: absolute; content: ""; background: url("../images/search.png") no-repeat center; top: 50%; left: 0; margin-top: -10px; background-size: 20px; }
 
 .fixed-header.active .nav-links { transform: translate(0, -20px); opacity: 0; }
 
@@ -76,6 +94,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* common css */
 .g-container { width: 1080px; margin: 0 auto; box-sizing: border-box; font-family: Oswald,Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; }
+
+.left { float: left; }
+
+.right { float: right; }
 
 .g-pt65 { padding-top: 65px; }
 
@@ -162,6 +184,14 @@ body { background-color: #efeeec; font-size: 16px; font-family: Oswald,Helvetica
 .g-alert-content .g-alert-btns em { margin-right: 20px; background-color: #E85C5F; border: 1px solid #f5b5b7; }
 
 .g-alert-content .g-alert-btns i { background-color: #5CB85C; border: 1px solid #c7e6c7; }
+
+.g-icon-coin { background: url("../images/money-white.png") no-repeat center; background-size: 20px; }
+
+.g-icon-upload { background: url("../images/upload-white.png") no-repeat center; background-size: 20px; }
+
+.g-icon-login { background: url("../images/profile-white.png") no-repeat center; background-size: 20px; }
+
+.g-icon-create { background: url("../images/profile-white.png") no-repeat center; background-size: 20px; }
 
 .loadmore { width: 100% !important; height: 23px !important; padding-top: 20px !important; background-color: transparent !important; }
 
