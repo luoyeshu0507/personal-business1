@@ -21,7 +21,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .h-header .h-login-btn:hover { color: #000; border-color: #000; }
 
-.fixed-header { position: fixed; height: 100px; width: 100%; top: 0; left: 0; overflow: hidden; z-index: 9999; }
+.fixed-header { position: fixed; height: 100px; width: 100%; top: 0; left: 0; z-index: 9999; }
 
 .fixed-header .nav { height: 24px; position: relative; z-index: 1; background-color: #000; }
 
@@ -35,9 +35,25 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .fixed-header .nav .nav-links .g-container ul li a { line-height: 44px; display: inline-block; color: #fff; font-size: 14px; padding: 0 10px; height: 100%; }
 
-.fixed-header .nav .nav-links .g-container ul li a:hover { background-color: #222; }
+.fixed-header .nav .nav-links .g-container ul li a:hover { background-color: #333; }
 
 .fixed-header .nav .nav-links .g-container ul li a .g-icon { float: left; margin-top: 9px; margin-right: 10px; }
+
+.fixed-header .nav .nav-links .g-container .user-info { float: right; height: 100%; position: relative; }
+
+.fixed-header .nav .nav-links .g-container .user-info .info-item { cursor: pointer; height: 100%; display: inline-block; width: 44px; float: left; }
+
+.fixed-header .nav .nav-links .g-container .user-info .info-item:hover { background-color: #333; }
+
+.fixed-header .nav .nav-links .g-container .user-info .info-item:hover ol { display: block; }
+
+.fixed-header .nav .nav-links .g-container .user-info .info-item .g-icon { margin-top: 9px; margin-left: 9px; }
+
+.fixed-header .nav .nav-links .g-container .user-info .info-item ol { width: 132px; display: none; position: absolute; top: 44px; left: 0; font-size: 14px; background-color: #333; }
+
+.fixed-header .nav .nav-links .g-container .user-info .info-item ol li { line-height: 40px; }
+
+.fixed-header .nav .nav-links .g-container .user-info .info-item ol a { color: #fff; margin: 0 15px; }
 
 .fixed-header .nav .pigment { height: 44px; position: absolute; background-color: #000; text-align: center; font-size: 12px; font-weight: 700; color: #fff; top: 0; left: 0; width: 100%; transition: all .4s ease; line-height: 64px; }
 
@@ -192,6 +208,10 @@ body { background-color: #efeeec; font-size: 16px; font-family: Oswald,Helvetica
 .g-icon-login { background: url("../images/profile-white.png") no-repeat center; background-size: 20px; }
 
 .g-icon-create { background: url("../images/profile-white.png") no-repeat center; background-size: 20px; }
+
+.g-icon-notification { background: url("../images/notification-white.png") no-repeat center; background-size: 20px; }
+
+.g-icon-menu { background: url("../images/menu-white.png") no-repeat center; background-size: 20px; }
 
 .loadmore { width: 100% !important; height: 23px !important; padding-top: 20px !important; background-color: transparent !important; }
 

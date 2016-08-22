@@ -39,7 +39,6 @@ $nav-min-height:24px;
 	width: 100%;
 	top:0;
 	left: 0;
-	overflow: hidden;
 	z-index:9999;
 	.nav{
 		height: $nav-min-height;
@@ -72,12 +71,50 @@ $nav-min-height:24px;
 							padding:0 10px;
 							height:100%;
 							&:hover{
-								background-color:#222;
+								background-color:#333;
 							}
 							.g-icon{
 								float:left;
 								margin-top:($nav-height - 26px) / 2;
 								margin-right:10px;
+							}
+						}
+					}
+				}
+				.user-info{
+					float:right;
+					height:100%;
+					position:relative;
+					.info-item{
+						cursor:pointer;
+						height:100%;
+						display:inline-block;
+						width:$nav-height;
+						float:left;
+						&:hover{
+							background-color:#333;
+							ol{
+								display:block;
+							}
+						}
+						.g-icon{
+							margin-top:($nav-height - 26px) / 2;
+							margin-left:($nav-height - 26px) / 2;
+						}
+						ol{
+							width:$nav-height * 3;
+							display:none;
+							position:absolute;
+							top:$nav-height;
+							left:0;
+							font-size:14px;
+							background-color:#333;
+							li{
+								line-height:40px;
+							}
+							a{
+								color:#fff;
+								margin:0 15px;
 							}
 						}
 					}

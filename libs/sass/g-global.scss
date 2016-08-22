@@ -106,6 +106,7 @@ body{
 	height:40px;
 	background: url("../images/upload.png") no-repeat;
 }
+
 .g-icon-gotop{
 	background-position: -103px -1px;
 }
@@ -262,6 +263,14 @@ body{
 }
 .g-icon-create{
 	background:url("../images/profile-white.png") no-repeat center;
+	background-size:20px;
+}
+.g-icon-notification{
+	background:url("../images/notification-white.png") no-repeat center;
+	background-size:20px;
+}
+.g-icon-menu{
+	background:url("../images/menu-white.png") no-repeat center;
 	background-size:20px;
 }
 .loadmore{
