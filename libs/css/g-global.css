@@ -53,6 +53,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .fixed-header .nav .nav-links .g-container .user-info .info-item ol li { line-height: 40px; }
 
+.fixed-header .nav .nav-links .g-container .user-info .info-item ol li:hover { background-color: #555; }
+
 .fixed-header .nav .nav-links .g-container .user-info .info-item ol a { color: #fff; margin: 0 15px; }
 
 .fixed-header .nav .pigment { height: 44px; position: absolute; background-color: #000; text-align: center; font-size: 12px; font-weight: 700; color: #fff; top: 0; left: 0; width: 100%; transition: all .4s ease; line-height: 64px; }
