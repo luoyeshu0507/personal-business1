@@ -121,6 +121,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .g-pt44 { padding-top: 44px; }
 
+.g-mt20 { margin-top: 20px; }
+
+.g-pt20 { padding-top: 20px; }
+
 .bg-black { background-color: #000; }
 
 .clearfix:before, .clearfix:after { content: ""; display: table; }

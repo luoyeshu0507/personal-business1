@@ -16,25 +16,45 @@
 
 .home .blocks { width: 706px; overflow: hidden; margin: 0 auto 40px; text-align: center; }
 
-.home .blocks ul { width: 730px; }
+.home .blocks .access-list { width: 730px; margin-top: 10px; }
 
-.home .blocks ul li { width: 222px; margin: 0 20px 20px 0; height: 282px; float: left; }
+.home .blocks .access-list li { width: 222px; margin: 0 20px 20px 0; height: 282px; float: left; }
 
-.home .blocks ul li.access-item { cursor: pointer; color: #455258; }
+.home .blocks .access-list li.access-item { cursor: pointer; color: #455258; }
 
-.home .blocks ul li.access-item span { display: block; height: 174px; line-height: 174px; font-size: 18px; font-weight: normal; color: #fff; background-size: cover; background-position: center; background-repeat: no-repeat; -webkit-transition: all .3s ease; transition: all .3s ease; }
+.home .blocks .access-list li.access-item span { display: block; height: 174px; line-height: 174px; font-size: 18px; font-weight: normal; color: #fff; background-size: cover; background-position: center; background-repeat: no-repeat; -webkit-transition: all .3s ease; transition: all .3s ease; }
 
-.home .blocks ul li.access-item:nth-child(1) span { background-image: url("https://placem.at/things?w=222&h=174&random=1&txt="); }
+.home .blocks .access-list li.access-item:nth-child(1) span { background-image: url("https://placem.at/things?w=222&h=174&random=1&txt="); }
 
-.home .blocks ul li.access-item:nth-child(2) span { background-image: url("https://placem.at/things?w=222&h=174&random=2&txt="); }
+.home .blocks .access-list li.access-item:nth-child(2) span { background-image: url("https://placem.at/things?w=222&h=174&random=2&txt="); }
 
-.home .blocks ul li.access-item:nth-child(3) span { background-image: url("https://placem.at/things?w=222&h=174&random=3&txt="); }
+.home .blocks .access-list li.access-item:nth-child(3) span { background-image: url("https://placem.at/things?w=222&h=174&random=3&txt="); }
 
-.home .blocks ul li.access-item em { display: block; height: 108px; line-height: 108px; -webkit-transition: all .3s ease; transition: all .3s ease; }
+.home .blocks .access-list li.access-item em { display: block; height: 108px; line-height: 108px; -webkit-transition: all .3s ease; transition: all .3s ease; }
 
-.home .blocks ul li.access-item:hover span { height: 114px; line-height: 114px; }
+.home .blocks .access-list li.access-item:hover span { height: 114px; line-height: 114px; }
 
-.home .blocks ul li.access-item:hover em { height: 168px; line-height: 168px; }
+.home .blocks .access-list li.access-item:hover em { height: 168px; line-height: 168px; }
+
+.home .blocks .service-list { width: 730px; margin-top: 10px; }
+
+.home .blocks .service-list li { width: 222px; margin: 0 20px 20px 0; height: 282px; float: left; background-color: #fff; cursor: pointer; }
+
+.home .blocks .service-list li:nth-child(odd):hover { background-color: #f7f3b7; }
+
+.home .blocks .service-list li:nth-child(even):hover { background-color: #a6d8de; }
+
+.home .blocks .service-list li a { display: block; width: 132px; height: 132px; margin: 30px auto 20px; }
+
+.home .blocks .service-list li a:nth-of-type(2) { display: none; }
+
+.home .blocks .service-list li:hover a { display: none; }
+
+.home .blocks .service-list li:hover a:nth-of-type(2) { display: block; }
+
+.home .blocks .service-list li h2 { font-size: 18px; }
+
+.home .blocks .service-list li p { line-height: 24px; margin: 15px; }
 
 .home .service { padding: 50px 0; background-color: #e6e5e2; }
 
