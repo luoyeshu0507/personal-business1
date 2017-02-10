@@ -8,7 +8,11 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('serve', ['sass'], function() {
     browserSync.init({
         server: {
-		    baseDir: "./"
+		    baseDir: "./",
+            middleware: function (req, res, next) {
+                res.setHeader('xxx', '123');
+                next();
+            }
 		},
 		port:3012
     });
